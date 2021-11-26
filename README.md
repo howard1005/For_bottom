@@ -10,4 +10,5 @@ https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%AA%85%ED%95%9C_%EC%9B%B9%EC%82%AC%EC%
 https://ko.reactjs.org/tutorial/tutorial.html
 
 ## Django
-https://docs.djangoproject.com/ko/3.2/intro/tutorial01/
+공식 가이드 : https://docs.djangoproject.com/ko/3.2/intro/tutorial01/
+동작 방식 : https://cocook.tistory.com/126

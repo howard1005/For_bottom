@@ -17,3 +17,33 @@ https://ko.reactjs.org/tutorial/tutorial.html
 ### 1. 최창우의 적극적인 참여
 
 ![image](https://user-images.githubusercontent.com/16042073/143764488-a30b7c41-41b2-493e-ac49-82967572fd2d.png)
+
+
+
+
+
+기능 리스트
+
+1. 일단 로그인 없음
+2. 바텀 챔피언 위주로 정보 보여주기
+ - 원딜 챔피언이면 해당 챔피언과 라인에 섰을 때 가장 승률이 좋은 챔피언,  가장 조합 시너지가 잘 나는 챔피언(?) -> 이건 할 수 있으려나 모르겠네, 
+ - 서포터 챔피언이면 해당 챔피언과 라인에 섰을 때 가장 승률이 좋은 챔피언, 위와 동일
+
+3. 챔피언에 대한 정보 보여주기
+ - 일단 스킬 찍는 순서 + 상황별 아이템 추천 또는 승률이 제일 높은 아이템 트리 추천
+
+4. 챔피언 별 궁합 보여주기
+5. 유튜브 링크 (바텀 유저)
+6. 게시판 -> 고민중
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/16042073/143766155-565adbda-1573-44be-bcbc-5ad314c7cacd.png)
+![image](https://user-images.githubusercontent.com/16042073/143766168-eff45c8c-2967-4589-9bb9-3bddf59f9fd9.png)
+![image](https://user-images.githubusercontent.com/16042073/143766170-32b61278-079a-4325-9f51-cb484ebee1d5.png)
+![image](https://user-images.githubusercontent.com/16042073/143766174-6da8fafe-0da1-418a-8b22-ccd0f729dcad.png)
+![image](https://user-images.githubusercontent.com/16042073/143766176-c3cafe2a-fab5-4dad-858b-e9491c1a8aa2.png)
+![image](https://user-images.githubusercontent.com/16042073/143766177-3cf195a5-886d-47bc-a4b1-97e384a0e40d.png)

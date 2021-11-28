@@ -12,3 +12,6 @@ https://ko.reactjs.org/tutorial/tutorial.html
 ## Django
 공식 가이드 : https://docs.djangoproject.com/ko/3.2/intro/tutorial01/
 동작 방식 : https://cocook.tistory.com/126
+
+## 요구사항
+### 1. 최창우의 적극적인 참여

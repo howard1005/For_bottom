@@ -1,10 +1,13 @@
 # For_bottom
 LOL bottom match project
 
-## 기반 language 고민자료 (react - django로 일단 확정)
+## 기반 language 고민자료 (Front:[react] - Back:[node.js or django])
 https://velog.io/@sinichy7/Django-vs-NodeJS-vs-NestJS
 http://tech.trenbe.com/?p=515
 https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%AA%85%ED%95%9C_%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90_%EC%82%AC%EC%9A%A9%EB%90%98%EB%8A%94_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4%EB%93%A4
+
+## 방향
+프로젝트 목적등을 고려했을때, CRUD형식의 서비스 보다는 real-time 반응형 서비스로 django,spring 보다는 node.js가 Backend로 더 적합하다고 판단됨 
 
 ## React
 https://ko.reactjs.org/tutorial/tutorial.html
@@ -12,6 +15,10 @@ https://ko.reactjs.org/tutorial/tutorial.html
 ## Django
 공식 가이드 : https://docs.djangoproject.com/ko/3.2/intro/tutorial01/
 동작 방식 : https://cocook.tistory.com/126
+
+## Node.js
+공식 가이드 : https://nodejs.org/ko/docs/guides/
+
 
 ## 요구사항
 ### 1. 최창우의 적극적인 참여

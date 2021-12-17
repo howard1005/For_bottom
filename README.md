@@ -12,6 +12,7 @@ https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%AA%85%ED%95%9C_%EC%9B%B9%EC%82%AC%EC%
 ## React
 https://ko.reactjs.org/tutorial/tutorial.html
 https://codepen.io/gaearon/pen/oWWQNa?editors=0010
+- CSS 자동 : https://www.toptal.com/developers/css3maker/css3-animation.html
 
 ## Django
 공식 가이드 : https://docs.djangoproject.com/ko/3.2/intro/tutorial01/

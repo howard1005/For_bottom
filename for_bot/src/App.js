@@ -18,37 +18,26 @@ const menuList ={
   5: <Board></Board>
 }
 
-class App extends React.Component{
-  constructor(props){
-    super();
-    this.state ={
-      menu:0,
-    };
-  }
+function App() {
 
-  changeMenu =(menuIndex) =>{
-    this.setState({menu: menuIndex});
-  }
-
-
-  render(){
+    let [menu, menuChange] = useState(0)
+  
     return (
       <div className="App">
         <div className ="black-nav">
-          <div onClick={()=>this.changeMenu(0)}>Home</div>
-          <div onClick={()=>this.changeMenu(1)}>인게임 정보</div>
-          <div onClick={()=>this.changeMenu(2)}>바텀 트렌드 챔피언</div>
-          <div onClick={()=>this.changeMenu(3)}>궁합 좋은 챔피언 보기</div>
-          <div onClick={()=>this.changeMenu(4)}>AD Carry YouTube</div>
-          <div onClick={()=>this.changeMenu(5)}>Board</div>
+          <div onClick={()=>menuChange(0)}>Home</div>
+          <div onClick={()=>menuChange(1)}>인게임 정보</div>
+          <div onClick={()=>menuChange(2)}>바텀 트렌드 챔피언</div>
+          <div onClick={()=>menuChange(3)}>궁합 좋은 챔피언 보기</div>
+          <div onClick={()=>menuChange(4)}>AD Carry YouTube</div>
+          <div onClick={()=>menuChange(5)}>Board</div>
           
         </div>
         
-        <div>{menuList[this.state.menu]}</div>
+        <div>{menuList[menu]}</div>
         
       </div>
     );
-  }
 }
 
 export default App;

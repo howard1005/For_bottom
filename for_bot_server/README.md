@@ -3,6 +3,10 @@ Server based on Server
 
 ## Server 구동
 ```bash
+nodemon server.js
+
+or
+
 node server.js
 
 or

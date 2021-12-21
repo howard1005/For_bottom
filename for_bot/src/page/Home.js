@@ -1,35 +1,37 @@
 import React, { Component } from "react";
-import mainImage from '../main.png'
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+import {useState}from 'react'
+import './Home.css';
 
+
+function Championimages(props){
+  return(
+    <>
+    <img alt ={props.champ['title']} src = {props.champ['img']} height='50' width='50'></img>
+    </>
+  );
+}
 
 function Home (){
+
+  let [champions, change_champions] = useState(itemData)
+
   return(
       <>
-        <div>Home
-          <ImageList cols={3} rowHeight={164} sx={{ padding: 80,width: 100, height: 200 }}>
-            {itemData.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}`}
-                  srcSet={`${item.img}`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <ImageListItemBar
-                  title={item.title}
-                  subtitle={<span>by: {item.author}</span>}
-                  position="below"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
+        <div>Home</div>
+        <div>검색</div>
+        <div className = "rows">
+          {
+            champions.map(function(n, i){
+              return(
+                <Championimages champ = {champions[i]} key={champions['title']}/>
+              )
+            })
+          }
         </div>
       </>
     )
 }
+
 
 const itemData = [
   {

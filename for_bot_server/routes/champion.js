@@ -19,7 +19,7 @@ router.get(`/img/all-url`, function(req, res){
         if (img_url_list.length == 0){
             for (var i in filelist) {
                 var file_name = filelist[i]
-                img_url_list.push({id : file_name, url : `${adress}/images/${file_name}`});
+                img_url_list.push({id : file_name, url : `${adress}/forbot/v1/champion/images/${file_name}`});
             }
         }
         res.send(img_url_list);

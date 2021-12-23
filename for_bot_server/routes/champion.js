@@ -15,7 +15,7 @@ router.get(`/info/all`, function(req, res){
 var img_url_list = [];
 router.get(`/img/all-url`, function(req, res){
     fs.readdir(__dirname + `/champion_images`, function(error, filelist){
-        console.log(error);
+        console.log('error : ' + error);
         if (img_url_list.length == 0){
             for (var i in filelist) {
                 var file_name = filelist[i]

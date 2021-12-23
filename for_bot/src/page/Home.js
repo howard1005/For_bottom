@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {useState}from 'react'
+import {useEffect} from 'react';
 import './Home.css';
+import axios from 'axios';
 
 
 function Championimages(props){
@@ -13,12 +15,22 @@ function Championimages(props){
 
 function Home (){
 
-  let [champions, change_champions] = useState(itemData)
+  let [champions, change_champions] = useState(itemData);
+  const [idata, setData] = useState('');
+  
+  useEffect(()=>{
+    const apiCall = async () =>{
+      const response = await axios.get('http://14.32.21.158:8081/forbot/v1/champion/img/all-url').then(res=>setData(res.data));
+      //console.log(response.data);
+    };
+      apiCall();
+  },[])
 
   return(
       <>
         <div>Home</div>
         <div>검색</div>
+        <div>{idata && <textarea rows={7} value={JSON.stringify(idata, null, 2)} />}</div>
         <div className = "rows">
           {
             champions.map(function(n, i){

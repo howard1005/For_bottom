@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Trouble Shooting
+ - npm ERR! code ELIFECYCLE 해결하기
+```bash
+$ npm cache clean --force
+$ rm -rf node_modules package-lock.json
+$ npm install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

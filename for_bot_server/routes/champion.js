@@ -22,7 +22,7 @@ router.get(`/img/all-url`, function(req, res){
                 img_url_list.push({id : file_name, url : `${adress}/forbot/v1/champion/images/${file_name}`});
             }
         }
-        res.send(img_url_list);
+        res.send({champion_images : img_url_list});
     })
 });
 

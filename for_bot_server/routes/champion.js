@@ -14,12 +14,12 @@ router.get(`/info/all`, function(req, res){
 
 var img_url_list = [];
 router.get(`/img/all-url`, function(req, res){
+    logger.info(`[${__filename}][/img/all-url] ` , req.headers);
     fs.readdir(__dirname + `/champion_images`, function(error, filelist){
-        console.log('error : ' + error);
         if (img_url_list.length == 0){
             for (var i in filelist) {
                 var file_name = filelist[i]
-                img_url_list.push({id : file_name, url : `${adress}/forbot/v1/champion/images/${file_name}`});
+                img_url_list.push({id : file_name, url : `http://${adress}/forbot/v1/champion/images/${file_name}`});
             }
         }
         res.send({champion_images : img_url_list});

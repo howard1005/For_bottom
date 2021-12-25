@@ -5,6 +5,7 @@ const championRouter = require('./routes/champion');
 const recommendRouter = require('./routes/recommend');
 const analysisRouter = require('./routes/analysis');
 
+global.logger = require('./config/winston');
 global.adress = "14.32.21.158:8081";
 global.port = 8080;
 

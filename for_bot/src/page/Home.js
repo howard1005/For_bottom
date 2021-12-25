@@ -13,26 +13,18 @@ function Championimages(props){
   );
 }
 
-
-
-
 function Home (){
 
   let [champions, change_champions] = useState(champion_images);
-  const [idata, setData] = useState([]);
   
-  // useEffect(()=>{
-  //   const apiCall = async () =>{
-  //     const response = await axios.get('http://14.32.21.158:8081/forbot/v1/champion/img/all-url').catch(function(error){
-  //       console.log(error);
-  //     });
-  //     setData(response.data)
-  //     console.log(idata);
-  //     console.log("여기:"+typeof(idata.champion_images));
-      
-  //   };
-  //   apiCall();
-  // },[])
+  useEffect(()=>{
+    const apiCall = async () => {
+      await axios.get('http://14.32.21.158:8081/forbot/v1/champion/img/all-url')
+      .then(res => change_champions(res.data.champion_images))
+      .catch(error => console.log(error))
+    };
+    apiCall();
+  },[])
 
   return(
       <>
@@ -50,8 +42,6 @@ function Home (){
             })
           }
         </div>
-
-
         
       </>
     )

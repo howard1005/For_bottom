@@ -8,104 +8,97 @@ import axios from 'axios';
 function Championimages(props){
   return(
     <>
-    <img alt ={props.champ['title']} src = {props.champ['img']} height='50' width='50'></img>
+    <img alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img>
     </>
   );
 }
 
+
+
+
 function Home (){
 
-  let [champions, change_champions] = useState(itemData);
-  const [idata, setData] = useState('');
+  let [champions, change_champions] = useState(champion_images);
+  const [idata, setData] = useState([]);
   
-  useEffect(()=>{
-    const apiCall = async () =>{
-      const response = await axios.get('http://14.32.21.158:8081/forbot/v1/champion/img/all-url').then(res=>setData(res.data));
-      //console.log(response.data);
-    };
-      apiCall();
-  },[])
+  // useEffect(()=>{
+  //   const apiCall = async () =>{
+  //     const response = await axios.get('http://14.32.21.158:8081/forbot/v1/champion/img/all-url').catch(function(error){
+  //       console.log(error);
+  //     });
+  //     setData(response.data)
+  //     console.log(idata);
+  //     console.log("여기:"+typeof(idata.champion_images));
+      
+  //   };
+  //   apiCall();
+  // },[])
 
   return(
       <>
         <div>Home</div>
         <div>검색</div>
-        <div>{idata && <textarea rows={7} value={JSON.stringify(idata, null, 2)} />}</div>
+        <div>dfkaidsfj</div>
+
         <div className = "rows">
           {
+            
             champions.map(function(n, i){
               return(
-                <Championimages champ = {champions[i]} key={champions['title']}/>
+                 <Championimages champ = {champions[i]} key={champions[i]['id']}/>
               )
             })
           }
         </div>
+
+
+        
       </>
     )
 }
 
 
-const itemData = [
+const champion_images = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    author: '@bkristastucchio',
+    id:'Aatrox.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Aatrox.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-    author: '@rollelflex_graphy726',
+    id:'Ahri.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Ahri.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
+    id:'Akali.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Akali.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    author: '@nolanissac',
+    id:'Alistar.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Alistar.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    author: '@hjrc33',
+    id:'Amumu.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Amumu.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
+    id:'Anivia.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Anivia.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    author: '@tjdragotta',
+    id:'Annie.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Annie.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-    author: '@katie_wasserman',
+    id:'Ashe.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Ashe.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    author: '@silverdalex',
+    id:'AurelionSol.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/AurelionSol.png'
   },
   {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    author: '@shelleypauls',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    author: '@peterlaster',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    author: '@southside_customs',
-  },
+    id:'Azir.png',
+    url:'http://14.32.21.158:8081/forbot/v1/champion/images/Azir.png'
+  }
 ];
   
   export default Home;

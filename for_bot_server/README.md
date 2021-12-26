@@ -14,6 +14,9 @@ or
 npm start
 ```
 
+## Nodejs 기본소양
+- https://myeonguni.tistory.com/1582
+
 ## SERVER API LIST
 - 기본적인 api
     ||URL|설명|

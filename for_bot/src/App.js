@@ -9,6 +9,8 @@ import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
 
+global.serverAdress = "211.218.215.226:8081";
+
 const menuList ={
   0: <Home></Home>,
   1: <InGameInfo></InGameInfo>,

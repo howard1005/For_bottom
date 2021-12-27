@@ -15,11 +15,11 @@ function Championimages(props){
 
 function Home (){
 
-  let [champions, change_champions] = useState(champion_images);
+  let [champions, change_champions] = useState([]);
   
   useEffect(()=>{
     const apiCall = async () => {
-      await axios.get('http://14.32.21.158:8081/forbot/v1/champion/img/all-url')
+      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
       .then(res => change_champions(res.data.champion_images))
       .catch(error => console.log(error))
     };

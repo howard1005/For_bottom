@@ -6,11 +6,11 @@ const recommendRouter = require('./routes/recommend');
 const analysisRouter = require('./routes/analysis');
 
 global.logger = require('./config/winston');
-global.adress = "14.32.21.158:8081";
+global.serverAdress = "211.218.215.226:8081";
 global.port = 8080;
 
 app.listen(port, function(){
-    console.log(`for bot server start ${port} \n external adress : ${adress}`);
+    console.log(`for bot server start ${global.port} \n external server adress : ${global.serverAdress}`);
 });
 
 app.use(function(req, res, next) {

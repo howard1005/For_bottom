@@ -14,16 +14,19 @@ router.get(`/info/all`, function(req, res){
 
 var imgUrlList = [];
 router.get(`/img/all-url`, function(req, res){
-    logger.info(`[${__filename}][/img/all-url] `, req.headers);
+    global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
     if (imgUrlList.length == 0){
         fs.readdir(__dirname + `/champion_images`, function(error, filelist){
             for (var i in filelist) {
                 var fileName = filelist[i]
-                imgUrlList.push({id : fileName, url : `http://${adress}/forbot/v1/champion/images/${fileName}`});
+                imgUrlList.push({id : fileName, url : `http://${global.serverAdress}/forbot/v1/champion/images/${fileName}`});
             }
+            res.send({champion_images : imgUrlList});
         })
     }
-    res.send({champion_images : imgUrlList});
+    else{
+        res.send({champion_images : imgUrlList});
+    }
 });
 
 module.exports = router;

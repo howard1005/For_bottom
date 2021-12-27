@@ -16,6 +16,8 @@ function Championimages(props){
 function Home (){
 
   let [champions, change_champions] = useState([]);
+  const [searchField, setSearchfield] = useState("");
+  let [filterImages, setFilterimages] = useState([]);
   
   useEffect(()=>{
     const apiCall = async () => {
@@ -26,18 +28,26 @@ function Home (){
     apiCall();
   },[])
 
+  useEffect(() => {
+    setFilterimages(()=>
+      champions.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
+    );
+    
+    
+  }, [searchField, champions]);
+
   return(
       <>
         <div>Home</div>
-        <div>검색</div>
-        <div>dfkaidsfj</div>
+        <div>검색
+          <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
+        </div>
 
         <div className = "rows">
           {
-            
-            champions.map(function(n, i){
+            filterImages.map(function(n, i){
               return(
-                 <Championimages champ = {champions[i]} key={champions[i]['id']}/>
+                <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
               )
             })
           }

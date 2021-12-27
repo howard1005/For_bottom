@@ -12,21 +12,18 @@ router.get(`/info/all`, function(req, res){
     res.send("TODO");
 });
 
-var imgUrlList = [];
 router.get(`/img/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
-    if (imgUrlList.length == 0){
+    (new Promise((resolve, reject) => {
         fs.readdir(__dirname + `/champion_images`, function(error, filelist){
+            var imgUrlList = [];
             for (var i in filelist) {
                 var fileName = filelist[i]
-                imgUrlList.push({id : fileName, url : `http://${global.serverAdress}/forbot/v1/champion/images/${fileName}`});
+                imgUrlList.push({id : fileName.replace('.png',''), url : `http://${global.serverAdress}/forbot/v1/champion/images/${fileName}`});
             }
-            res.send({champion_images : imgUrlList});
+            resolve(imgUrlList);
         })
-    }
-    else{
-        res.send({champion_images : imgUrlList});
-    }
+    })).then((imgUrlList) => res.send({champion_images : imgUrlList}))
 });
 
 module.exports = router;

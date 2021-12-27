@@ -23,11 +23,6 @@ https://codepen.io/gaearon/pen/oWWQNa?editors=0010
 
 
 ## 요구사항
-### 1. 최창우의 적극적인 참여
-
-![image](https://user-images.githubusercontent.com/16042073/143764488-a30b7c41-41b2-493e-ac49-82967572fd2d.png)
-
-
 
 
 

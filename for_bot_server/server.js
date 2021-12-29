@@ -1,9 +1,14 @@
-const express = require("express");
-const app = express();
 const indexRouter = require('./routes/index');
 const championRouter = require('./routes/champion');
 const recommendRouter = require('./routes/recommend');
 const analysisRouter = require('./routes/analysis');
+
+const sequelize = require('./models').sequelize;
+
+const express = require("express");
+const app = express();
+
+sequelize.sync();
 
 global.logger = require('./config/winston');
 global.serverAdress = "211.218.215.226:8081";

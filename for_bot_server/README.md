@@ -17,6 +17,11 @@ npm start
 ## Nodejs 기본소양
 - https://myeonguni.tistory.com/1582
 
+## ORM sequelize
+- https://charlie-choi.tistory.com/m/227
+- https://baeharam.netlify.app/posts/Node.js/Node.js-Sequelize-%EB%8B%A4%EB%A3%A8%EA%B8%B0
+- https://alencion.tistory.com/48
+
 ## SERVER API LIST
 - 기본적인 api
     ||URL|설명|

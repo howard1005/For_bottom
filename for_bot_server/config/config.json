@@ -1,0 +1,11 @@
+{
+    "development": {
+        "username": "root",
+        "password": "1234",
+        "database": "forbot",
+        "host": "211.218.215.226",
+        "port": "3306",
+        "dialect": "mysql",
+        "operatorAliases": false
+    }
+}

@@ -7,8 +7,6 @@ from riot_match import RiotMatch
 class RiotApi:
     def __init__(self) -> None:
         self.api_key = RiotApiConfig().get_api_key()
-        self.__url = RiotApiConfig().url
-        self.__get = RiotApiConfig().get
 
 # SUMMONER-V4
     def get_summoner_by_summoner_name(self, summoner_name):
@@ -17,6 +15,7 @@ class RiotApi:
 # LEAGUE-V4
     def get_league_entries_by_summoner_name(self, summoner_name):
         return RiotLeague(RiotSummoner(summoner_name=summoner_name)).get_league_entries()
+
 # MATCH-V5
     def get_matchs_by_summoner_name(self, summoner_name):
         return RiotMatch(RiotSummoner(summoner_name=summoner_name)).get_matchs()

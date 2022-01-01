@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {useState}from 'react'
 import {useEffect} from 'react';
-import './Home.css';
+import '../style/Home.css';
 import axios from 'axios';
 
 
@@ -38,8 +38,8 @@ function Home (){
 
   return(
       <>
-        <div>Home</div>
-        <div>검색
+        <div className="home_font">Home</div>
+        <div className="home_font">검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
 

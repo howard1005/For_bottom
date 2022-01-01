@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {useState}from 'react'
 import {useEffect} from 'react';
-import './Mate.css';
+import '../style/Mate.css';
 import axios from 'axios';
 
 
@@ -42,8 +42,8 @@ function Mate (){
 
   return(
       <>
-        <div>Mate</div>
-        <div>검색
+        <div className="mate_title">Mate</div>
+        <div className="mate_title">검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
 

@@ -47,6 +47,10 @@ body {
   color: #61dafb;
 }
 
+.menu{
+  font-family: "BlackHanSans-Regular";
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -54,4 +58,10 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face{
+  font-family: "BlackHanSans-Regular";
+  font-weight: 200;
+  src : url("./style/fonts/BlackHanSans-Regular.ttf") format("trueType");
 }

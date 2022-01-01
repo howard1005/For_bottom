@@ -27,12 +27,12 @@ function App() {
     return (
       <div className="App">
         <div className ="black-nav">
-          <div onClick={()=>menuChange(0)}>Home</div>
-          <div onClick={()=>menuChange(1)}>인게임 정보</div>
-          <div onClick={()=>menuChange(2)}>바텀 트렌드 챔피언</div>
-          <div onClick={()=>menuChange(3)}>궁합 좋은 챔피언 보기</div>
-          <div onClick={()=>menuChange(4)}>AD Carry YouTube</div>
-          <div onClick={()=>menuChange(5)}>Board</div>
+          <div className = "menu" onClick={()=>menuChange(0)}>Home</div>
+          <div className = "menu" onClick={()=>menuChange(1)}>인게임 정보</div>
+          <div className = "menu" onClick={()=>menuChange(2)}>바텀 트렌드 챔피언</div>
+          <div className = "menu" onClick={()=>menuChange(3)}>궁합 좋은 챔피언 보기</div>
+          <div className = "menu" onClick={()=>menuChange(4)}>AD Carry YouTube</div>
+          <div className = "menu" onClick={()=>menuChange(5)}>Board</div>
           
         </div>
         

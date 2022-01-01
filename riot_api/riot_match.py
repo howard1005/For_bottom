@@ -8,9 +8,9 @@ class RiotMatch:
         self.__url = RiotApiConfig().url
         self.__get = RiotApiConfig().get
 
-    def get_match_ids(self):
+    def get_match_ids(self, count=20):
         summoner = self.riot_summoner.get_summoner()
-        return self.__get(self.__url('asia', "/lol/match/v5/matches/by-puuid/{}/ids".format(summoner['puuid'])) + "&start=0&count=20").json()
+        return self.__get(self.__url('asia', "/lol/match/v5/matches/by-puuid/{}/ids".format(summoner['puuid'])) + "&start=0&count={}".format(count)).json()
 
     def get_matchs(self):
         ret = []

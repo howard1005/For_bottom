@@ -1,23 +1,13 @@
 import React, { Component } from "react";
 
 
-class Trend extends React.Component{
-    constructor(props) {
-      super();
-  
-      this.state = {
-        menu: 2,
-      };
-    }
+function Trend(){
 
-    render(){
-        return(
-            <>
-            <div>Trend</div>
-            </>
-        )
-    }
-  }
-  
-  
+  return(
+    <>
+    <div>Trend</div>
+    <div></div>
+    </>
+  )
+}  
   export default Trend;

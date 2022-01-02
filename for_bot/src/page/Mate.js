@@ -9,10 +9,11 @@ import axios from 'axios';
 function imageClick(){
   console.log("click");
 }
+
 function Championimages(props){
   return(
     <>
-      <img alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
+      <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
     </>
   );
 }

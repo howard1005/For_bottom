@@ -8,7 +8,7 @@ import axios from 'axios';
 function Championimages(props){
   return(
     <>
-      <img alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img>
+      <img className="home_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img>
     </>
   );
 }
@@ -38,7 +38,9 @@ function Home (){
 
   return(
       <>
-        <div className="home_font">Home</div>
+        <div className="home_font">
+          <h1>Home</h1>
+        </div>
         <div className="home_font">검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>

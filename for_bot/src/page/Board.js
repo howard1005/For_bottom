@@ -1,23 +1,10 @@
 import React, { Component } from "react";
 
+function Board(){
 
-class Board extends React.Component{
-    constructor(props) {
-      super();
+  return(
+    <div>Board</div>
+  )
+}
   
-      this.state = {
-        menu: 5,
-      };
-    }
-
-    render(){
-        return(
-            <>
-            <div>Board</div>
-            </>
-        )
-    }
-  }
-  
-  
-  export default Board;
+export default Board;

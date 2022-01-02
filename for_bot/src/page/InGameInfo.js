@@ -1,23 +1,24 @@
 import React, { Component } from "react";
+import {useState}from 'react'
+import '../style/InGameInfo.css';
 
+function InGameInfo(){
 
-class InGameInfo extends React.Component{
-    constructor(props) {
-      super();
-  
-      this.state = {
-        menu: 1,
-      };
-    }
+  let [disadvantageRank, setDisadvantageRank] = useState('매우 불리');
 
-    render(){
-        return(
-            <>
-            <div>InGameInfo</div>
-            </>
-        )
-    }
-  }
+  return (
+    <>
+      <div> User id </div>
+      <div> Line </div>
+      <div> Champion </div>
+      <div> Running Time </div>
+      <div className ="circle_wrap"> 
+        <div className="circle"></div>
+        <div className="circle_data"><p> {disadvantageRank} </p></div>
+      </div> 
+    </>
+  )
+}
   
   
   export default InGameInfo;

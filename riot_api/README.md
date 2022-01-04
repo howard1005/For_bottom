@@ -11,6 +11,9 @@
 - 라이엇 개발 페이지에서 API test를 온라인으로 제공해 준다(https://developer.riotgames.com/apis)이를 참고하여 기능 정리필요하다.
 - 데이터 분석이 필요 하므로 기본 구현은 Python으로 api class 구현
 
+# 구글 Docs에 API 정리중이다.
+https://docs.google.com/spreadsheets/d/1ud1CjRezWv2N13RCcIIF3utwKzC4JEF1cA16CM1cXzg/edit#gid=0
+
 # API Url List
 
 - ACCOUNT-V1

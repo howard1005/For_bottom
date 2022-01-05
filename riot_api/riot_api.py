@@ -19,3 +19,4 @@ class RiotApi:
 # MATCH-V5
     def get_matchs_by_summoner_name(self, summoner_name):
         return RiotMatch(RiotSummoner(summoner_name=summoner_name)).get_matchs()
+

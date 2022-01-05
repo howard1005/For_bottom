@@ -10,6 +10,7 @@ import Trend from './page/Trend'
 import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
+import Sidebar from './page/Sidebar'
 
 global.serverAdress = "211.218.215.226:8081";
 
@@ -22,30 +23,30 @@ const menuList ={
   5: <Board></Board>
 }
 
-const styles = {
-  background: '#000',
-  width: '2px',
-  cursor: 'col-resize',
-  margin: '0 5px',
-  height: '100%',
-};
 
 function App() {
 
     //let [menu, menuChange] = useState(0)
   
     return (
-      
-    <Routes>
+          <>
+          <Sidebar></Sidebar>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/InGameInfo" element={<InGameInfo/>} />
+            <Route path="/Trend" component={<Trend/>} />
+          </Routes>
+          </>
+    // <Routes>
 
-      <Route path="/" element={<Home />} />
-      <Route path="/InGameInfo" element={<InGameInfo />} />
-      <Route path="/Mate" element={<Mate />} />
-      <Route path="/Trend" element={<Trend />} />
-      <Route path="/Youtube" element={<Youtube />} />
-      <Route path="/Board" element={<Board />} />
+    //   <Route path="/" element={<Home />} />
+    //   <Route path="/InGameInfo" element={<InGameInfo />} />
+    //   <Route path="/Mate" element={<Mate />} />
+    //   <Route path="/Trend" element={<Trend />} />
+    //   <Route path="/Youtube" element={<Youtube />} />
+    //   <Route path="/Board" element={<Board />} />
 
-    </Routes>
+    // </Routes>
     
     // <div className="App">
       //   <div className ="black-nav">

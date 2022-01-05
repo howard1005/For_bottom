@@ -1,0 +1,9 @@
+.sidebar{
+    background: black;
+    width: 15%;
+    height:100%;
+    position: fixed;
+    color: white;
+    font-family: "BlackHanSans-Regular";
+    text-align: center;
+}

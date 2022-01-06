@@ -9,7 +9,10 @@ function Sidebar() {
   const menus = [
     { name: "Home", path: "/" },
     { name: "인게임 정보", path: "/InGameInfo" },
-    { name: "Trend", path: "/Trend" }
+    { name: "Trend", path: "/Trend" },
+    { name: "Mate", path: "/Mate"},
+    { name: "Youtube", path: "/Youtube"},
+    { name: "Board", path: "/Board"}
   ];
 
   return (

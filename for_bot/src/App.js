@@ -34,7 +34,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/InGameInfo" element={<InGameInfo/>} />
-            <Route path="/Trend" component={<Trend/>} />
+            <Route path="/Trend" element={<Trend/>} />
+            <Route path="/Mate" element={<Mate/>} />
+            <Route path="/Youtube" element={<Youtube/>} />
+            <Route path="/Board" element={<Board/>} />
           </Routes>
           </>
     // <Routes>

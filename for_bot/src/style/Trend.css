@@ -1,17 +1,24 @@
-.mate_img{
+.trend_img{
     margin-left:1px;
 }
 
-.mate_rows{
+.trend_rows{
     padding: 8px 0px 8px 32px;
     margin-left: 15%;
     margin-top: 5%;
+    width: 20%;
     height:100%;
-    border: 6px solid blue;
+    border: 6px solid lightslategrey;
     border-radius: 16px;
+    float:left;
 }
 
-.mate_title{
+.trend_title{
+    font-family: "BlackHanSans-Regular";
+    text-align: center;
+}
+
+.trend_subtitle{
     font-family: "BlackHanSans-Regular";
     text-align: center;
 }

@@ -8,10 +8,12 @@ function InGameInfo(){
 
   return (
     <>
+    <div className="InGameInfo">
       <div> User id </div>
       <div> Line </div>
       <div> Champion </div>
       <div> Running Time </div>
+    </div>
       <div className ="circle_wrap"> 
         <div className="circle"></div>
         <div className="circle_data"><p> {disadvantageRank} </p></div>

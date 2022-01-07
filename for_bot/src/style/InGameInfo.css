@@ -1,3 +1,7 @@
+.InGameInfo{
+    text-align: center;
+}
+
 .circle_wrap{
     width: 25%;
 	margin: 10px auto;

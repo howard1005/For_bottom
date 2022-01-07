@@ -1,23 +1,18 @@
 import React, { Component } from "react";
 
 
-class Youtube extends React.Component{
-    constructor(props) {
-      super();
-  
-      this.state = {
-        menu: 4,
-      };
-    }
-
-    render(){
-        return(
-            <>
-            <div>Youtube</div>
-            </>
-        )
-    }
-  }
+function Youtube(){
+  return(
+    <>
+        <div>링크</div>
+        <div>링크</div>
+        <div>링크</div>
+        <div>링크</div>
+        <div>링크</div>
+        <div>링크</div>
+    </>
+  )
+}
   
   
   export default Youtube;

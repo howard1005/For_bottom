@@ -11,7 +11,12 @@ router.get(`/bottom-match`, function(req, res){
     pythonHandler(__dirname + '/../../riot_api/riot_dispatcher.py', 
                     ['riot-api/get-league-entries-by-summoner-name', 'hide on bush'])
                     .then((data) => datas.push(data))
+                    ).then(
+    pythonHandler(__dirname + '/../../riot_api/riot_dispatcher.py', 
+                    ['riot-api/get-matchs-by-summoner-name', 'hide on bush'])
+                    .then((data) => datas.push(data))
                     ).then(() => res.send(datas))
+
 });
 
 

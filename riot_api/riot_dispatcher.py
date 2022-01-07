@@ -7,7 +7,8 @@ class RiotDispatcher:
         self.riot_api = RiotApi()
         self.api_map = {
             'riot-api/get-summoner-by-summoner-name': self.riot_api.get_summoner_by_summoner_name,
-            'riot-api/get-league-entries-by-summoner-name': self.riot_api.get_league_entries_by_summoner_name
+            'riot-api/get-league-entries-by-summoner-name': self.riot_api.get_league_entries_by_summoner_name,
+            'riot-api/get-matchs-by-summoner-name': self.riot_api.get_matchs_by_summoner_name,
         }
 
     def dispatch_by_argv(self, argv):

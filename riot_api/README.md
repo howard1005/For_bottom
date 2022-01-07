@@ -14,6 +14,10 @@
 # 구글 Docs에 API 정리중이다.
 https://docs.google.com/spreadsheets/d/1ud1CjRezWv2N13RCcIIF3utwKzC4JEF1cA16CM1cXzg/edit#gid=0
 
+# TODO
+-[ ] API 설명 정리
+-[ ] API field 값 정리
+
 # API Url List
 
 - ACCOUNT-V1

@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import {useState}from 'react'
+import {useState, useRef}from 'react'
 import {useEffect} from 'react';
 import '../style/Home.css';
 import axios from 'axios';
+import { motion } from "framer-motion";
+
 
 
 function Championimages(props){
   return(
     <>
-      <img className="home_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img>
+        <motion.img className="home_img" key ={props.id} src ={props.champ['url']} height='50' width='50'></motion.img>
+      {/* <img className="home_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img> */}
     </>
   );
 }
@@ -39,21 +42,24 @@ function Home (){
   return(
       <>
         <div className="home_font">
-          <h1>Home</h1>
+          <motion.h2 animate={{fontSize:20, scale:1.5, rotateZ:180}}>Home</motion.h2>
         </div>
-        <div className="home_font">검색
-          <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
-        </div>
-
-        <div className = "rows">
+        
+          <motion.div className="home_font">검색
+            <motion.input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></motion.input>
+          </motion.div>
+          
+        <motion.div className = "rows" initial={{ x: 300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -300, opacity: 0 }}>
           {
             filterImages.map(function(n, i){
               return(
-                <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
+                  <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
               )
             })
           }
-        </div>
+        </motion.div>
         
       </>
     )

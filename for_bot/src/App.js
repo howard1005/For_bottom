@@ -11,6 +11,7 @@ import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
 import Sidebar from './page/Sidebar'
+import { motion } from 'framer-motion'
 
 global.serverAdress = "211.218.215.226:8081";
 
@@ -30,6 +31,7 @@ function App() {
   
     return (
           <>
+         
           <Sidebar></Sidebar>
           <Routes>
             <Route path="/" element={<Home/>} />

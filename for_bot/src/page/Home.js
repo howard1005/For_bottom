@@ -45,7 +45,7 @@ function Home (){
           <motion.h2 animate={{fontSize:20, scale:1.5, rotateZ:180}}>Home</motion.h2>
         </div>
         
-          <motion.div className="home_font">검색
+          <motion.div className="home_font" animate={{scale: 1.5}}>검색
             <motion.input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></motion.input>
           </motion.div>
           

@@ -26,3 +26,9 @@
     left: 50%;
     transform : translate(-50%, -50%);
 }
+
+.ingame_font{
+    position:sticky;
+    text-align: center;
+    font-family: "BlackHanSans-Regular";
+}

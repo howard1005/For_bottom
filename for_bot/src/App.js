@@ -11,7 +11,7 @@ import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
 import Sidebar from './page/Sidebar'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 global.serverAdress = "211.218.215.226:8081";
 
@@ -33,14 +33,16 @@ function App() {
           <>
          
           <Sidebar></Sidebar>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/InGameInfo" element={<InGameInfo/>} />
-            <Route path="/Trend" element={<Trend/>} />
-            <Route path="/Mate" element={<Mate/>} />
-            <Route path="/Youtube" element={<Youtube/>} />
-            <Route path="/Board" element={<Board/>} />
-          </Routes>
+          <AnimatePresence exitBeforeEnter>
+            <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/InGameInfo" element={<InGameInfo/>} />
+              <Route path="/Trend" element={<Trend/>} />
+              <Route path="/Mate" element={<Mate/>} />
+              <Route path="/Youtube" element={<Youtube/>} />
+              <Route path="/Board" element={<Board/>} />
+            </Routes>
+          </AnimatePresence>
           </>
     // <Routes>
 

@@ -9,10 +9,10 @@ function InGameInfo(){
   return (
     <>
     <div className="InGameInfo">
-      <div> User id </div>
-      <div> Line </div>
-      <div> Champion </div>
-      <div> Running Time </div>
+      <div className="ingame_font"> User id </div>
+      <div className="ingame_font"> Line </div>
+      <div className="ingame_font"> Champion </div>
+      <div className="ingame_font"> Running Time </div>
     </div>
       <div className ="circle_wrap"> 
         <div className="circle"></div>

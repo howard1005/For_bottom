@@ -22,5 +22,10 @@ class RiotApiTest(unittest.TestCase):
         matchs = self.riot_api.get_matchs_by_summoner_name('hide on bush')
         print("\n[matchs]\n", matchs)
 
+    def test_get_all_champion_mastery_entries_by_summoner_name(self):
+        masterys = self.riot_api.get_all_champion_mastery_entries_by_summoner_name('hide on bush')
+        print("\n[masterys]\n", masterys)
+
+
 if __name__ == '__main__':
     unittest.main()

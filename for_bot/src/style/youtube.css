@@ -1,7 +1,13 @@
 .youtube_rows{
     padding: 8px 0px 8px 32px;
     margin-left: 15%;
-    margin-top: 15%;
     height:100%;
     text-align: center;
+}
+
+.thumbnails{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }

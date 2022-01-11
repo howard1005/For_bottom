@@ -26,6 +26,9 @@ class RiotApiTest(unittest.TestCase):
         masterys = self.riot_api.get_all_champion_mastery_entries_by_summoner_name('hide on bush')
         print("\n[masterys]\n", masterys)
 
+    def test_get_champion_rotations(self):
+        champion_rotations =  self.riot_api.get_champion_rotations()
+        print("\n[champion_rotations]\n", champion_rotations)
 
 if __name__ == '__main__':
     unittest.main()

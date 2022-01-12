@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {useState}from 'react'
 import '../style/InGameInfo.css';
+import { motion } from "framer-motion";
 
 function InGameInfo(){
 
@@ -8,16 +9,19 @@ function InGameInfo(){
 
   return (
     <>
-    <div className="InGameInfo">
-      <div className="ingame_font"> User id </div>
-      <div className="ingame_font"> Line </div>
-      <div className="ingame_font"> Champion </div>
-      <div className="ingame_font"> Running Time </div>
-    </div>
-      <div className ="circle_wrap"> 
-        <div className="circle"></div>
-        <div className="circle_data"><p> {disadvantageRank} </p></div>
-      </div> 
+    <motion.div className="container">
+      <motion.div className="Info_container">
+        <motion.div className="ingame_font"> User id </motion.div>
+        <motion.div className="ingame_font"> Line </motion.div>
+        <motion.div className="ingame_font"> Champion </motion.div>
+        <motion.div className="ingame_font"> Running Time </motion.div>
+    </motion.div>
+        <motion.div className ="circle_wrap"> 
+          <motion.div className="circle"></motion.div>
+          <motion.div className="circle_data"><p> {disadvantageRank} </p></motion.div>
+        </motion.div>
+      
+    </motion.div> 
     </>
   )
 }

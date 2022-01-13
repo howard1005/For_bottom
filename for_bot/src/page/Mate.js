@@ -3,6 +3,7 @@ import {useState}from 'react'
 import {useEffect} from 'react';
 import '../style/Mate.css';
 import axios from 'axios';
+import { motion } from "framer-motion";
 
 
 
@@ -58,6 +59,8 @@ function Mate (){
             })
           }
         </div>
+
+        <motion.div className="recommend_container"></motion.div>
 
         <div> ?? 클릭 이벤트 후 여기에 챔피언 보여주기</div>
         

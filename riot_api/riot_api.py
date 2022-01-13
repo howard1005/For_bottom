@@ -5,6 +5,7 @@ from riot_league import RiotLeague
 from riot_mastery import RiotMastery
 from riot_match import RiotMatch
 from riot_champion import RiotChampion
+from riot_status import RiotStatus
 
 class RiotApi:
     def __init__(self) -> None:
@@ -29,3 +30,7 @@ class RiotApi:
 # CHAMPION
     def get_champion_rotations(self):
             return RiotChampion().get_champion_rotations()
+
+# LOL-STATUS-V4
+    def get_lol_status(self):
+            return RiotStatus().get_lol_status()

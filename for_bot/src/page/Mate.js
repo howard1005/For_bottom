@@ -57,10 +57,19 @@ function Mate (){
                 <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
               )
             })
-          }
+        }
         </div>
 
-        <motion.div className="recommend_container"></motion.div>
+        <motion.div className="recommend_container">
+        {
+            
+            filterImages.map(function(n, i){
+              return(
+                <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
+              )
+            })
+        }
+        </motion.div>
 
         <div> ?? 클릭 이벤트 후 여기에 챔피언 보여주기</div>
         

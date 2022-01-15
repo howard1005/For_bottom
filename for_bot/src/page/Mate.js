@@ -71,8 +71,6 @@ function Mate (){
         }
         </motion.div>
 
-        <div> ?? 클릭 이벤트 후 여기에 챔피언 보여주기</div>
-        
       </>
     )
 }

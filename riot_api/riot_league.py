@@ -2,7 +2,7 @@ from riot_api_config import RiotApiConfig
 from riot_summoner import RiotSummoner
 
 class RiotLeague:
-    def __init__(self, riot_summoner: RiotSummoner) -> None:
+    def __init__(self, riot_summoner: RiotSummoner = None) -> None:
         self.riot_summoner = riot_summoner
         self.queue = ["RANKED_SOLO_5x5", "RANKED_FLEX_SR", "RANKED_FLEX_TT"]
         self.tier = ["DIAMOND", "PLATINUM", "GOLD", "SILVER", "BRONZE", "IRON"]

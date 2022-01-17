@@ -6,23 +6,12 @@ import axios from 'axios';
 import { motion } from "framer-motion";
 
 
-
-function imageClick(){
-  console.log("click");
-}
-
-function Championimages(props){
-  return(
-    <>
-      <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
-    </>
-  );
-}
-
 function Mate (){
 
   let [champions, change_champions] = useState([]);
   const [searchField, setSearchfield] = useState("");
+  const [mateId, setMateid] = useState("");
+  let [mateImages, setMateimages] = useState([]);
   let [filterImages, setFilterimages] = useState([]);
   
   useEffect(()=>{
@@ -38,10 +27,31 @@ function Mate (){
     setFilterimages(()=>
       champions.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
     );
-    
-    
   }, [searchField, champions]);
 
+  useEffect(() => {
+    setMateimages(()=>
+      champions.filter((c) => c.id.toLowerCase().includes(mateId.toLowerCase()))
+    );
+  }, [mateId]);
+
+  function imageClick(id){
+    console.log("click");
+    console.log(id);
+    setMateid(id);
+  }
+
+  function Championimages(props){
+    let champId = props.champ['id'];
+    
+    return(
+      <>
+        <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick(champId)}></img>
+      </>
+    );
+  }
+
+  
   return(
       <>
         <div className="mate_title">Mate</div>
@@ -63,9 +73,9 @@ function Mate (){
         <motion.div className="recommend_container">
         {
             
-            filterImages.map(function(n, i){
+            mateImages.map(function(n, i){
               return(
-                <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
+                <Championimages champ = {mateImages[i]} key={mateImages[i]['id']}/>
               )
             })
         }

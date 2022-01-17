@@ -21,7 +21,7 @@ class RiotApi:
         return RiotLeague(RiotSummoner(summoner_name=summoner_name)).get_league_entries()
 
     def get_all_league_entries(self, tier="DIAMOND", division="I"):
-        return RiotLeague(RiotSummoner()).get_all_league_entries(tier, division)
+        return RiotLeague(RiotSummoner()).get_all_league_entries_by_tier(tier, division)
 
 # MATCH-V5
     def get_matchs_by_summoner_name(self, summoner_name):

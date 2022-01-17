@@ -29,3 +29,11 @@ class RiotLeague:
     def get_master_league(self):
         return self.__get(self.__url('kr', "/lol/league/v4/masterleagues/by-queue/{}".format(self.queue[0]))).json()
 
+    def get_all_league_entries_by_tier(self, tier="DIAMOND", division="I"):
+        if tier == "CHALLENGER":
+            return self.get_challenger_league()
+        elif tier == "GRANDMASTER":
+            return self.get_grandmaster_league()
+        elif tier == "MASTER":
+            return self.get_master_league()
+        return self.get_all_league_entries(tier, division)

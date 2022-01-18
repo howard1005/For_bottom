@@ -19,3 +19,11 @@ class RiotMatch:
             ret.append(self.__get(
                 self.__url('asia', "/lol/match/v5/matches/{}".format(match_id))).json())
         return ret
+
+    def get_match_timeline(self):
+        ret = []
+        match_ids = self.get_match_ids()
+        for match_id in match_ids:
+            ret.append(self.__get(
+                self.__url('asia', "/lol/match/v5/matches/{}/timeline".format(match_id))).json())
+        return ret

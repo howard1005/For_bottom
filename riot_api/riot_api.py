@@ -27,6 +27,9 @@ class RiotApi:
     def get_matchs_by_summoner_name(self, summoner_name):
         return RiotMatch(RiotSummoner(summoner_name=summoner_name)).get_matchs()
 
+    def get_match_timelines_by_summoner_name(self, summoner_name):
+        return RiotMatch(RiotSummoner(summoner_name=summoner_name)).get_match_timeline()
+
 # CHAMPION-MASTERY-V4
     def get_all_champion_mastery_entries_by_summoner_name(self, summoner_name):
         return RiotMastery(RiotSummoner(summoner_name=summoner_name)).get_all_champion_mastery_entries()

@@ -31,13 +31,15 @@ function Mate (){
 
   useEffect(() => {
     setMateimages(()=>
-      champions.filter((c) => c.id.toLowerCase().includes(mateId.toLowerCase()))
+      champions.filter((c) => c.id.startsWith(mateId[0]))
+      //champions.filter((c) => c.id.toLowerCase().includes(mateId.toLowerCase()))
     );
   }, [mateId]);
 
   function imageClick(id){
     console.log("click");
     console.log(id);
+
     setMateid(id);
   }
 

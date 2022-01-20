@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     padding: 32px 0;
+    text-align: center;
 }
 
 .Info_container{

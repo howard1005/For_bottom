@@ -34,6 +34,9 @@ class RiotApi:
     def get_all_champion_mastery_entries_by_summoner_name(self, summoner_name):
         return RiotMastery(RiotSummoner(summoner_name=summoner_name)).get_all_champion_mastery_entries()
 
+    def get_total_mastery_score_by_summoner_name(self, summoner_name):
+        return RiotMastery(RiotSummoner(summoner_name=summoner_name)).get_total_mastery_score()
+
 # CHAMPION
     def get_champion_rotations(self):
         return RiotChampion().get_champion_rotations()

@@ -9,6 +9,9 @@ function InGameInfo(){
 
   return (
     <>
+    <div className='ingame_font'>
+      <motion.h2 animate={{fontSize:20, scale:1.5}}>InGameInfo</motion.h2>
+    </div>
     <motion.div className="container">
       <motion.div className="Info_container">
         <motion.div className="ingame_font"> User id </motion.div>
@@ -20,7 +23,6 @@ function InGameInfo(){
           <motion.div className="circle"></motion.div>
           <motion.div className="circle_data"><p> {disadvantageRank} </p></motion.div>
         </motion.div>
-      
     </motion.div> 
     </>
   )

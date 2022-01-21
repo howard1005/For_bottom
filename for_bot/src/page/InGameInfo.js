@@ -9,8 +9,10 @@ function InGameInfo(){
 
   return (
     <>
+    <div className='ingame_font'>
+      <motion.h2 animate={{fontSize:20, scale:1.5}}>InGameInfo</motion.h2>
+    </div>
     <motion.div className="container">
-    <motion.h2>InGameInfo</motion.h2>
       <motion.div className="Info_container">
         <motion.div className="ingame_font"> User id </motion.div>
         <motion.div className="ingame_font"> Line </motion.div>

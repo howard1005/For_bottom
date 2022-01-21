@@ -34,7 +34,7 @@ function Youtube(){
             channels.map(function(n, i){
               return(
                   <>
-                  <motion.div className='container'>
+                  <motion.div className='youtube_container'>
                     <motion.div className='list_container'>
                       <motion.div animate={{textAlign:'center'}}>{channels[i]['id']}</motion.div>
                       <motion.div animate={{textAlign:'center'}}>{channels[i]['url']}</motion.div>

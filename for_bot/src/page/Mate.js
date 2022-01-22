@@ -56,7 +56,9 @@ function Mate (){
   
   return(
       <>
-        <div className="mate_title">Mate</div>
+        <div className="mate_title">
+        <motion.h2 animate={{fontSize:20, scale:1.5}}>Mate</motion.h2>
+        </div>
         <div className="mate_title">검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>

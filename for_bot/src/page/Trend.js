@@ -3,6 +3,7 @@ import {useState}from 'react'
 import {useEffect} from 'react';
 import '../style/Trend.css';
 import axios from 'axios';
+import { motion } from "framer-motion";
 
 function imageClick(){
   console.log("click");
@@ -43,7 +44,9 @@ function Trend(){
 
   return (
     <>
-     <div className="trend_title">Trend</div>
+     <div className="trend_title">
+     <motion.h2 animate={{fontSize:20, scale:1.5}}>Trend</motion.h2>
+     </div>
         <div className="trend_title">검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>

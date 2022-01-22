@@ -47,5 +47,7 @@ class RiotApi:
 
 # SPECTATOR-V4
     def get_current_game_information_by_summoner_name(self,summoner_name):
-        return RiotSpectator(RiotSummoner(summoner_name=summoner_name))
+        return RiotSpectator(RiotSummoner(summoner_name=summoner_name)).get_current_game_information()
 
+    def get_list_of_featured_games(self):
+        return  RiotSpectator(RiotSummoner()).get_list_of_featured_games()

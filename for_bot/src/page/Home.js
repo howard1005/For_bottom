@@ -10,7 +10,11 @@ import { motion } from "framer-motion";
 function Championimages(props){
   return(
     <>
-        <motion.img className="home_img" key ={props.id} src ={props.champ['url']} height='50' width='50'></motion.img>
+        <motion.img className="home_img" key ={props.id} src ={props.champ['url']} height='50' width='50'
+          initial={{ x: 300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 600, opacity: 0 }}
+        ></motion.img>
       {/* <img className="home_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img> */}
     </>
   );
@@ -49,13 +53,16 @@ function Home (){
             <motion.input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></motion.input>
           </motion.div>
           
-        <motion.div className = "rows" initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: -300, opacity: 0 }}>
+        <motion.div className = "rows" 
+        animate={{ x: 0, opacity: 1 }}>
           {
             filterImages.map(function(n, i){
               return(
-                  <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
+                  <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 600, opacity: 0 }}
+                  />
               )
             })
           }

@@ -3,18 +3,18 @@
 }
 
 .trend_rows{
-    padding: 8px 0px 8px 32px;
+    padding: 8px 0px 8px 100px;
     margin-left: 15%;
     margin-top: 5%;
     width: 20%;
     height:100%;
-    border: 6px solid lightslategrey;
     border-radius: 16px;
     float:left;
 }
 
 .trend_title{
     font-family: "BlackHanSans-Regular";
+    color: rgb(83, 98, 102);
     text-align: center;
 }
 

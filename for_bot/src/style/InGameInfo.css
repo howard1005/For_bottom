@@ -1,5 +1,5 @@
 .container{
-    background-color: burlywood;
+    background-color: transparent;
     color: black;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,6 @@
 .circle_wrap{
     width: 25%;
 	margin: 10px auto;
-	border: 1px solid white;
 	position: relative;
 }
 
@@ -46,5 +45,6 @@
 
 .ingame_font{
     text-align: center;
+    color: rgb(83, 98, 102);
     font-family: "BlackHanSans-Regular";
 }

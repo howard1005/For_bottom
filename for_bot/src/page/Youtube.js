@@ -39,7 +39,6 @@ function Youtube(){
                   <>
                   <motion.div className='youtube_container'>
                     <motion.div className='list_container'>
-                      <motion.div animate={{textAlign:'left'}}>{channels[i]['id']}</motion.div>
                       <motion.div animate={{textAlign:'left'}}>{channels[i]['url']}</motion.div>
                       <motion.img className="thumbnails" alt="thumbnails" key ={channels[i]['id']} src ={channels[i]['thumbnails']} height='100' width='200' ></motion.img>
                     </motion.div>  

@@ -16,16 +16,15 @@
     padding: 8px 0px 8px 8px;
     margin-left: 15%;
     height:100%;
-    text-align: left;
 }
 
 .thumbnails{
     display: block;
-    right: 10px;    
+    right: 10px;
+    margin: 0px auto;
 }
 
 .youtube_title{
     font-family: "BlackHanSans-Regular";
     color: rgb(83, 98, 102);
-    text-align: left;
 }

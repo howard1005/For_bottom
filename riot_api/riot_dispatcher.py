@@ -12,7 +12,8 @@ class RiotDispatcher:
             'riot-api/get-match-timelines-by-summoner-name': self.riot_api.get_match_timelines_by_summoner_name,
             'riot-api/get-all-champion-mastery-entries-by-summoner-name': self.riot_api.get_all_champion_mastery_entries_by_summoner_name,
             'riot-api/get-total-mastery-score-by-summoner-name': self.riot_api.get_total_mastery_score_by_summoner_name,
-            'riot-api/get-champion-rotations': self.get_champion_rotations
+            'riot-api/get-champion-rotations': self.riot_api.get_champion_rotations,
+            'riot-api/get-lol-status': self.riot_api.get_lol_status,
         }
 
     def dispatch_by_argv(self, argv):

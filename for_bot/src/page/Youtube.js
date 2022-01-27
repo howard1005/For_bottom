@@ -28,7 +28,7 @@ function Youtube(){
   return(
     <>
       <div className="youtube_title">
-     <motion.h2 animate={{fontSize:20, scale:1.5}}>Youtube</motion.h2>
+     <motion.h2>Youtube</motion.h2>
      </div>
         <motion.div className = "youtube_rows" initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

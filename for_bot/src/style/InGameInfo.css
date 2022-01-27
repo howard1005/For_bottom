@@ -46,5 +46,6 @@
 .ingame_font{
     text-align: center;
     color: rgb(83, 98, 102);
-    font-family: "BlackHanSans-Regular";
+    font-family: sans-serif;
+    font-size : 1.5 em;
 }

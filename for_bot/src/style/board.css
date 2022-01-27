@@ -1,5 +1,6 @@
 .board_title{
-    font-family: "BlackHanSans-Regular";
+    font-family: sans-serif;
+    font-size : 1.5 em;
     color: rgb(83, 98, 102);
     text-align: center;
 }

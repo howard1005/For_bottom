@@ -14,6 +14,7 @@ class RiotDispatcher:
             'riot-api/get-total-mastery-score-by-summoner-name': self.riot_api.get_total_mastery_score_by_summoner_name,
             'riot-api/get-champion-rotations': self.riot_api.get_champion_rotations,
             'riot-api/get-lol-status': self.riot_api.get_lol_status,
+            'riot-api/get-current-game-information-by-summoner-name': self.riot_api.get_current_game_information_by_summoner_name,
         }
 
     def dispatch_by_argv(self, argv):

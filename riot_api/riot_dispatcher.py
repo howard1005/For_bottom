@@ -15,6 +15,7 @@ class RiotDispatcher:
             'riot-api/get-champion-rotations': self.riot_api.get_champion_rotations,
             'riot-api/get-lol-status': self.riot_api.get_lol_status,
             'riot-api/get-current-game-information-by-summoner-name': self.riot_api.get_current_game_information_by_summoner_name,
+            'riot-api/get-list-of-featured-games': self.riot_api.get_list_of_featured_games,
         }
 
     def dispatch_by_argv(self, argv):

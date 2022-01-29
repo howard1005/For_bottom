@@ -4,18 +4,9 @@ import {useEffect} from 'react';
 import '../style/Trend.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';  
 
-function imageClick(){
-  console.log("click");
-}
 
-function Championimages(props){
-  return(
-    <>
-      <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
-    </>
-  );
-}
 
 function Trend(){
 
@@ -23,7 +14,22 @@ function Trend(){
   let [champions, change_champions] = useState([]);
   const [searchField, setSearchfield] = useState("");
   let [filterImages, setFilterimages] = useState([]);
+  const navigate = useNavigate();
+
   
+  function imageClick(){
+    console.log('click'); 
+    navigate("/");
+  }
+  
+  function Championimages(props){
+    return(
+      <>
+        <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
+      </>
+    );
+  }
+
   useEffect(()=>{
     const apiCall = async () => {
       await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)

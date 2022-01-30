@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../logo.png"
 import SidebarItem from "./SidebarItem";
 import SidebarStyle from "../style/SidebarStyle.css"
 
@@ -17,7 +17,17 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      {menus.map((menu, index) => {
+        <header>
+            <div className ="image-text">
+                <span className="logo-image">
+                    {<img src={logo} alt="logo"></img>}
+                </span>
+                <div className="text header-text">
+                    <span className="siteName">For-bottom</span>
+                </div>
+            </div>
+        </header>
+        {menus.map((menu, index) => {
         return (
           <Link to={menu.path} key={index}>
             <SidebarItem

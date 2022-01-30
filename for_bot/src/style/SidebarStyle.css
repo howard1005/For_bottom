@@ -1,12 +1,47 @@
+*{
+    font-family : 'sans-serif';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ============= Trasition ============ */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+    
+}
+
+/* body{
+    height:100wh;
+    background: var(--body-color);
+} */
+
 .sidebar{
-    background: black;
-    width: 10.0rem;
-    height: 80vh;
-    margin-top: 1rem;
-    border-radius: 0 30px 30px 0;
-    padding: 1rem 0;
-    position: fixed;
-    color: white;
-    font-family: "BlackHanSans-Regular";
-    text-align: center;
+    position:fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+}
+
+.sidebar .image-text img{
+    width:40px;
+    border-radius:6px;
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
 }

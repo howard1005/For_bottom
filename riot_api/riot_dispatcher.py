@@ -8,6 +8,7 @@ class RiotDispatcher:
         self.api_map = {
             'riot-api/get-summoner-by-summoner-name': self.riot_api.get_summoner_by_summoner_name,
             'riot-api/get-league-entries-by-summoner-name': self.riot_api.get_league_entries_by_summoner_name,
+            'riot-api/get-all-league-entries': self.riot_api.get_all_league_entries,
             'riot-api/get-matchs-by-summoner-name': self.riot_api.get_matchs_by_summoner_name,
             'riot-api/get-match-timelines-by-summoner-name': self.riot_api.get_match_timelines_by_summoner_name,
             'riot-api/get-all-champion-mastery-entries-by-summoner-name': self.riot_api.get_all_champion_mastery_entries_by_summoner_name,

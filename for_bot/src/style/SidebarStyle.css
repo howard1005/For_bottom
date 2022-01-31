@@ -36,6 +36,12 @@
     background: var(--sidebar-color);
 }
 
+.sidebar .logo-image{
+    min-width: 60px;
+    display:flex;
+    align-items: center;
+}
+
 .sidebar .image-text img{
     width:40px;
     border-radius:6px;
@@ -44,4 +50,8 @@
 .sidebar header .image-text{
     display: flex;
     align-items: center;
+}
+
+header .image-text .header-text{
+    font-weight: 600;
 }

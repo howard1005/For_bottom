@@ -1,9 +1,9 @@
 import React from "react";
 
-function SidebarItem({ menu }) {
+function SidebarItem({ menu, icons }) {
   return (
     <div className="sidebar-item">
-      <p>{menu.name}</p>
+      <p>{menu.icons}{menu.name}</p>
     </div>
   );
 }

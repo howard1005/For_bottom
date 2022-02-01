@@ -34,5 +34,9 @@ class RiotApiTest(unittest.TestCase):
         current_game_information =  self.riot_api.get_current_game_information_by_summoner_name('hide on bush')
         print("\n[current_game_information]\n", current_game_information)
 
+    def test_get_list_of_featured_games(self):
+        featured_games =  self.riot_api.get_list_of_featured_games()
+        print("\n[featured_games]\n", featured_games)
+
 if __name__ == '__main__':
     unittest.main()

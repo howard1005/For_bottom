@@ -4,16 +4,21 @@ import logo from "../logo.png"
 import SidebarItem from "./SidebarItem";
 import SidebarStyle from "../style/SidebarStyle.css"
 import {BiHomeAlt} from "react-icons/bi"
+import {HiInformationCircle} from "react-icons/hi"
+import {IoMdTrendingUp} from "react-icons/io"
+import {FaUserFriends} from "react-icons/fa"
+import {BsYoutube} from "react-icons/bs"
+import {IoMdClipboard} from "react-icons/io"
 
 function Sidebar() {
 
   const menus = [
     { name: "Home", path: "/", icons :<BiHomeAlt></BiHomeAlt>},
-    { name: "인게임 정보", path: "/InGameInfo" },
-    { name: "Trend", path: "/Trend" },
-    { name: "Mate", path: "/Mate"},
-    { name: "Youtube", path: "/Youtube"},
-    { name: "Board", path: "/Board"}
+    { name: "인게임 정보", path: "/InGameInfo", icons: <HiInformationCircle></HiInformationCircle> },
+    { name: "Trend", path: "/Trend", icons: <IoMdTrendingUp></IoMdTrendingUp> },
+    { name: "Mate", path: "/Mate", icons: <FaUserFriends></FaUserFriends>},
+    { name: "Youtube", path: "/Youtube", icons: <BsYoutube></BsYoutube>},
+    { name: "Board", path: "/Board", icons: <IoMdClipboard></IoMdClipboard>}
   ];
 
   return (

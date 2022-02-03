@@ -14,7 +14,7 @@
     --text-color: #707070;
 
     /* ============= Trasition ============ */
-    --tran-03: all 0.2s ease;
+    --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
@@ -25,6 +25,8 @@
     height:100wh;
     background: var(--body-color);
 } */
+
+/* Sidebar */
 
 .sidebar{
     position:fixed;
@@ -54,4 +56,94 @@
 
 header .image-text .header-text{
     font-weight: 600;
+}
+
+
+/* Sidebar - menu items */
+
+.sidebar .sidebar-menu .sidebar-item{
+    font-size:20px;
+    color: var(--text-color);
+    align-items: center;
+    text-decoration: none;
+}
+.sidebar .sidebar-item .sidebar-menu-texts,
+.sidebar .sidebar-item .sidebar-menu-icons{
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.sidebar .sidebar-item:hover .sidebar-menu-texts,
+.sidebar .sidebar-item:hover .sidebar-menu-icons{
+    color: var(--sidebar-color);
+}
+
+.sidebar .sidebar-item .sidebar-menu-icons{
+    font-size: 20px;
+    display: inline-block;
+    padding:10px;
+    min-width: 60px;
+}
+
+
+/* Sidebar - menu */
+.sidebar .sidebar-menu{
+    background: var(--primary-color-light);
+}
+
+.sidebar .sidebar-menu:hover{
+    background: var(--primary-color);
+}
+
+
+/* Sidebar - mode*/
+
+.sidebar .mode{
+    background: var(--primary-color-light);
+}
+
+.sidebar .mode .moon-sun{
+    color: var(--text-color);
+    transition: var(--tran-02);
+    height:50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    min-width:60px;
+}
+
+.sidebar .mode .moon-sun .moon-sun-icons{
+    font-size: 20px;
+    display: inline-block;
+    padding:10px;
+    display:inline-block;
+}
+
+.sidebar .mode .toggle-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor:pointer;
+}
+
+.toggle-switch .swtich{
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+}
+
+.swtich::before{
+    content:'';
+    position:absolute;
+    height: 15px;
+    width:15px;
+    border-radius:50%;
+    background: var(--sidebar-color);
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
 }

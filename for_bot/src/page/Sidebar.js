@@ -9,6 +9,9 @@ import {IoMdTrendingUp} from "react-icons/io"
 import {FaUserFriends} from "react-icons/fa"
 import {BsYoutube} from "react-icons/bs"
 import {IoMdClipboard} from "react-icons/io"
+import {BsFillMoonFill} from "react-icons/bs"
+import {BsSunFill} from "react-icons/bs"
+
 
 function Sidebar() {
 
@@ -43,6 +46,20 @@ function Sidebar() {
           </Link>
         );
       })}
+      <div class="mode">
+        <div className="moon-sun">
+            <div className="moon-sun-icons">
+                <span className="moon"><BsFillMoonFill></BsFillMoonFill></span>
+                <span className="sun"><BsSunFill></BsSunFill></span>
+            </div>
+            <div className="mode-text">Dark Mode</div>
+        </div>
+    
+        
+        <div class ="toggle-switch">
+            <span className="swtich"></span>
+        </div>
+      </div>
     </div>
   );
 }

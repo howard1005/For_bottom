@@ -18,6 +18,10 @@ class RiotApiTest(unittest.TestCase):
         league_entries = self.riot_api.get_league_entries_by_summoner_name('hide on bush')
         print("\n[league_entries]\n", league_entries)
 
+    def test_get_all_league_entries(self):
+        all_league_entries = self.riot_api.get_all_league_entries(tier="DIAMOND", division="I")
+        print("\n[all_league_entries]\n", all_league_entries)
+
     def test_get_matchs_by_summoner_name(self):
         matchs = self.riot_api.get_matchs_by_summoner_name('hide on bush')
         print("\n[matchs]\n", matchs)

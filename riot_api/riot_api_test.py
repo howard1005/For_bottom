@@ -34,6 +34,12 @@ class RiotApiTest(unittest.TestCase):
         champion_rotations =  self.riot_api.get_champion_rotations()
         print("\n[champion_rotations]\n", champion_rotations)
 
+    
+    def test_get_lol_status(self):
+        lol_status =  self.riot_api.get_lol_status()
+        print("\n[lol_status]\n", lol_status)
+
+
     def test_get_current_game_information_by_summoner_name(self):
         current_game_information =  self.riot_api.get_current_game_information_by_summoner_name('hide on bush')
         print("\n[current_game_information]\n", current_game_information)

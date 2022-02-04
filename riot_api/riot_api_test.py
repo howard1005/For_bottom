@@ -30,6 +30,10 @@ class RiotApiTest(unittest.TestCase):
         masterys = self.riot_api.get_all_champion_mastery_entries_by_summoner_name('hide on bush')
         print("\n[masterys]\n", masterys)
 
+    def test_get_total_mastery_score_by_summoner_name(self):
+        total_mastery_score = self.riot_api.get_total_mastery_score_by_summoner_name('hide on bush')
+        print("\n[total_mastery_score]\n", total_mastery_score)
+
     def test_get_champion_rotations(self):
         champion_rotations =  self.riot_api.get_champion_rotations()
         print("\n[champion_rotations]\n", champion_rotations)

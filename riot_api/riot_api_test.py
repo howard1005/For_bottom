@@ -26,6 +26,10 @@ class RiotApiTest(unittest.TestCase):
         matchs = self.riot_api.get_matchs_by_summoner_name('hide on bush')
         print("\n[matchs]\n", matchs)
 
+    def test_get_match_timelines_by_summoner_name(self):
+        match_timelines = self.riot_api.get_match_timelines_by_summoner_name('hide on bush')
+        print("\n[match_timelines]\n", match_timelines)
+
     def test_get_all_champion_mastery_entries_by_summoner_name(self):
         masterys = self.riot_api.get_all_champion_mastery_entries_by_summoner_name('hide on bush')
         print("\n[masterys]\n", masterys)
@@ -37,12 +41,10 @@ class RiotApiTest(unittest.TestCase):
     def test_get_champion_rotations(self):
         champion_rotations =  self.riot_api.get_champion_rotations()
         print("\n[champion_rotations]\n", champion_rotations)
-
     
     def test_get_lol_status(self):
         lol_status =  self.riot_api.get_lol_status()
         print("\n[lol_status]\n", lol_status)
-
 
     def test_get_current_game_information_by_summoner_name(self):
         current_game_information =  self.riot_api.get_current_game_information_by_summoner_name('hide on bush')

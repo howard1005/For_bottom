@@ -13,6 +13,7 @@ import {BsFillMoonFill} from "react-icons/bs"
 import {BsSunFill} from "react-icons/bs"
 
 
+
 function Sidebar() {
 
   const menus = [
@@ -23,6 +24,10 @@ function Sidebar() {
     { name: "Youtube", path: "/Youtube", icons: <BsYoutube></BsYoutube>},
     { name: "Board", path: "/Board", icons: <IoMdClipboard></IoMdClipboard>}
   ];
+
+  function modeClick(){
+    console.log(1);
+  }
 
   return (
     <div className="sidebar">
@@ -56,7 +61,7 @@ function Sidebar() {
         </div>
     
         
-        <div class ="toggle-switch">
+        <div class ="toggle-switch" onClick={modeClick}>
             <span className="swtich"></span>
         </div>
       </div>

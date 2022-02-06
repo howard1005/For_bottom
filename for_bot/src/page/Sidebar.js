@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../logo.png"
 import SidebarItem from "./SidebarItem";
 import SidebarStyle from "../style/SidebarStyle.css"
-import {BiHomeAlt} from "react-icons/bi"
+import {BiBody, BiHomeAlt} from "react-icons/bi"
 import {HiInformationCircle} from "react-icons/hi"
 import {IoMdTrendingUp} from "react-icons/io"
 import {FaUserFriends} from "react-icons/fa"
@@ -26,7 +26,8 @@ function Sidebar() {
   ];
 
   function modeClick(){
-    console.log(1);
+    console.log(2);
+    //body.classList.toggle("dark");
   }
 
   return (

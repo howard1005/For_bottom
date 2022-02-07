@@ -27,7 +27,7 @@ function Sidebar() {
 
   function modeClick(){
     console.log(2);
-    //body.classList.toggle("dark");
+    document.body.classList.toggle("dark");
   }
 
   return (

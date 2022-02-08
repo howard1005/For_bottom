@@ -21,10 +21,10 @@
     
 }
 
-/* body{
-    height:100wh;
+body{
     background: var(--body-color);
-} */
+    transition: var(--tran-02);
+}
 
 body.dark{
     --body-color: #18191A;
@@ -65,6 +65,7 @@ body.dark{
 
 header .image-text .header-text{
     font-weight: 600;
+    color: var(--text-color);
 }
 
 
@@ -74,7 +75,7 @@ header .image-text .header-text{
     font-size:20px;
     color: var(--text-color);
     align-items: center;
-    text-decoration: none;
+    text-decoration: none;  
 }
 .sidebar .sidebar-item .sidebar-menu-texts,
 .sidebar .sidebar-item .sidebar-menu-icons{

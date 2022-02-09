@@ -18,7 +18,6 @@ function Trend(){
 
   
   function imageClick(){
-    console.log('click'); 
     navigate("/");
   }
   

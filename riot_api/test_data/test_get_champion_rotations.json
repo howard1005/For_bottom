@@ -1,1 +1,1 @@
-{"status": {"message": "Forbidden", "status_code": 403}}
+{"freeChampionIds": [3, 22, 50, 59, 62, 83, 90, 98, 104, 106, 114, 121, 161, 166, 235, 236], "freeChampionIdsForNewPlayers": [222, 254, 427, 82, 131, 147, 54, 17, 18, 37], "maxNewPlayerLevel": 10}

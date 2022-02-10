@@ -1,8 +1,7 @@
 import unittest   # The test framework
 from riot_api import RiotApi
 
-import os
-import sys
+import os, sys, time
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),  '..', '..'))
 
 def write_json(data, file_name):
@@ -15,6 +14,7 @@ class RiotApiTest(unittest.TestCase):
 
     def setUp(self):
         self.riot_api = RiotApi()
+        time.sleep(1)
 
     def test_get_summoner_by_summoner_name(self):
         summoner = self.riot_api.get_summoner_by_summoner_name('hide on bush')

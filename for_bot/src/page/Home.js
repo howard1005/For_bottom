@@ -1,21 +1,15 @@
 import React, { Component } from "react";
 import {useState, useRef}from 'react'
 import {useEffect} from 'react';
-import '../style/Home.css';
+import styles from '../style/Home.module.css';
 import axios from 'axios';
-import { motion } from "framer-motion";
 
 
 
 function Championimages(props){
   return(
     <>
-        <motion.img className="home_img" key ={props.id} src ={props.champ['url']} height='50' width='50'
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: 600, opacity: 0 }}
-        ></motion.img>
-      {/* <img className="home_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50'></img> */}
+        <img className={styles.home_img} key ={props.id} src ={props.champ['url']} height='50' width='50'></img>
     </>
   );
 }
@@ -45,28 +39,23 @@ function Home (){
 
   return(
       <>
-        <div className="home_font">
-          <motion.h2 animate={{fontSize:20, scale:1.5}}>For_Bottom</motion.h2>
+        <div className={styles.home_font}>
+          <h2>For_Bottom</h2>
         </div>
         
-          <motion.div className="home_font">검색
-            <motion.input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></motion.input>
-          </motion.div>
+          <div className={styles.home_font}>검색
+            <input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
+          </div>
           
-        <motion.div className = "rows" 
-        animate={{ x: 0, opacity: 1 }}>
+        <div className = {styles.rows}>
           {
             filterImages.map(function(n, i){
               return(
-                  <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}
-                  initial={{ x: 300, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: 600, opacity: 0 }}
-                  />
+                  <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
               )
             })
           }
-        </motion.div>
+        </div>
         
       </>
     )

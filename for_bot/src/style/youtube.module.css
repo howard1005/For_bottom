@@ -2,26 +2,27 @@
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
+    padding: 10px 100px;
 }
+
 .list_container{
     flex-direction: column;
     margin-top: 0px;
     width: 100%;
     border-radius: 10px;
-    border: 1px solid #eaeaea;
-    background-color: white;
+    border: 1px solid white;
 }
+
 .youtube_rows{
-    padding: 8px 0px 8px 8px;
+    padding: 8px 0 0 8px;
     margin-left: 15%;
     height:100%;
 }
 
 .thumbnails{
-    display: block;
+    display: flex;
     right: 10px;
-    margin: 0px auto;
+    margin: 0px ;
 }
 
 .youtube_title{

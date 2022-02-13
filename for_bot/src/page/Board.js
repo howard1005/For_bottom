@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { motion } from "framer-motion";
-import '../style/board.css';
+import '../style/board.module.css';
 
 
 function Board(){

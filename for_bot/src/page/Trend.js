@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {useState}from 'react'
 import {useEffect} from 'react';
-import '../style/Trend.css';
+import styles from '../style/Trend.module.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';  
@@ -24,7 +24,7 @@ function Trend(){
   function Championimages(props){
     return(
       <>
-        <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
+        <img className={styles.trend_img} alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
       </>
     );
   }
@@ -49,16 +49,16 @@ function Trend(){
 
   return (
     <>
-     <div className="trend_title">
-     <motion.h2 animate={{fontSize:20, scale:1.5}}>Trend</motion.h2>
+     <div className={styles.trend_title}>
+     <h2>Trend</h2>
      </div>
-        <div className="trend_title">검색
+        <div className={styles.trend_title}>검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
 
         
-        <div className = "trend_rows">
-        <div className="trend_subtitle"> AD </div>
+        <div className = {styles.trend_rows}>
+        <div className={styles.trend_subtitle}> AD </div>
           {
             
             filterImages.map(function(n, i){
@@ -70,8 +70,8 @@ function Trend(){
         </div>
 
         
-        <div className = "trend_rows">
-        <div className="trend_subtitle">Support</div>
+        <div className = {styles.trend_rows}>
+        <div className={styles.trend_subtitle}>Support</div>
           {
             
             filterImages.map(function(n, i){

@@ -11,6 +11,7 @@ import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
 import Sidebar from './page/Sidebar'
+import ChampionInfo from './page/ChampionInfo'
 import { AnimatePresence, motion } from 'framer-motion'
 
 global.serverAdress = "211.218.215.226:8081";
@@ -41,6 +42,7 @@ function App() {
               <Route path="/Mate" element={<Mate/>} />
               <Route path="/Youtube" element={<Youtube/>} />
               <Route path="/Board" element={<Board/>} />
+              <Route path="/ChampionInfo" element={<ChampionInfo/>} />
             </Routes>
           </AnimatePresence>
           </>

@@ -16,6 +16,7 @@ global.port = 8080;
 
 app.listen(port, function(){
     console.log(`for bot server start ${global.port} \n external server adress : ${global.serverAdress}`);
+    
 });
 
 app.use(function(req, res, next) {

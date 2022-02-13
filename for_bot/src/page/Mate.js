@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {useState}from 'react'
 import {useEffect} from 'react';
-import '../style/Mate.css';
+import styles from '../style/Mate.module.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
 
@@ -48,7 +48,7 @@ function Mate (){
     
     return(
       <>
-        <img className="mate_img" alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick(champId)}></img>
+        <img className={styles.mate_img} alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick(champId)}></img>
       </>
     );
   }
@@ -56,14 +56,14 @@ function Mate (){
   
   return(
       <>
-        <div className="mate_title">
-        <motion.h2 animate={{fontSize:20, scale:1.5}}>Mate</motion.h2>
+        <div className={styles.mate_title}>
+        <h2 animate={{fontSize:20, scale:1.5}}>Mate</h2>
         </div>
-        <div className="mate_title">검색
+        <div className={styles.mate_title}>검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
 
-        <div className = "mate_rows">
+        <div className = {styles.mate_rows}>
           {
             
             filterImages.map(function(n, i){
@@ -74,7 +74,7 @@ function Mate (){
         }
         </div>
 
-        <motion.div className="recommend_container">
+        <motion.div className={styles.recommend_container}>
         {
             
             mateImages.map(function(n, i){

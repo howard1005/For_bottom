@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { motion } from "framer-motion";
-import '../style/youtube.css';
+import styles from '../style/youtube.module.css';
 
 const channels = [
   {
@@ -27,27 +27,23 @@ const channels = [
 function Youtube(){
   return(
     <>
-      <div className="youtube_title">
-     <motion.h2 >Youtube</motion.h2>
-     </div>
-        <motion.div className = "youtube_rows" initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: -300, opacity: 0 }}>
+      <div className={styles.youtube_title}><h2 >Youtube</h2></div>
+        <div className = {styles.youtube_rows}>
           {
             channels.map(function(n, i){
               return(
                   <>
-                  <motion.div className='youtube_container'>
-                    <motion.div className='list_container'>
-                      <motion.div animate={{textAlign:'left'}}>{channels[i]['url']}</motion.div>
-                      <motion.img className="thumbnails" alt="thumbnails" key ={channels[i]['id']} src ={channels[i]['thumbnails']} height='100' width='200' ></motion.img>
-                    </motion.div>  
-                  </motion.div>
+                  <div className={styles.youtube_container}>
+                    <div className={styles.list_container}>
+                      <div>{channels[i]['url']}</div>
+                      <img className={styles.thumbnails} alt="thumbnails" key ={channels[i]['id']} src ={channels[i]['thumbnails']} height='100' width='200' ></img>
+                    </div>
+                  </div>
                   </>    
               )
             })
           }
-        </motion.div>
+        </div>
     </>
   )
 }

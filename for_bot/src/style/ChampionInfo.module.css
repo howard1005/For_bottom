@@ -4,7 +4,32 @@ body{
 }
 
 section{
-    height: 800px;
-    width: auto;
-    background: url('https://www.starbucks.co.kr/common/img/main/fav_prod_bg_new.jpg');
+    height: 200px;
+    background-color:#E4E9F7;
+}
+.info_section{
+    
+    background-color: rgb(41, 46, 56);
+}
+
+.info_section .champion_img{
+    border: 3px solid #A8E082;
+    border-radius: 15px;
+    margin-left:20%;
+    height: 200px;
+    width: 200px;
+    float:left;
+}
+
+.info_section .champion_info{
+    height: 200px;
+    width: 200px;
+    float:left;
+    color:rgb(255, 255, 255);
+}
+
+.champion_name{
+}
+
+.champion_skills{
 }

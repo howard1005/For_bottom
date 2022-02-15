@@ -3,6 +3,7 @@ import {useState, useRef}from 'react'
 import {useEffect} from 'react';
 import styles from '../style/Home.module.css';
 import axios from 'axios';
+import {Typography} from '@material-ui/core'
 
 
 
@@ -39,10 +40,9 @@ function Home (){
 
   return(
       <>
-        <div className={styles.home_font}>
-          <h2>For_Bottom</h2>
+        <div>
+          <Typography variant="h4" className={styles.home_font}>For_Bottom</Typography>
         </div>
-        
           <div className={styles.home_font}>검색
             <input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
           </div>

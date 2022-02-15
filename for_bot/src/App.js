@@ -11,8 +11,10 @@ import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
 import Sidebar from './page/Sidebar'
+import PersistentDrawerLeft from './page/drawer'
 import ChampionInfo from './page/ChampionInfo'
 import { AnimatePresence, motion } from 'framer-motion'
+import {Drawer} from '@material-ui/core'
 
 global.serverAdress = "211.218.215.226:8081";
 
@@ -32,8 +34,8 @@ function App() {
   
     return (
           <>
-         
-          <Sidebar></Sidebar>
+          <PersistentDrawerLeft></PersistentDrawerLeft>
+          {/* <Sidebar></Sidebar> */}
           <AnimatePresence exitBeforeEnter>
             <Routes>
               <Route path="/" element={<Home/>} />

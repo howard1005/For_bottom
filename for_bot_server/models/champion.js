@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         skill_json_property: { type: DataTypes.STRING(100), allowNull: false },
         description : { type: DataTypes.STRING(10), allowNull: false },
       },
-      { timestamps: false }
+      { timestamps: true }
     );
   };
   

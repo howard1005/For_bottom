@@ -10,8 +10,8 @@ import Trend from './page/Trend'
 import Mate from './page/Mate'
 import Youtube from './page/Youtube'
 import Board from './page/Board'
-import Sidebar from './page/Sidebar'
-import PersistentDrawerLeft from './page/drawer'
+//import Sidebar from './page/Sidebar'
+import Sidebar from './page/drawer'
 import ChampionInfo from './page/ChampionInfo'
 import { AnimatePresence, motion } from 'framer-motion'
 import {Drawer} from '@material-ui/core'
@@ -34,7 +34,7 @@ function App() {
   
     return (
           <>
-          <PersistentDrawerLeft></PersistentDrawerLeft>
+          <Sidebar></Sidebar>
           {/* <Sidebar></Sidebar> */}
           <AnimatePresence exitBeforeEnter>
             <Routes>

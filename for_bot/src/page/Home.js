@@ -40,9 +40,7 @@ function Home (){
 
   return(
       <>
-        <div>
-          <Typography variant="h4" className={styles.home_font}>For_Bottom</Typography>
-        </div>
+
           <div className={styles.home_font}>검색
             <input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
           </div>

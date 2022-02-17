@@ -17,6 +17,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { Link } from "react-router-dom";
+
 
 const drawerWidth = 240;
 
@@ -119,7 +121,9 @@ export default function Sidebar() {
           {['Home', 'InGameInfo', 'Trend', 'Mate', 'Youtube','Board'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
+                  <Link to={text}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </Link>
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>

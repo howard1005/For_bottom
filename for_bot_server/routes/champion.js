@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
+const db = require('../models/index');
 
 // router.use(`/images`, function(req, res, next) {
 //     console.log(`call static images ${req.url}`);

@@ -3,7 +3,11 @@ const router = express.Router();
 
 router.get(`/`, function(req, res){
     console.log("[index][/] " + Date());
-    res.send("최창우의 적극적인 참여 바람!");
+    release_path = path.join(__dirname, "../client/build", "index.html")
+    fs.exists(release_path, exists => {
+        if(exists) res.sendFile(release_path);
+        else res.send("Not release!");
+    })
 });
 
 

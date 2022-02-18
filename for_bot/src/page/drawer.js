@@ -18,6 +18,12 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Link } from "react-router-dom";
+import {HiInformationCircle} from "react-icons/hi"
+import {IoMdTrendingUp} from "react-icons/io"
+import {FaUserFriends} from "react-icons/fa"
+import {BsYoutube} from "react-icons/bs"
+import {IoMdClipboard} from "react-icons/io"
+import {BiBody, BiHomeAlt} from "react-icons/bi"
 
 
 const drawerWidth = 240;
@@ -79,6 +85,15 @@ export default function Sidebar() {
     setOpen(false);
   };
 
+  const menus = [
+    { name: "Home", path: "/", icons :<BiHomeAlt></BiHomeAlt>},
+    { name: "인게임 정보", path: "/InGameInfo", icons: <HiInformationCircle></HiInformationCircle> },
+    { name: "Trend", path: "/Trend", icons: <IoMdTrendingUp></IoMdTrendingUp> },
+    { name: "Mate", path: "/Mate", icons: <FaUserFriends></FaUserFriends>},
+    { name: "Youtube", path: "/Youtube", icons: <BsYoutube></BsYoutube>},
+    { name: "Board", path: "/Board", icons: <IoMdClipboard></IoMdClipboard>}
+  ];
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -118,14 +133,14 @@ export default function Sidebar() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Home', 'InGameInfo', 'Trend', 'Mate', 'Youtube','Board'].map((text, index) => (
-            <ListItem button key={text}>
+          {menus.map((text, index) => (
+            <ListItem button key={text.name}>
               <ListItemIcon>
-                  <Link to={text}>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </Link>
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <Link to={text.path}>
+              <ListItemText primary={text.name} />
+              </Link>
             </ListItem>
           ))}
         </List>

@@ -4,6 +4,7 @@ import {useEffect} from 'react';
 import styles from '../style/ChampionInfo.module.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
+import BasicCard from './Cards.js'
 
 function ChampionInfo (){
     return (
@@ -13,7 +14,9 @@ function ChampionInfo (){
                 <div className={styles.champion_info}>
                     <span className ={styles.champion_name}>champion name</span>
                     <div className={styles.champion_skills}>champion skills</div>
+                    
                 </div>
+                <BasicCard></BasicCard>
             </section>
         </>
     );

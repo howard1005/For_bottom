@@ -16,10 +16,10 @@ global.port = 8080;
 
 app.listen(port, function(){
     console.log(`for bot server start ${global.port} \n external server adress : ${global.serverAdress}`);
-    
 });
 
 app.use(function(req, res, next) {
+    console.log(`for bot server req url : `, req.url);
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");

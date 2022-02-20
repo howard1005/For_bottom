@@ -5,6 +5,7 @@ const analysisRouter = require('./routes/analysis');
 
 const sequelize = require('./models').sequelize;
 const path = require("path");
+const cors = require('cors');
 
 const express = require("express");
 const app = express();
@@ -21,16 +22,16 @@ app.listen(port, function(){
 });
 
 app.use(function(req, res, next) {
-    console.log(`for bot server req url : `, req.url);
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+    global.logger.info(`for bot server req url : ` + req.url);
     next();
 });
 
+app.use(cors());
+
 app.use('/static', express.static(path.join(global.resource_dir, "/static")));
 
-app.use('/', indexRouter);
 app.use('/forbot/v1/champion', championRouter);
 app.use('/forbot/v1/recommend', recommendRouter);
 app.use('/forbot/v1/analysis', analysisRouter);
+
+app.use('*', indexRouter);

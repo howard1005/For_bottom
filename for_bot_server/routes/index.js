@@ -9,7 +9,7 @@ router.get(`/`, function(req, res){
     global.logger.info("[index][/] " + "release_path : " +  release_path);
     fs.exists(release_path, exists => {
         if(exists) res.sendFile(release_path);
-        else res.send("Not release!");
+        else res.status(400).send("Not release!");
     })
 });
 

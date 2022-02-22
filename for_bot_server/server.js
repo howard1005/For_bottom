@@ -15,7 +15,10 @@ sequelize.sync();
 global.logger = require('./config/winston');
 global.serverAdress = "211.218.215.226:8081";
 global.port = 8080;
-global.resource_dir = path.join(__dirname, "../for_bot/build")
+global.resource_path = path.join(__dirname, "../for_bot/build")
+global.dragontail_path = path.join(__dirname, "./dragontail-12.3.1/12.3.1")
+
+
 
 app.listen(port, function(){
     console.log(`for bot server start ${global.port} \n external server adress : ${global.serverAdress}`);
@@ -28,7 +31,8 @@ app.use(function(req, res, next) {
 
 app.use(cors());
 
-app.use('/static', express.static(path.join(global.resource_dir, "/static")));
+app.use('/static', express.static(path.join(global.resource_path, "/static")));
+app.use('/dragontail', express.static(global.dragontail_path));
 
 app.use('/forbot/v1/champion', championRouter);
 app.use('/forbot/v1/recommend', recommendRouter);

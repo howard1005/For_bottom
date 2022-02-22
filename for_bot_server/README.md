@@ -23,7 +23,7 @@ npm start
 - https://alencion.tistory.com/48
 
 ## 기본 Setting
-data dragon(https://ddragon.leagueoflegends.com/cdn/dragontail-12.4.1.tgz) 다운로드 후 "./routes/static/" 경로에 압축 풀기
+data dragon(https://ddragon.leagueoflegends.com/cdn/dragontail-12.4.1.tgz) 다운로드 후 "./" 경로에 압축 풀기
 
 ## SERVER API LIST
 - 기본적인 api

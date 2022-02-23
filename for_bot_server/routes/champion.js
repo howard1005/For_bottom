@@ -29,4 +29,19 @@ router.get(`/img/all-url`, function(req, res){
     })).then((imgUrlList) => res.send({champion_images : imgUrlList}))
 });
 
+router.get(`/ability/all-url`, function(req, res){
+    global.logger.info(`[${__filename}][/ability/all-url] `, req.headers);
+    (new Promise((resolve, reject) => {
+        imgs_path = path.join(global.dragontail_path, `/data/en_US/champion`)
+        fs.readdir(imgs_path, function(error, filelist){
+            var imgUrlList = [];
+            for (var i in filelist) {
+                var fileName = filelist[i]
+                imgUrlList.push({id : fileName.replace('.png',''), url : `http://${global.serverAdress}/dragontail/data/en_US/champion/${fileName}`});
+            }
+            resolve(imgUrlList);
+        })
+    })).then((imgUrlList) => res.send({champion_images : imgUrlList}))
+});
+
 module.exports = router;

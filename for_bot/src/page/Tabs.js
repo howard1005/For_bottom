@@ -59,25 +59,39 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        빌드
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>빌드</Typography>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        룬
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>룬</Typography>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        카운터
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>카운터</Typography>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        아이템
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>아이템</Typography>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        스킬
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>스킬</Typography>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        트렌드 그래프
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>트렌드 그래프</Typography>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={6}>
-        팁
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography>팁</Typography>
+        </Box>
       </TabPanel>
     </Box>
   );

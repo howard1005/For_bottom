@@ -5,6 +5,14 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+import {
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    CardHeader
+  } from "@material-ui/core";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -60,7 +68,41 @@ export default function BasicTabs() {
       </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-            <Typography>빌드</Typography>
+            <Card>
+      <CardHeader
+        title="Free"
+        titleTypographyProps={{ align: "center" }}
+      />
+      <CardContent>
+        <div>
+          <Typography variant="h3" color="textPrimary">
+            $0
+          </Typography>
+          <Typography variant="h6" color="textSecondary">
+            /mo
+          </Typography>
+        </div>
+        <ul>
+          {["2 GB of storage", "Help center access", "Email support"].map(
+            (line) => (
+              <Typography
+                component="li"
+                variant="subtitle1"
+                align="center"
+                key={line}
+              >
+                {line}
+              </Typography>
+            )
+          )}
+        </ul>
+      </CardContent>
+      <CardActions>
+        <Button fullWidth variant="contained" color="primary">
+          Sign up for free
+        </Button>
+      </CardActions>
+    </Card>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

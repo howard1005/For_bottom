@@ -37,7 +37,7 @@ router.get(`/ability/all-url`, function(req, res){
             var imgUrlList = [];
             for (var i in filelist) {
                 var fileName = filelist[i]
-                imgUrlList.push({id : fileName.replace('.png',''), url : `http://${global.serverAdress}/dragontail/data/en_US/champion/${fileName}`});
+                imgUrlList.push({id : fileName, url : `http://${global.serverAdress}/dragontail/data/en_US/champion/${fileName}`});
             }
             resolve(imgUrlList);
         })

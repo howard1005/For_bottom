@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import styles from '../style/Home.module.css';
 
 import {
     Button,
@@ -68,22 +69,22 @@ export default function BasicTabs() {
       </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-            <Card>
+      <Card>
       <CardHeader
-        title="Free"
-        titleTypographyProps={{ align: "center" }}
+        title="빌드"
+        
       />
       <CardContent>
         <div>
           <Typography variant="h3" color="textPrimary">
-            $0
+            키스톤
           </Typography>
           <Typography variant="h6" color="textSecondary">
-            /mo
+            룬
           </Typography>
         </div>
         <ul>
-          {["2 GB of storage", "Help center access", "Email support"].map(
+          {["skill1", "skill2", "skill3"].map(
             (line) => (
               <Typography
                 component="li"

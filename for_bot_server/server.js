@@ -2,6 +2,7 @@ const indexRouter = require('./routes/index');
 const championRouter = require('./routes/champion');
 const recommendRouter = require('./routes/recommend');
 const analysisRouter = require('./routes/analysis');
+const itemRouter = require('./routes/item');
 
 const sequelize = require('./models').sequelize;
 const path = require("path");
@@ -37,5 +38,6 @@ app.use('/dragontail', express.static(global.dragontail_path));
 app.use('/forbot/v1/champion', championRouter);
 app.use('/forbot/v1/recommend', recommendRouter);
 app.use('/forbot/v1/analysis', analysisRouter);
+app.use('/forbot/v1/item', itemRouter);
 
 app.use('*', indexRouter);

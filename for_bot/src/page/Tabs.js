@@ -98,11 +98,6 @@ export default function BasicTabs() {
           )}
         </ul>
       </CardContent>
-      <CardActions>
-        <Button fullWidth variant="contained" color="primary">
-          Sign up for free
-        </Button>
-      </CardActions>
     </Card>
         </Box>
       </TabPanel>

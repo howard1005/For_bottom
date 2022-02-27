@@ -5,6 +5,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import styles from '../style/Home.module.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
 
 import {
     Button,
@@ -66,7 +68,7 @@ export default function BasicTabs() {
           <Tab label="트렌드 그래프" {...a11yProps(6)} />
           <Tab label="팁" {...a11yProps(7)} />
         </Tabs>
-      </Box>
+    </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
       <Card>
@@ -75,6 +77,12 @@ export default function BasicTabs() {
         
       />
       <CardContent>
+        <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth="sm">
+            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />
+        </Container>
+        </React.Fragment>
         <div>
           <Typography variant="h3" color="textPrimary">
             키스톤
@@ -134,3 +142,5 @@ export default function BasicTabs() {
     </Box>
   );
 }
+
+

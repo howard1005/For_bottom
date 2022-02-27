@@ -14,7 +14,7 @@ const app = express();
 sequelize.sync();
 
 global.logger = require('./config/winston');
-global.serverAdress = "211.218.215.226:8081";
+global.serverAdress = "211.218.101.221:8081";
 global.port = 8080;
 global.resource_path = path.join(__dirname, "../for_bot/build")
 global.dragontail_path = path.join(__dirname, "./dragontail-12.3.1/12.3.1")

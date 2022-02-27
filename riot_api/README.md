@@ -17,6 +17,7 @@ https://docs.google.com/spreadsheets/d/1ud1CjRezWv2N13RCcIIF3utwKzC4JEF1cA16CM1c
 # TODO
 -[ ] API 설명 정리
 -[ ] API field 값 정리
+- https://developer.riotgames.com/docs/lol 데이터 가공
 
 # API Url List
 

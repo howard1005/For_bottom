@@ -4,9 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import styles from '../style/Home.module.css';
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
+import SpacingGrid from './Grid.js'
+
+
 
 import {
     Button,
@@ -71,42 +71,7 @@ export default function BasicTabs() {
     </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-      <Card>
-      <CardHeader
-        title="빌드"
-        
-      />
-      <CardContent>
-        <React.Fragment>
-        <CssBaseline />
-        <Container maxWidth="sm">
-            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />
-        </Container>
-        </React.Fragment>
-        <div>
-          <Typography variant="h3" color="textPrimary">
-            키스톤
-          </Typography>
-          <Typography variant="h6" color="textSecondary">
-            룬
-          </Typography>
-        </div>
-        <ul>
-          {["skill1", "skill2", "skill3"].map(
-            (line) => (
-              <Typography
-                component="li"
-                variant="subtitle1"
-                align="center"
-                key={line}
-              >
-                {line}
-              </Typography>
-            )
-          )}
-        </ul>
-      </CardContent>
-    </Card>
+            <SpacingGrid></SpacingGrid>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -142,5 +107,8 @@ export default function BasicTabs() {
     </Box>
   );
 }
+
+
+
 
 

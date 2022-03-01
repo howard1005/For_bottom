@@ -5,16 +5,16 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import SpacingGrid from './Grid.js'
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles({
+    tabs:{
+        width:1500,
+        height:1000,
+        backgroundColor:'black',
+    },
+});
 
-
-import {
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    CardHeader
-  } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -51,14 +51,15 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
+  const tabClasses = useStyles();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Box sx={{height:1000, backgroundColor:'lightblue'}}>
+      <Box lassName={tabClasses.tabs} sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="빌드" {...a11yProps(0)} />
           <Tab label="룬" {...a11yProps(1)} />

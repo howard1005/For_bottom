@@ -3,6 +3,7 @@ const championRouter = require('./routes/champion');
 const recommendRouter = require('./routes/recommend');
 const analysisRouter = require('./routes/analysis');
 const itemRouter = require('./routes/item');
+const passiveRouter = require('./routes/passive');
 
 const sequelize = require('./models').sequelize;
 const path = require("path");
@@ -39,5 +40,6 @@ app.use('/forbot/v1/champion', championRouter);
 app.use('/forbot/v1/recommend', recommendRouter);
 app.use('/forbot/v1/analysis', analysisRouter);
 app.use('/forbot/v1/item', itemRouter);
+app.use('/forbot/v1/passive', passiveRouter);
 
 app.use('*', indexRouter);

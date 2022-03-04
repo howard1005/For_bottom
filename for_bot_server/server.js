@@ -9,6 +9,8 @@ const sequelize = require('./models').sequelize;
 const path = require("path");
 const cors = require('cors');
 
+const { swaggerUi, specs } = require('./swagger/swagger');
+
 const express = require("express");
 const app = express();
 
@@ -32,6 +34,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(cors());
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use('/static', express.static(path.join(global.resource_path, "/static")));
 app.use('/dragontail', express.static(global.dragontail_path));

@@ -4,12 +4,30 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../models/index');
 
-// router.use(`/images`, function(req, res, next) {
-//     console.log(`call static images ${req.url}`);
-//     next();
-// });
-//router.use(`/images`, express.static(__dirname + `/champion_images`));
+/**
+ * @swagger
+ * tags:
+ *   name: champion
+ *   description: 챔피언 정보 가져오기
+ */
 
+ /**
+  * @swagger
+  * /forbot/v1/champion/img/all-url:
+  *   get:
+  *     summary: 챔피언 정보 가져오기
+  *     tags: [Champion]
+  *     responses:
+  *       200:
+  *         description: 성공
+  *       403:
+  *         description: BadRequest
+  *       404:
+  *         description: NotFound
+  *       500:
+  *         description: InternalError
+  */
+ 
 router.get(`/info/all`, function(req, res){
     res.send("TODO");
 });

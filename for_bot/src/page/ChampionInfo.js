@@ -21,7 +21,7 @@ function ChampionInfo (){
         <>
             <section className={styles.info_section}>
                 <img className={styles.champion_img} src="http://www.simplegame.co.kr/data/editor/1601/4980aecb2de311df98ce93789a9018a2_1453270224_21.PNG"></img>
-                <List sx={{ width: '50%', maxWidth: 300, bgcolor: 'background.paper' }}>
+                <List sx={{ width: '50%', maxWidth: 300, algin: 'center' }}>
                 <ListItem>
                     <ListItemAvatar>
                     <Avatar>

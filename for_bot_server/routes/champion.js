@@ -4,18 +4,16 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../models/index');
 
-/**
- * @swagger
- * tags:
- *   name: champion
- *   description: 챔피언 정보 가져오기
- */
+router.get(`/info/all`, function(req, res){
+    res.send("TODO");
+});
+
 
  /**
   * @swagger
   * /forbot/v1/champion/img/all-url:
   *   get:
-  *     summary: 챔피언 정보 가져오기
+  *     summary: 챔피언 이미지의 모든 url 가져오기
   *     tags: [Champion]
   *     responses:
   *       200:
@@ -27,11 +25,6 @@ const db = require('../models/index');
   *       500:
   *         description: InternalError
   */
- 
-router.get(`/info/all`, function(req, res){
-    res.send("TODO");
-});
-
 router.get(`/img/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
     (new Promise((resolve, reject) => {
@@ -47,6 +40,22 @@ router.get(`/img/all-url`, function(req, res){
     })).then((imgUrlList) => res.send({champion_images : imgUrlList}))
 });
 
+ /**
+  * @swagger
+  * /forbot/v1/champion/ability/all-url:
+  *   get:
+  *     summary: 챔피언 능력치 정보의 모든 url 가져오기
+  *     tags: [Champion]
+  *     responses:
+  *       200:
+  *         description: 성공
+  *       403:
+  *         description: BadRequest
+  *       404:
+  *         description: NotFound
+  *       500:
+  *         description: InternalError
+  */
 router.get(`/ability/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/ability/all-url] `, req.headers);
     (new Promise((resolve, reject) => {

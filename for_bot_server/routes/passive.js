@@ -10,7 +10,7 @@ const db = require('../models/index');
   * /forbot/v1/passive/img/all-url:
   *   get:
   *     summary: passive 이미지 모든 url 가져오기
-  *     tags: [Item]
+  *     tags: [Passive]
   *     responses:
   *       200:
   *         description: 성공

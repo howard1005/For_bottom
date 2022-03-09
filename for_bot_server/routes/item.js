@@ -33,7 +33,7 @@ router.get(`/img/all-url`, function(req, res){
             }
             resolve(imgUrlList);
         })
-    })).then((imgUrlList) => res.send({champion_images : imgUrlList}))
+    })).then((imgUrlList) => res.send({item_images : imgUrlList}))
 });
 
 module.exports = router;

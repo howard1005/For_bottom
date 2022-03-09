@@ -16,6 +16,6 @@ const apiCall = async () => {
   };
 
 export default handleActions({
-    [INCREMENT]: ({champions}) => ({champions : number + 1}),
+    [imageLoad]: ({champions}) => (apiCall),
     
 }, initialState)

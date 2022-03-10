@@ -4,6 +4,12 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../models/index');
 
+let getItemJson = function(cb){
+    fs.readFile(path.join(global.dragontail_path, `/data/ko_KR/item.json`), (err, data) => { 
+        if (err) throw err
+        cb(JSON.parse(data))
+    })
+}
 
  /**
   * @swagger
@@ -24,20 +30,22 @@ const db = require('../models/index');
 router.get(`/img/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
 
-    fs.readFile(path.join(global.dragontail_path, `/data/ko_KR/item.json`), (err, data) => { 
-        if (err) throw err
-        const item = JSON.parse(data)
-    })
-
     (new Promise((resolve, reject) => {
         imgs_path = path.join(global.dragontail_path, `/img/item`)
         fs.readdir(imgs_path, function(error, filelist){
-            var imgUrlList = [];
-            for (var i in filelist) {
-                var fileName = filelist[i]
-                imgUrlList.push({id : fileName.replace('.png',''), url : `http://${global.serverAdress}/dragontail/img/item/${fileName}`});
-            }
-            resolve(imgUrlList);
+            getItemJson((itemJSon) => {
+                var imgUrlList = [];
+                for (var i in filelist) {
+                    var fileName = filelist[i]
+                    imgUrlList.push({
+                      id: fileName.replace(".png", ""),
+                      url: `http://${global.serverAdress}/dragontail/img/item/${fileName}`,
+                      data: itemJSon.data[fileName.replace(".png", "")]
+                    });
+                }
+                resolve(imgUrlList);
+            });
+
         })
     })).then((imgUrlList) => res.send({item_images : imgUrlList}))
 });

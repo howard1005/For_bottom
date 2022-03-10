@@ -4,8 +4,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import SpacingGrid from './Grid.js'
 import { makeStyles } from "@material-ui/core/styles";
+import DenseTable from './Table.js'
 
 const useStyles = makeStyles({
     tabs:{
@@ -72,7 +72,7 @@ export default function BasicTabs() {
     </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-            <SpacingGrid></SpacingGrid>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

@@ -1,52 +1,44 @@
 import React, { Component } from "react";
-import {useState, useRef}from 'react'
-import {useEffect} from 'react';
 import styles from '../style/ChampionInfo.module.css';
-import axios from 'axios';
-import { motion } from "framer-motion";
 import BasicTabs from './Tabs.js'
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import ImageIcon from '@mui/icons-material/Image';
-import WorkIcon from '@mui/icons-material/Work';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
-/**/ 
+
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 function ChampionInfo (){
     return (
         <>
             <section className={styles.info_section}>
                 <img className={styles.champion_img} src="http://www.simplegame.co.kr/data/editor/1601/4980aecb2de311df98ce93789a9018a2_1453270224_21.PNG"></img>
-                <List sx={{ width: '50%', maxWidth: 300, algin: 'center' }}>
-                <ListItem>
-                    <ListItemAvatar>
-                    <Avatar>
-                        <ImageIcon />
-                    </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-                </ListItem>
-                <ListItem>
-                    <ListItemAvatar>
-                    <Avatar>
-                        <WorkIcon />
-                    </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Work" secondary="Jan 7, 2014" />
-                </ListItem>
-                <ListItem>
-                    <ListItemAvatar>
-                    <Avatar>
-                        <BeachAccessIcon />
-                    </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary="Vacation" secondary="July 20, 2014" />
-                </ListItem>
-                </List>
+                <Stack spacing={2} width={100}>
+                    <Item>룰루</Item>
+                    <Item>챔피언 티어</Item>
+                    <ImageList sx={{ width: 200, height: 50 }} cols={4} >
+                        {itemData.map((item) => (
+                            <ImageListItem key={item.img}>
+                            <img
+                                src={item.img}
+                                
+                                alt={item.title}
+                                
+                            />
+                    </ImageListItem>
+                    ))}
+                    </ImageList>
+                </Stack>
             </section>
             <section>
             <BasicTabs></BasicTabs>
@@ -54,5 +46,25 @@ function ChampionInfo (){
         </>
     );
 }
+
+const itemData = [
+    {
+      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+      title: 'Breakfast',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+      title: 'Burger',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+      title: 'Camera',
+    },
+    {
+      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+      title: 'Coffee',
+    },
+    
+  ];
 
 export default ChampionInfo;

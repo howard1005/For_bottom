@@ -23,6 +23,12 @@ const db = require('../models/index');
   */
 router.get(`/img/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
+
+    fs.readFile(path.join(global.dragontail_path, `/data/ko_KR/item.json`), (err, data) => { 
+        if (err) throw err
+        const item = JSON.parse(data)
+    })
+
     (new Promise((resolve, reject) => {
         imgs_path = path.join(global.dragontail_path, `/img/item`)
         fs.readdir(imgs_path, function(error, filelist){

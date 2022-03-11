@@ -39,14 +39,46 @@ router.get(`/img/all-url`, function(req, res){
                     var fileName = filelist[i]
                     imgUrlList.push({
                       id: fileName.replace(".png", ""),
+                      name: itemJSon.data[fileName.replace(".png", "")]["name"],
                       url: `http://${global.serverAdress}/dragontail/img/item/${fileName}`,
-                      data: itemJSon.data[fileName.replace(".png", "")]
+                      data_api: `http://${global.serverAdress}/forbot/v1/item/${fileName.replace(".png", "")}`
                     });
                 }
                 resolve(imgUrlList);
             });
 
         })
+    })).then((imgUrlList) => res.send({item_images : imgUrlList}))
+});
+
+ /**
+  * @swagger
+  * /forbot/v1/item/{id}:
+  *   get:
+  *     summary: item에 대한 상세 정보 가져오기
+  *     tags: [Item]
+  *     parameters:
+  *       - in: path
+  *         name: id
+  *         required: true
+  *         schema:
+  *           type: string
+  *           description: item id
+  *     responses:
+  *       200:
+  *         description: 성공
+  *       403:
+  *         description: BadRequest
+  *       404:
+  *         description: NotFound
+  *       500:
+  *         description: InternalError
+  */
+  router.get(`/:id`, function(req, res){
+    global.logger.info(`[${__filename}][/${req.params.id}] `, req.headers);
+
+    (new Promise((resolve, reject) => {
+        getItemJson((itemJSon) => resolve(itemJSon.data[req.params.id]));
     })).then((imgUrlList) => res.send({item_images : imgUrlList}))
 });
 

@@ -22,9 +22,9 @@ export default function DenseTable() {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>추천 소환사 주문</TableCell>
-            <TableCell align="right">픽률</TableCell>
-            <TableCell align="right">승률</TableCell>
+            <TableCell>룰루 소환사 주문</TableCell>
+            <TableCell align="left"><img src ="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=q_auto,f_webp,w_84&v=1646907748425" height="42" width="42"></img></TableCell>
+            <TableCell align="left"><img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=q_auto,f_webp,w_84&v=1646907748425"height="42" width="42" ></img></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

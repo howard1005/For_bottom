@@ -74,12 +74,12 @@ router.get(`/img/all-url`, function(req, res){
   *       500:
   *         description: InternalError
   */
-  router.get(`/:id`, function(req, res){
-    global.logger.info(`[${__filename}][/${req.params.id}] `, req.headers);
+router.get(`/:id`, function (req, res) {
+  global.logger.info(`[${__filename}][/${req.params.id}] `, req.headers);
 
-    (new Promise((resolve, reject) => {
-        getItemJson((itemJSon) => resolve(itemJSon.data[req.params.id]));
-    })).then((imgUrlList) => res.send({item_images : imgUrlList}))
+  new Promise((resolve, reject) => {
+    getItemJson((itemJSon) => resolve(itemJSon.data[req.params.id]));
+  }).then((imgUrlList) => res.send({ item_images: imgUrlList }));
 });
 
 module.exports = router;

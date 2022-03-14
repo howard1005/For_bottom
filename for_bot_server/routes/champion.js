@@ -13,6 +13,41 @@ let getChampionJson = function(championName, cb){
 
  /**
   * @swagger
+  * /forbot/v1/champion/all-url:
+  *   get:
+  *     summary: 챔피언 모든 url 가져오기
+  *     tags: [Champion]
+  *     responses:
+  *       200:
+  *         description: 성공
+  *       403:
+  *         description: BadRequest
+  *       404:
+  *         description: NotFound
+  *       500:
+  *         description: InternalError
+  */
+  router.get(`/all-url`, function(req, res){
+    global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
+    (new Promise((resolve, reject) => {
+        imgs_path = path.join(global.dragontail_path, `/img/champion`)
+        fs.readdir(imgs_path, function(error, filelist){
+            var imgUrlList = [];
+            for (var i in filelist) {
+                var fileName = filelist[i]
+                imgUrlList.push({
+                    id : fileName.replace('.png',''), 
+                    img : `http://${global.serverAdress}/dragontail/img/champion/${fileName}`,
+                    ability : `http://${global.serverAdress}/forbot/v1/summoner/ability/${fileName.replace('.png','')}`
+                });
+            }
+            resolve(imgUrlList);
+        })
+    })).then((imgUrlList) => res.send({champion_images : imgUrlList}))
+});
+
+ /**
+  * @swagger
   * /forbot/v1/champion/img/all-url:
   *   get:
   *     summary: 챔피언 이미지의 모든 url 가져오기

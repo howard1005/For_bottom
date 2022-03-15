@@ -4,13 +4,15 @@ import {useEffect} from 'react';
 import styles from '../style/Home.module.css';
 import axios from 'axios';
 import {Typography} from '@material-ui/core'
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
 
 
 
 function Championimages(props){
   return(
     <>
-        <img className={styles.home_img} key ={props.id} src ={props.champ['url']} height='50' width='50'></img>
+        {/* <img className={styles.home_img} key ={props.id} src ={props.champ['url']} height='50' width='50'></img> */}
     </>
   );
 }
@@ -47,11 +49,24 @@ function Home (){
           
         <div className = {styles.rows}>
           {
-            filterImages.map(function(n, i){
-              return(
-                  <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
-              )
-            })
+
+              <ImageList sx={{ width: 800, height: 'auto'}} cols={10} gap ={10} rowHeight={80}>
+                {filterImages.map((item) => (
+                  <ImageListItem key={item.id}>
+                    <img
+                      src={`${item.url}?w=200&h=200&fit=crop&auto=format`}
+                      srcSet={`${item.url}?w=200&h=200&fit=crop&auto=format&dpr=2 2x`}
+                      alt={item.id}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            // filterImages.map(function(n, i){
+            //   return(
+            //       <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
+            //   )
+            // })
           }
         </div>
         

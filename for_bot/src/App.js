@@ -16,7 +16,7 @@ import ChampionInfo from './page/ChampionInfo'
 import { AnimatePresence, motion } from 'framer-motion'
 import {Drawer} from '@material-ui/core'
 
-global.serverAdress = "211.218.215.226:8081";
+global.serverAdress = "211.218.213.188:8081";
 
 const menuList ={
   0: <Home></Home>,

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import {useState}from 'react'
 import styles from '../style/InGameInfo.module.css';
-import { motion } from "framer-motion";
+import { Container } from '@mui/material';
+import {Box} from '@mui/material';
+import DenseTable from './Table.js'
+import LetterAvatars from './Avatar.js'
 
 function InGameInfo(){
 
@@ -12,18 +15,12 @@ function InGameInfo(){
     <div className={styles.ingame_font}>
       <h2>InGameInfo</h2>
     </div>
-    <div className={styles.container}>
-      <div className={styles.Info_container}>
-        <div className={styles.ingame_font}> User id </div>
-        <div className={styles.ingame_font}> Line </div>
-        <div className={styles.ingame_font}> Champion </div>
-        <div className={styles.ingame_font}> Running Time </div>
-    </div>
-        <div className ={styles.circle_wrap}> 
-          <div className={styles.circle}></div>
-          <div className={styles.circle_data}><p> {disadvantageRank} </p></div>
-        </div>
-    </div> 
+    <Container maxWidth="md">
+        <Box sx={{ bgcolor: 'white', width: '1000' ,height: '10vh' }}>
+            <DenseTable></DenseTable>
+        </Box>
+        <LetterAvatars></LetterAvatars>
+    </Container>
     </>
   )
 }

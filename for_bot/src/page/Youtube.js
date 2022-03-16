@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { motion } from "framer-motion";
 import styles from '../style/youtube.module.css';
+import YoutubeList from './YoutubeList.js'
 
 const channels = [
   {
@@ -30,18 +31,20 @@ function Youtube(){
       <div className={styles.youtube_title}><h2 >Youtube</h2></div>
         <div className = {styles.youtube_rows}>
           {
-            channels.map(function(n, i){
-              return(
-                  <>
-                  <div className={styles.youtube_container}>
-                    <div className={styles.list_container}>
-                      <div>{channels[i]['url']}</div>
-                      <img className={styles.thumbnails} alt="thumbnails" key ={channels[i]['id']} src ={channels[i]['thumbnails']} height='100' width='200' ></img>
-                    </div>
-                  </div>
-                  </>    
-              )
-            })
+            <YoutubeList></YoutubeList>
+            // channels.map(function(n, i){
+            //   return(
+            //       <>
+                  
+            //       <div className={styles.youtube_container}>
+            //         <div className={styles.list_container}>
+            //           <div>{channels[i]['url']}</div>
+            //           <img className={styles.thumbnails} alt="thumbnails" key ={channels[i]['id']} src ={channels[i]['thumbnails']} height='100' width='200' ></img>
+            //         </div>
+            //       </div>
+            //       </>    
+            //   )
+            //})
           }
         </div>
     </>

@@ -13,6 +13,29 @@ let getSummonerJson = function(cb){
 
  /**
   * @swagger
+  * /forbot/v1/summoner/all-url:
+  *   get:
+  *     summary: summoner(소환사 주문) 모든 url 가져오기
+  *     tags: [Summoner]
+  *     responses:
+  *       200:
+  *         description: 성공
+  *       403:
+  *         description: BadRequest
+  *       404:
+  *         description: NotFound
+  *       500:
+  *         description: InternalError
+  */
+  router.get(`/all-url`, function(req, res){
+    global.logger.info(`[${__filename}][/all-url] `, req.headers);
+    (new Promise((resolve, reject) => {
+        getSummonerJson((data) => resolve(data))
+    })).then((data) => res.send({summoner : data.data}))
+});
+
+ /**
+  * @swagger
   * /forbot/v1/summoner/data:
   *   get:
   *     summary: summoner(소환사 주문) 데이터 가져오기

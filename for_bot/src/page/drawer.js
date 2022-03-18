@@ -136,7 +136,7 @@ export default function Sidebar() {
           {menus.map((text, index) => (
             <ListItem button key={text.name}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {text.icons}
               </ListItemIcon>
               <Link to={text.path}>
               <ListItemText primary={text.name} />

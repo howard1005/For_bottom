@@ -3,24 +3,18 @@ import {useState, useRef}from 'react'
 import {useEffect} from 'react';
 import styles from '../style/Home.module.css';
 import axios from 'axios';
-import {Typography} from '@material-ui/core'
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import ImageView from './ImageList.js'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
-
-function Championimages(props){
-  return(
-    <>
-        {/* <img className={styles.home_img} key ={props.id} src ={props.champ['url']} height='50' width='50'></img> */}
-    </>
-  );
-}
 
 function Home (){
 
   let [champions, change_champions] = useState([]);
   const [searchField, setSearchfield] = useState("");
+  const [mateId, setMateid] = useState("");
+  let [mateImages, setMateimages] = useState([]);
   let [filterImages, setFilterimages] = useState([]);
   
   useEffect(()=>{
@@ -36,32 +30,43 @@ function Home (){
     setFilterimages(()=>
       champions.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
     );
-    
-    
   }, [searchField, champions]);
+
+  useEffect(() => {
+    setMateimages(()=>
+      champions.filter((c) => c.id.startsWith(mateId[0]))
+      //champions.filter((c) => c.id.toLowerCase().includes(mateId.toLowerCase()))
+    );
+  }, [mateId]);
+
+  function imageClick(id){
+    console.log("click");
+    console.log(id);
+
+    setMateid(id);
+  }
+
 
   return(
       <>
+          <Box
+            component="form"
+            sx={{
+              '& > :not(style)': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+            textAlign='center'
 
-          <div className={styles.home_font}>검색
-            <input placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
-          </div>
+          >
+            <TextField id="outlined-search" color = 'secondary' label="Search" type="search" onChange={(e) => setSearchfield(e.target.value)} />
+          </Box>
+         
           
         <div className = {styles.rows}>
           {
 
-              <ImageList sx={{ width: 800, height: 'auto'}} cols={10} gap ={10} rowHeight={80}>
-                {filterImages.map((item) => (
-                  <ImageListItem key={item.id}>
-                    <img
-                      src={`${item.url}?w=200&h=200&fit=crop&auto=format`}
-                      srcSet={`${item.url}?w=200&h=200&fit=crop&auto=format&dpr=2 2x`}
-                      alt={item.id}
-                      loading="lazy"
-                    />
-                  </ImageListItem>
-                ))}
-              </ImageList>
+              <ImageView items ={filterImages}></ImageView>
             // filterImages.map(function(n, i){
             //   return(
             //       <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>

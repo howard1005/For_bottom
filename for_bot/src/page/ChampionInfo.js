@@ -9,6 +9,9 @@ import { styled } from '@mui/material/styles';
 
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { useLocation } from 'react-router-dom';
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,13 +22,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function ChampionInfo (){
+    const location = useLocation();
+    const data = location.state.champName;
     return (
         <>
             <section className={styles.info_section}>
                 <img className={styles.champion_img} src="http://www.simplegame.co.kr/data/editor/1601/4980aecb2de311df98ce93789a9018a2_1453270224_21.PNG"></img>
                 <Stack spacing={2} width={100}>
-                    <Item>룰루</Item>
+                    <Item> {data}</Item>
                     <Item>챔피언 티어</Item>
+                    
                     <ImageList sx={{ width: 200, height: 50 }} cols={4} >
                         {itemData.map((item) => (
                             <ImageListItem key={item.img}>

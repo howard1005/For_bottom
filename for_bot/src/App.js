@@ -22,9 +22,8 @@ const menuList ={
   0: <Home></Home>,
   1: <InGameInfo></InGameInfo>,
   2: <Trend></Trend>,
-  3: <Mate></Mate>,
-  4: <Youtube></Youtube>,
-  5: <Board></Board>
+  3: <Youtube></Youtube>,
+  4: <Board></Board>
 }
 
 
@@ -41,7 +40,6 @@ function App() {
               <Route path="/" element={<Home/>} />
               <Route path="/InGameInfo" element={<InGameInfo/>} />
               <Route path="/Trend" element={<Trend/>} />
-              <Route path="/Mate" element={<Mate/>} />
               <Route path="/Youtube" element={<Youtube/>} />
               <Route path="/Board" element={<Board/>} />
               <Route path="/ChampionInfo" element={<ChampionInfo/>} />

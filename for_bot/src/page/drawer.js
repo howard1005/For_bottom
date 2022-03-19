@@ -86,10 +86,9 @@ export default function Sidebar() {
   };
 
   const menus = [
-    { name: "Home", path: "/", icons :<BiHomeAlt></BiHomeAlt>},
+    { name: "Mate", path: "/", icons: <FaUserFriends></FaUserFriends>},
     { name: "인게임 정보", path: "/InGameInfo", icons: <HiInformationCircle></HiInformationCircle> },
     { name: "Trend", path: "/Trend", icons: <IoMdTrendingUp></IoMdTrendingUp> },
-    { name: "Mate", path: "/Mate", icons: <FaUserFriends></FaUserFriends>},
     { name: "Youtube", path: "/Youtube", icons: <BsYoutube></BsYoutube>},
     { name: "Board", path: "/Board", icons: <IoMdClipboard></IoMdClipboard>}
   ];

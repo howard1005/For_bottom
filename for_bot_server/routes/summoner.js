@@ -31,7 +31,7 @@ let getSummonerJson = function(cb){
     global.logger.info(`[${__filename}][/all-url] `, req.headers);
     (new Promise((resolve, reject) => {
         getSummonerJson((data) => resolve(data))
-    })).then((data) => res.send({summoner : data.data}))
+    })).then((data) => res.send({data : data.data}))
 });
 
  /**
@@ -54,7 +54,7 @@ router.get(`/data`, function(req, res){
     global.logger.info(`[${__filename}][/data] `, req.headers);
     (new Promise((resolve, reject) => {
         getSummonerJson((data) => resolve(data))
-    })).then((data) => res.send({summoner : data.data}))
+    })).then((data) => res.send({data : data.data}))
 });
 
 module.exports = router;

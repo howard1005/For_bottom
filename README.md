@@ -58,3 +58,15 @@ https://codepen.io/gaearon/pen/oWWQNa?editors=0010
 ![image](https://user-images.githubusercontent.com/16042073/143766177-3cf195a5-886d-47bc-a4b1-97e384a0e40d.png)
 ![image](https://user-images.githubusercontent.com/16042073/146666643-7be8c925-a336-4141-938e-d0f899c0eebf.png)
 
+
+
+
+[Mate Logic 접근]
+1. 챔프끼리 잘 맞는다는 것의 정의 : "승률"을 기본으로 잡고, 거기서 나오는 다양한 feature들의 점수를 산정
+2. feature(유저 데이터 + 객관적 데이터)를 조합해서 추천 로직을 만든다. 
+
+[1 차 할 일]
+1. 의범 : API 리펙토링
+2. 나 : 전적 검색 페이지 만들기
+
+

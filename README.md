@@ -70,3 +70,8 @@ https://codepen.io/gaearon/pen/oWWQNa?editors=0010
 2. 나 : 전적 검색 페이지 만들기
 
 
+[승률 구하기]
+- League v4 api 에서 해당 티어 유저 가져오기 : encrypted summoner id 얻기
+- Summoner v4 api 에서 puuid 가져오기 : 해당 유저의 puuid 얻기
+- Match v5 api에서 puuid 로 match ID 가져오기 : Match ID 리스트 얻기
+- Match v5 api에서 matchID 검색 : 해당 유저의 champid(플레이한 챔피언)와 승리 여부 확인할 수 

@@ -21,8 +21,8 @@ function ImageView({items}){
                   <ImageListItem key={item.id}>
                     <Link to ='/championinfo' state={{champName : item.id}}>
                     <img
-                      src={`${item.url}?w=200&h=200&fit=crop&auto=format`}
-                      srcSet={`${item.url}?w=200&h=200&fit=crop&auto=format&dpr=2 2x`}
+                      src={`${item.img_href}?w=200&h=200&fit=crop&auto=format`}
+                      srcSet={`${item.img_href}?w=200&h=200&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.id}
                       loading="lazy"
                     />

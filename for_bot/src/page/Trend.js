@@ -21,7 +21,7 @@ function Trend(){
     navigate("/");
   }
   
-  function Championimages(props){
+function Championimages(props){
     return(
       <>
         <img className={styles.trend_img} alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
@@ -31,8 +31,8 @@ function Trend(){
 
   useEffect(()=>{
     const apiCall = async () => {
-      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
-      .then(res => change_champions(res.data.champion_images))
+      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/all-url`)
+      .then(res => change_champions(res.data.data))
       .catch(error => console.log(error))
     };
     apiCall();

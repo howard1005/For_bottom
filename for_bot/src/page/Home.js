@@ -19,8 +19,8 @@ function Home (){
   
   useEffect(()=>{
     const apiCall = async () => {
-      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
-      .then(res => change_champions(res.data.champion_images))
+      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/all-url`)
+      .then(res => change_champions(res.data.data))
       .catch(error => console.log(error))
     };
     apiCall();

@@ -30,13 +30,22 @@ let getSummonerJson = function(cb){
   router.get(`/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/all-url] `, req.headers);
     (new Promise((resolve, reject) => {
-        getSummonerJson((data) => resolve(data))
-    })).then((data) => res.send({data : data.data}))
+        getSummonerJson((data) => {
+            var urlList = [];
+            for (var i in data.data) {
+                var id = data.data[i]
+                urlList.push({
+                    id : id, 
+                    img_href : `http://${global.serverAdress}/forbot/v1/summoner/${id}`});
+            }
+            resolve(urlList);
+        })
+    })).then((urlList) => res.send({data : urlList}))
 });
 
  /**
   * @swagger
-  * /forbot/v1/summoner/data:
+  * /forbot/v1/summoner/id:
   *   get:
   *     summary: summoner(소환사 주문) 데이터 가져오기
   *     tags: [Summoner]
@@ -50,10 +59,12 @@ let getSummonerJson = function(cb){
   *       500:
   *         description: InternalError
   */
-router.get(`/data`, function(req, res){
-    global.logger.info(`[${__filename}][/data] `, req.headers);
+router.get(`/:id`, function(req, res){
+    global.logger.info(`[${__filename}][/${req.query.id}] `, req.headers);
     (new Promise((resolve, reject) => {
-        getSummonerJson((data) => resolve(data))
+        getSummonerJson((data) => {
+            resolve(data.data[`${req.query.id}`]);
+        })
     })).then((data) => res.send({data : data.data}))
 });
 

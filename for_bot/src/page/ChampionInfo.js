@@ -23,13 +23,13 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function ChampionInfo (){
     const location = useLocation();
-    const data = location.state.champName;
+    const data = location.state.champInfo;
     return (
         <>
             <section className={styles.info_section}>
-                <img className={styles.champion_img} src="http://www.simplegame.co.kr/data/editor/1601/4980aecb2de311df98ce93789a9018a2_1453270224_21.PNG"></img>
+                <img className={styles.champion_img} src={data.img_href}></img>
                 <Stack spacing={2} width={100}>
-                    <Item> {data}</Item>
+                    <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
                     
                     <ImageList sx={{ width: 200, height: 50 }} cols={4} >
@@ -37,9 +37,7 @@ function ChampionInfo (){
                             <ImageListItem key={item.img}>
                             <img
                                 src={item.img}
-                                
                                 alt={item.title}
-                                
                             />
                     </ImageListItem>
                     ))}

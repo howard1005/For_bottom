@@ -19,7 +19,7 @@ function ImageView({items}){
                 {items.map((item) => (
                     
                   <ImageListItem key={item.id}>
-                    <Link to ='/championinfo' state={{champName : item.id}}>
+                    <Link to ='/championinfo' state={{champInfo : item}}>
                     <img
                       src={`${item.img_href}?w=200&h=200&fit=crop&auto=format`}
                       srcSet={`${item.img_href}?w=200&h=200&fit=crop&auto=format&dpr=2 2x`}

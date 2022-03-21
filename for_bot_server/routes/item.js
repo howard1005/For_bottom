@@ -80,7 +80,7 @@ router.get(`/:id`, function (req, res) {
 
   new Promise((resolve, reject) => {
     getItemJson((itemJSon) => resolve(itemJSon.data[req.params.id]));
-  }).then((imgUrlList) => res.send({ item_images: imgUrlList }));
+  }).then((data) => res.send(data));
 });
 
 module.exports = router;

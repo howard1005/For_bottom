@@ -30,13 +30,12 @@ let getSummonerJson = function(cb){
   router.get(`/all-url`, function(req, res){
     global.logger.info(`[${__filename}][/all-url] `, req.headers);
     (new Promise((resolve, reject) => {
-        getSummonerJson((data) => {
+        getSummonerJson((summonerJson) => {
             var urlList = [];
-            for (var i in data.data) {
-                var id = data.data[i]
+            for (var id in summonerJson.data) {
                 urlList.push({
                     id : id, 
-                    img_href : `http://${global.serverAdress}/forbot/v1/summoner/${id}`});
+                    data_api : `http://${global.serverAdress}/forbot/v1/summoner/${id}`});
             }
             resolve(urlList);
         })
@@ -45,10 +44,17 @@ let getSummonerJson = function(cb){
 
  /**
   * @swagger
-  * /forbot/v1/summoner/id:
+  * /forbot/v1/summoner/{id}:
   *   get:
   *     summary: summoner(소환사 주문) 데이터 가져오기
   *     tags: [Summoner]
+  *     parameters:
+  *       - in: path
+  *         name: id
+  *         required: true
+  *         schema:
+  *           type: string
+  *           description: summoner id
   *     responses:
   *       200:
   *         description: 성공
@@ -60,12 +66,12 @@ let getSummonerJson = function(cb){
   *         description: InternalError
   */
 router.get(`/:id`, function(req, res){
-    global.logger.info(`[${__filename}][/${req.query.id}] `, req.headers);
+    global.logger.info(`[${__filename}][/${req.params.id}] `, req.headers);
     (new Promise((resolve, reject) => {
-        getSummonerJson((data) => {
-            resolve(data.data[`${req.query.id}`]);
+        getSummonerJson((summonerJson) => {
+            resolve(summonerJson.data[`${req.params.id}`]);
         })
-    })).then((data) => res.send({data : data.data}))
+    })).then((data) => res.send(data))
 });
 
 module.exports = router;

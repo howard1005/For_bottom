@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import styles from '../style/ChampionInfo.module.css';
 import BasicTabs from './Tabs.js'
-
+import {useState, useRef}from 'react'
+import {useEffect} from 'react';
+import axios from 'axios';
 
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -24,6 +26,17 @@ const Item = styled(Paper)(({ theme }) => ({
 function ChampionInfo (){
     const location = useLocation();
     const data = location.state.champInfo;
+    const [abilityData, setAbilitydata] = useState([]);
+
+    useEffect(()=>{
+      const apiCall = async () => {
+        await axios.get(data.ability)
+        .then(res => setAbilitydata(res.data.data))
+        .catch(error => console.log(error))
+      };
+      apiCall();
+    },[])
+
     return (
         <>
             <section className={styles.info_section}>
@@ -47,6 +60,15 @@ function ChampionInfo (){
             <section>
             <BasicTabs></BasicTabs>
             </section>
+            <p>
+
+            {/* {abilityData.map((datas) => (
+              <div className="blog-preview">
+                <p>Written by {datas}</p>
+              </div>
+            ))} */}
+
+            </p>
         </>
     );
 }

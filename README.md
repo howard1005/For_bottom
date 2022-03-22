@@ -1,6 +1,8 @@
 # For_bottom
 LOL bottom match project
 
+Realease : http://211.218.213.188:8081/
+
 ## 기반 language 고민자료 (Front:[react] - Back:[node.js or django])
 https://velog.io/@sinichy7/Django-vs-NodeJS-vs-NestJS
 http://tech.trenbe.com/?p=515

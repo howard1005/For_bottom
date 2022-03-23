@@ -30,10 +30,11 @@ function ChampionInfo (){
 
     useEffect(()=>{
       const apiCall = async () => {
-        await axios.get(data.ability)
-        .then(res => setAbilitydata(res.data.data))
+        await axios.get(`http://${global.serverAdress}/forbot/v1/champion/ability/${data.id}`)
+        .then(res => console.log(res.data.data))//setAbilitydata(res.data))
         .catch(error => console.log(error))
       };
+
       apiCall();
     },[])
 
@@ -46,29 +47,20 @@ function ChampionInfo (){
                     <Item>챔피언 티어</Item>
                     
                     <ImageList sx={{ width: 200, height: 50 }} cols={4} >
-                        {itemData.map((item) => (
-                            <ImageListItem key={item.img}>
-                            <img
-                                src={item.img}
-                                alt={item.title}
-                            />
-                    </ImageListItem>
-                    ))}
+                        {/* {abilityData.map((item) => (
+                            <ImageListItem key={item.id}>
+                                <img
+                                    src={item.img}
+                                    alt={item.title}
+                                />
+                            </ImageListItem>
+                    ))} */}
                     </ImageList>
                 </Stack>
             </section>
             <section>
             <BasicTabs></BasicTabs>
-            </section>
-            <p>
-
-            {/* {abilityData.map((datas) => (
-              <div className="blog-preview">
-                <p>Written by {datas}</p>
-              </div>
-            ))} */}
-
-            </p>
+            </section>  
         </>
     );
 }

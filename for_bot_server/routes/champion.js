@@ -38,7 +38,7 @@ let getChampionJson = function(championName, cb){
                 urlList.push({
                     id : fileName.replace('.png',''), 
                     img_href : `http://${global.serverAdress}/dragontail/img/champion/${fileName}`,
-                    ability : `http://${global.serverAdress}/forbot/v1/summoner/ability/${fileName.replace('.png','')}`
+                    ability : `http://${global.serverAdress}/forbot/v1/champion/ability/${fileName.replace('.png','')}`
                 });
             }
             resolve(urlList);

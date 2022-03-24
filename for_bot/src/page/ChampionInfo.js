@@ -12,6 +12,7 @@ import { styled } from '@mui/material/styles';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useLocation } from 'react-router-dom';
+import ImageView from './ImageList.js'
 
 
 
@@ -31,7 +32,7 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/champion/ability/${data.id}`)
-        .then(res => console.log(res.data.data))//setAbilitydata(res.data))
+        .then(res => setAbilitydata(res.data))
         .catch(error => console.log(error))
       };
 
@@ -45,17 +46,18 @@ function ChampionInfo (){
                 <Stack spacing={2} width={100}>
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
-                    
-                    <ImageList sx={{ width: 200, height: 50 }} cols={4} >
-                        {/* {abilityData.map((item) => (
-                            <ImageListItem key={item.id}>
-                                <img
-                                    src={item.img}
-                                    alt={item.title}
-                                />
-                            </ImageListItem>
-                    ))} */}
-                    </ImageList>
+                    <ImageView items ={abilityData}></ImageView>
+                    {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >
+                        {abilityData.map((item) => (
+                          <></>
+                            // <ImageListItem key={item.id}>
+                            //     <img
+                            //         src={item.img}
+                            //         alt={item.title}
+                            //     />
+                            // </ImageListItem>
+                      ))}
+                    </ImageList> */}
                 </Stack>
             </section>
             <section>

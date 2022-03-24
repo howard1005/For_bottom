@@ -35,10 +35,11 @@ let getChampionJson = function(championName, cb){
             var urlList = [];
             for (var i in filelist) {
                 var fileName = filelist[i]
+                var id = fileName.replace('.png','')
                 urlList.push({
-                    id : fileName.replace('.png',''), 
+                    id : id, 
                     img_href : `http://${global.serverAdress}/dragontail/img/champion/${fileName}`,
-                    ability : `http://${global.serverAdress}/forbot/v1/champion/ability/${fileName.replace('.png','')}`
+                    ability : `http://${global.serverAdress}/forbot/v1/champion/ability/${id}`
                 });
             }
             resolve(urlList);
@@ -72,8 +73,13 @@ let getChampionJson = function(championName, cb){
   router.get(`/ability/:id`, function(req, res){
     global.logger.info(`[${__filename}][/ability/${req.params.id}] `, req.headers);
     (new Promise((resolve, reject) => {
-        getChampionJson(req.params.id, (data) => resolve(data))
-    })).then((data) => res.send({data : data.data}))
+        getChampionJson(req.params.id, (data) => {
+            resolve(data)
+        })
+    })).then((data) => res.send({
+        data : data.data,
+        spell_base_url : `http://${global.serverAdress}/dragontail/img/spell/`
+    }))
 });
 
 module.exports = router;

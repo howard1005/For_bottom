@@ -32,7 +32,7 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/champion/ability/${data.id}`)
-        .then(res => setAbilitydata(res.data))
+        .then(res => setAbilitydata(res.data.data))
         .catch(error => console.log(error))
       };
 
@@ -43,10 +43,12 @@ function ChampionInfo (){
         <>
             <section className={styles.info_section}>
                 <img className={styles.champion_img} src={data.img_href}></img>
+                {/* <img src = {abilityData.Aatrox.image.full}></img> */}
                 <Stack spacing={2} width={100}>
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
-                    <ImageView items ={abilityData}></ImageView>
+                    
+                    {/* <ImageView items ={abilityData.Aatrox.image.full}></ImageView> */}
                     {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >
                         {abilityData.map((item) => (
                           <></>
@@ -59,6 +61,7 @@ function ChampionInfo (){
                       ))}
                     </ImageList> */}
                 </Stack>
+                
             </section>
             <section>
             <BasicTabs></BasicTabs>

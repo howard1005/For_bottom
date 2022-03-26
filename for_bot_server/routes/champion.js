@@ -78,7 +78,8 @@ let getChampionJson = function(championName, cb){
         })
     })).then((data) => res.send({
         data : data.data,
-        spell_base_url : `http://${global.serverAdress}/dragontail/img/spell/`
+        spell_img_base_url : `http://${global.serverAdress}/dragontail/img/spell/`,
+        passive_img_base_url : `http://${global.serverAdress}/dragontail/img/passive/`
     }))
 });
 

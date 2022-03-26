@@ -47,7 +47,7 @@ function ChampionInfo (){
                 <Stack spacing={2} width={100}>
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
-                    
+                    <Item>{JSON.stringify(abilityData.Aatrox)}</Item>
                     {/* <ImageView items ={abilityData.Aatrox.image.full}></ImageView> */}
                     {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >
                         {abilityData.map((item) => (

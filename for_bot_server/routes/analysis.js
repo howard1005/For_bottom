@@ -3,6 +3,13 @@ const router = express.Router();
 
 const async = require('async');
 const pythonHandler = require('../python_handler/python_handler')
+
+let riot_api = function(url, args, cb){
+    var python_args = []
+    python_args.concat(url, args)
+    pythonHandler(__dirname + "/../../riot_api/riot_dispatcher.py", python_args).then((data) => cb(null, data));
+}
+
 router.get(`/bottom-match/:champion_name`, function(req, res){
     console.log("champion name : " + req.params.champion_name)
     datas = [];

@@ -44,10 +44,11 @@ function ChampionInfo (){
             <section className={styles.info_section}>
                 <img className={styles.champion_img} src={data.img_href}></img>
                 {/* <img src = {abilityData.Aatrox.image.full}></img> */}
-                <div> {JSON.stringify(abilityData.Aatrox)}</div>
+                {/* <div> {JSON.stringify(abilityData.image)}</div> */}
                 <Stack spacing={2} width={100}>
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
+                    <ImageView items ={abilityData.image.full}></ImageView>
                     {/* <Item>{JSON.stringify(abilityData.Aatrox["image"])}</Item> */}
                     {/* <ImageView items ={abilityData.Aatrox.image.full}></ImageView> */}
                     {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >

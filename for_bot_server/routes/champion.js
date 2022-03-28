@@ -74,12 +74,18 @@ let getChampionJson = function(championName, cb){
     global.logger.info(`[${__filename}][/ability/${req.params.id}] `, req.headers);
     (new Promise((resolve, reject) => {
         getChampionJson(req.params.id, (data) => {
-            resolve(data)
+            var champInfo = data.data[`${req.params.id}`]
+            champInfo.image.full = `http://${global.serverAdress}/dragontail/img/champion/` + champInfo.image.full
+            var spells = champInfo.spells
+            for (var i in spells){
+                spells[i].image['full'] = `http://${global.serverAdress}/dragontail/img/spell/` + spells[i].image.full
+            }
+            var passive = champInfo.passive
+            passive.image.full = `http://${global.serverAdress}/dragontail/img/passive/` +  passive.image.full
+            resolve(champInfo)
         })
     })).then((data) => res.send({
-        data : data.data,
-        spell_img_base_url : `http://${global.serverAdress}/dragontail/img/spell/`,
-        passive_img_base_url : `http://${global.serverAdress}/dragontail/img/passive/`
+        data : data
     }))
 });
 

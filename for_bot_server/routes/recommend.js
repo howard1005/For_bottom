@@ -3,7 +3,8 @@ const router = express.Router();
 
 router.get(`/champions/:champion_name`, function(req, res){
     res.send({
-        opponent: `who!`
+        opponent: `who is!`,
+        weight: `추천 정도`
     });
 });
 

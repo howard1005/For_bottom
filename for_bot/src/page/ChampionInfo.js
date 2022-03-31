@@ -38,6 +38,14 @@ function ChampionInfo (){
       apiCall();
     },[])
 
+    const skillImages = () =>{
+      const result = [];
+      for (let i = 0; i < 4; i++) {
+        abilityData && result.push(<img key={i} src= {abilityData.spells[i].image.full}></img>);
+      }
+      return result;
+    }
+
     return (
         <>
             <section className={styles.info_section}>
@@ -47,7 +55,7 @@ function ChampionInfo (){
                 <Stack spacing={2} width={100}>
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
-                    { abilityData && <img src ={abilityData.image.full} ></img> }
+                    <span>{skillImages()}</span>
                     {/* <Item>{JSON.stringify(abilityData.Aatrox["image"])}</Item> */}
                     {/* <ImageView items ={abilityData.Aatrox.image.full}></ImageView> */}
                     {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >

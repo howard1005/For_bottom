@@ -13,6 +13,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useLocation } from 'react-router-dom';
 import ImageView from './ImageList.js'
+import Tooltip from '@mui/material/Tooltip';
 
 
 
@@ -41,7 +42,7 @@ function ChampionInfo (){
     const skillImages = () =>{
       const result = [];
       for (let i = 0; i < 4; i++) {
-        abilityData && result.push(<img key={i} src= {abilityData.spells[i].image.full}></img>);
+        abilityData && result.push(<Tooltip title={abilityData.spells[i].description}><img key={i} src= {abilityData.spells[i].image.full}></img></Tooltip>);
       }
       return result;
     }

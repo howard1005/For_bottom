@@ -41,8 +41,10 @@ function ChampionInfo (){
 
     const skillImages = () =>{
       const result = [];
+      
+      abilityData&&result.push(<Tooltip title={abilityData.passive.description}><img src= {abilityData.passive.image.full}></img></Tooltip>)
       for (let i = 0; i < 4; i++) {
-        abilityData && result.push(<Tooltip title={abilityData.spells[i].description}><img key={i} src= {abilityData.spells[i].image.full}></img></Tooltip>);
+        abilityData && result.push(<Tooltip title={abilityData.spells[i].description}><span><img styled="vertical-align: middle;"key={i} src= {abilityData.spells[i].image.full}></img></span></Tooltip>);
       }
       return result;
     }
@@ -53,10 +55,11 @@ function ChampionInfo (){
                 <img className={styles.champion_img} src={data.img_href}></img>
                 {/* <img src = {abilityData.Aatrox.image.full}></img> */}
                 {/* <div> {JSON.stringify(abilityData.image)}</div> */}
-                <Stack spacing={2} width={100}>
+                <Stack direction="column"spacing={1} width={100}>
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
-                    <span>{skillImages()}</span>
+                    <Stack width={400}><Item>{skillImages()}</Item></Stack>
+                    
                     {/* <Item>{JSON.stringify(abilityData.Aatrox["image"])}</Item> */}
                     {/* <ImageView items ={abilityData.Aatrox.image.full}></ImageView> */}
                     {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >

@@ -59,20 +59,6 @@ function ChampionInfo (){
                     <Item> {data.id}</Item>
                     <Item>챔피언 티어</Item>
                     <Stack width={400}><Item>{skillImages()}</Item></Stack>
-                    
-                    {/* <Item>{JSON.stringify(abilityData.Aatrox["image"])}</Item> */}
-                    {/* <ImageView items ={abilityData.Aatrox.image.full}></ImageView> */}
-                    {/* <ImageList sx={{ width: 200, height: 50 }} cols={4} >
-                        {abilityData.map((item) => (
-                          <></>
-                            // <ImageListItem key={item.id}>
-                            //     <img
-                            //         src={item.img}
-                            //         alt={item.title}
-                            //     />
-                            // </ImageListItem>
-                      ))}
-                    </ImageList> */}
                 </Stack>
                 
             </section>
@@ -82,25 +68,5 @@ function ChampionInfo (){
         </>
     );
 }
-
-const itemData = [
-    {
-      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-      title: 'Breakfast',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-      title: 'Burger',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      title: 'Camera',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-      title: 'Coffee',
-    },
-    
-  ];
 
 export default ChampionInfo;

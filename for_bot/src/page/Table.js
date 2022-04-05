@@ -7,12 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(UserId, Line, Champion, RunningTime) {
-  return { UserId, Line, Champion, RunningTime };
+function createData(champ, winrate, pickrate) {
+  return { champ, winrate, pickrate};
 }
 
 const rows = [
-  createData('Userid', 'Line', 'Champion', 'RunningTime'),
+  createData("ㅠㅁ차", '100%', '100%'),
 ];
 
 export default function DenseTable() {
@@ -21,10 +21,9 @@ export default function DenseTable() {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>UserId</TableCell>
-            <TableCell align="right">Line</TableCell>
-            <TableCell align="right">Champion</TableCell>
-            <TableCell align="right">RunningTime</TableCell>
+            <TableCell>가렌 탑 챔</TableCell>
+            <TableCell align="right">승률</TableCell>
+            <TableCell align="right">픽률</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -36,9 +35,9 @@ export default function DenseTable() {
               <TableCell component="th" scope="row">
                 {row.UserId}
               </TableCell>
-              <TableCell align="right">{row.Line}</TableCell>
-              <TableCell align="right">{row.Champion}</TableCell>
-              <TableCell align="right">{row.RunningTime}</TableCell>
+              <TableCell align="right">{row.champ}</TableCell>
+              <TableCell align="right">{row.winrate}</TableCell>
+              <TableCell align="right">{row.pickrate}</TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { makeStyles } from "@material-ui/core/styles";
 import PinnedSubheaderList from './List.js'
+import DenseTable from './Table.js'
 
 const useStyles = makeStyles({
     tabs:{
@@ -78,6 +79,7 @@ export default function BasicTabs() {
       <TabPanel value={value} index={1}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>룬</Typography>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={2}>

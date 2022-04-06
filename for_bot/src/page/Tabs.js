@@ -85,26 +85,31 @@ export default function BasicTabs() {
       <TabPanel value={value} index={2}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>카운터</Typography>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>아이템</Typography>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={4}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>스킬</Typography>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={5}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>트렌드 그래프</Typography>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={6}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>팁</Typography>
+            <DenseTable></DenseTable>
         </Box>
       </TabPanel>
     </Box>

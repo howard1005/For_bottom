@@ -12,5 +12,7 @@ let post = function(url, body, cb){ // cb(err,httpResponse,body)
     request.post(options, cb)
 }
 
-module.exports = get;
-module.exports = post;
+module.exports = { 
+    get, 
+    post 
+}

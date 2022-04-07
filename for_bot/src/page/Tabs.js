@@ -73,7 +73,9 @@ export default function BasicTabs() {
     </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-            <PinnedSubheaderList></PinnedSubheaderList>
+        <DenseTable></DenseTable>
+        <br></br>
+        <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

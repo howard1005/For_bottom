@@ -12,7 +12,7 @@ function createData(champ, winrate, pickrate) {
 }
 
 const rows = [
-  createData("ㅠㅁ차", '100%', '100%'),
+  createData("", '100%', '100%'),
 ];
 
 export default function DenseTable() {
@@ -32,10 +32,7 @@ export default function DenseTable() {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {row.UserId}
-              </TableCell>
-              <TableCell align="right">{row.champ}</TableCell>
+              <TableCell align="left">{row.champ}</TableCell>
               <TableCell align="right">{row.winrate}</TableCell>
               <TableCell align="right">{row.pickrate}</TableCell>
             </TableRow>

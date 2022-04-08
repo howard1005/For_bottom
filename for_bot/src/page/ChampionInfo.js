@@ -63,7 +63,7 @@ function ChampionInfo (){
                 
             </section>
             <section>
-            <BasicTabs></BasicTabs>
+            <BasicTabs Information = {data}></BasicTabs>
             </section>  
         </>
     );

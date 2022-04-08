@@ -50,7 +50,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({Information}) {
   const [value, setValue] = React.useState(0);
   const tabClasses = useStyles();
 

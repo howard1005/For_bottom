@@ -88,6 +88,7 @@ export default function Sidebar() {
   const menus = [
     { name: "Mate", path: "/", icons: <FaUserFriends></FaUserFriends>},
     { name: "인게임 정보", path: "/InGameInfo", icons: <HiInformationCircle></HiInformationCircle> },
+    { name: "전적 검색", path: "/Summoner", icons: <HiInformationCircle></HiInformationCircle> },
     { name: "Trend", path: "/Trend", icons: <IoMdTrendingUp></IoMdTrendingUp> },
     { name: "Youtube", path: "/Youtube", icons: <BsYoutube></BsYoutube>},
     { name: "Board", path: "/Board", icons: <IoMdClipboard></IoMdClipboard>}

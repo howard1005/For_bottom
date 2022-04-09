@@ -13,7 +13,10 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useLocation } from 'react-router-dom';
 import ImageView from './ImageList.js'
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip , {tooltipClasses}from '@mui/material/Tooltip';
+import { blue } from "@mui/material/colors";
+import Typography from '@mui/material/Typography';
+import ReactHtmlParser from 'react-html-parser';
 
 
 
@@ -25,10 +28,25 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+const HtmlTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: 'Gray',
+    color: 'rgba(0, 0, 0, 0.87)',
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: '1px solid #dadde9',
+  },
+}));
+
+
+
 function ChampionInfo (){
     const location = useLocation();
     const data = location.state.champInfo;
     const [abilityData, setAbilitydata] = useState(null);
+    const [summonerSpellData, setSummonerSpellData] = useState(null);
 
     useEffect(()=>{
       const apiCall = async () => {
@@ -39,12 +57,36 @@ function ChampionInfo (){
       apiCall();
     },[])
 
+    useEffect(()=>{
+      const apiCall = async () => {
+        await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
+        .then((json) => setSummonerSpellData(json.data.data))
+        .catch(error => console.log(error))
+      };
+      apiCall();
+    },[])
+
     const skillImages = () =>{
       const result = [];
       
-      abilityData&&result.push(<Tooltip title={abilityData.passive.description}><img src= {abilityData.passive.image.full}></img></Tooltip>)
+      abilityData&&result.push(
+      <HtmlTooltip title={
+      <React.Fragment>
+        <Typography color="Orange" sx={{ fontWeight: 'bold' }}>{ReactHtmlParser(abilityData.passive.name)} </Typography>
+        <Typography color ="white" sx={{ fontFamily: 'Monospace'}, {fontSize: 12}}>{abilityData.passive.description} </Typography>
+      </React.Fragment>}>
+        <img src= {abilityData.passive.image.full}></img>
+      </HtmlTooltip>)
       for (let i = 0; i < 4; i++) {
-        abilityData && result.push(<Tooltip title={abilityData.spells[i].description}><span><img styled="vertical-align: middle;"key={i} src= {abilityData.spells[i].image.full}></img></span></Tooltip>);
+      
+      abilityData&&result.push(<HtmlTooltip title={
+          <React.Fragment>
+            <Typography color="Orange" sx={{ fontWeight: 'bold' }}>{abilityData.spells[i].name} </Typography>
+            <Typography color ="white" sx={{ fontFamily: 'Monospace'}, {fontSize: 12}}> {abilityData.spells[i].description} </Typography>
+          </React.Fragment>}>
+          <span><img styled="vertical-align: middle;"key={i} src= {abilityData.spells[i].image.full}></img></span>
+        </HtmlTooltip>
+      )
       }
       return result;
     }

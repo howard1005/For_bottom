@@ -73,9 +73,9 @@ export default function BasicTabs({Information}) {
     </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-        <DenseTable></DenseTable>
+        <DenseTable Information={Information}></DenseTable>
         <br></br>
-        <DenseTable></DenseTable>
+        <DenseTable Information={Information}></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

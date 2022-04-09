@@ -15,13 +15,13 @@ const rows = [
   createData("", '100%', '100%'),
 ];
 
-export default function DenseTable() {
+export default function DenseTable({Information}) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>가렌 탑 챔</TableCell>
+            <TableCell>{Information && Information.id} 탑 챔</TableCell>
             <TableCell align="right">승률</TableCell>
             <TableCell align="right">픽률</TableCell>
           </TableRow>

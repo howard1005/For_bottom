@@ -73,7 +73,7 @@ function ChampionInfo (){
       <HtmlTooltip title={
       <React.Fragment>
         <Typography color="Orange" sx={{ fontWeight: 'bold' }}>{ReactHtmlParser(abilityData.passive.name)} </Typography>
-        <Typography color ="white" sx={{ fontFamily: 'Monospace'}, {fontSize: 12}}>{abilityData.passive.description} </Typography>
+        <Typography color ="white" sx={{ fontFamily: 'Monospace'}, {fontSize: 12}}>{ReactHtmlParser(abilityData.passive.description)} </Typography>
       </React.Fragment>}>
         <img src= {abilityData.passive.image.full}></img>
       </HtmlTooltip>)
@@ -81,8 +81,8 @@ function ChampionInfo (){
       
       abilityData&&result.push(<HtmlTooltip title={
           <React.Fragment>
-            <Typography color="Orange" sx={{ fontWeight: 'bold' }}>{abilityData.spells[i].name} </Typography>
-            <Typography color ="white" sx={{ fontFamily: 'Monospace'}, {fontSize: 12}}> {abilityData.spells[i].description} </Typography>
+            <Typography color="Orange" sx={{ fontWeight: 'bold' }}>{ReactHtmlParser(abilityData.spells[i].name)} </Typography>
+            <Typography color ="white" sx={{ fontFamily: 'Monospace'}, {fontSize: 12}}> {ReactHtmlParser(abilityData.spells[i].description)} </Typography>
           </React.Fragment>}>
           <span><img styled="vertical-align: middle;"key={i} src= {abilityData.spells[i].image.full}></img></span>
         </HtmlTooltip>

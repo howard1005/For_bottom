@@ -6,6 +6,7 @@ const itemRouter = require('./routes/item');
 const passiveRouter = require('./routes/passive');
 const spellRouter = require('./routes/spell');
 const summonerRouter = require('./routes/summoner');
+const matchRouter = require('./routes/match');
 
 const sequelize = require('./models').sequelize;
 const path = require("path");
@@ -49,5 +50,6 @@ app.use('/forbot/v1/item', itemRouter);
 app.use('/forbot/v1/passive', passiveRouter);
 app.use('/forbot/v1/spell', spellRouter);
 app.use('/forbot/v1/summoner', summonerRouter);
+app.use('/forbot/v1/match', matchRouter);
 
 app.use('*', indexRouter);

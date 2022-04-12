@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {useState, useRef}from 'react'
 import {useEffect} from 'react';
 import { styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -44,6 +45,8 @@ function MatchCard(){
 
 function Summoner(){
 
+  const [searchField, setSearchfield] = useState("");
+
   const matchCards = () =>{
     const result = [MatchCard(), MatchCard()];
   
@@ -56,6 +59,19 @@ function Summoner(){
 
   return(
       <>
+        <Box
+          component="form"
+          sx={{
+            '& > :not(style)': { m: 1, width: '25ch' },
+          }}
+          noValidate
+          autoComplete="off"
+          textAlign='center'
+
+        >
+          <TextField id="outlined-search" color = 'secondary' label="Search" type="search" onChange={(e) => setSearchfield(e.target.value)} />
+        </Box>
+
         <Box sx={{ flexGrow: 1, overflow: 'hidden', px: 3 }}>
           {matchCards()}
         </Box>

@@ -105,7 +105,7 @@ function ChampionInfo (){
                 
             </section>
             <section>
-            <BasicTabs Information = {data}></BasicTabs>
+            <BasicTabs Information = {data} spells = {summonerSpellData}></BasicTabs>
             </section>  
         </>
     );

@@ -11,11 +11,14 @@ function createData(champ, winrate, pickrate) {
   return { champ, winrate, pickrate};
 }
 
-const rows = [
-  createData("", '100%', '100%'),
-];
 
-export default function DenseTable({Information}) {
+
+export default function DenseTable({Information}, {spells}) {
+  console.log(spells&& spells.id)
+  const rows = [
+    
+    createData(spells && spells, '100%', '100%'),
+  ];
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">

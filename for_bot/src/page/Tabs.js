@@ -50,7 +50,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs({Information}) {
+export default function BasicTabs({Information}, {spells}) {
   const [value, setValue] = React.useState(0);
   const tabClasses = useStyles();
 
@@ -73,9 +73,9 @@ export default function BasicTabs({Information}) {
     </Box>
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-        <DenseTable Information={Information}></DenseTable>
+        <DenseTable Information={Information} spells = {spells}></DenseTable>
         <br></br>
-        <DenseTable Information={Information}></DenseTable>
+        <DenseTable Information={Information} spells = {spells}></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

@@ -14,10 +14,9 @@ function createData(champ, winrate, pickrate) {
 
 
 export default function DenseTable({Information}, {spells}) {
-  console.log(spells&& spells.id)
+  
   const rows = [
-    
-    createData(spells && spells, '100%', '100%'),
+    createData(spells && spells[0], '100%', '100%'),
   ];
   return (
     <TableContainer component={Paper}>
@@ -25,7 +24,7 @@ export default function DenseTable({Information}, {spells}) {
         <TableHead>
           <TableRow>
             <TableCell>{Information && Information.id} 탑 챔</TableCell>
-            <TableCell align="right">승률</TableCell>
+            <TableCell align="right">{spells && spells[0]}승률</TableCell>
             <TableCell align="right">픽률</TableCell>
           </TableRow>
         </TableHead>

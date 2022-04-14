@@ -69,8 +69,10 @@ export default function BasicTabs({Information}, {spells}) {
           <Tab label="스킬" {...a11yProps(5)} />
           <Tab label="트렌드 그래프" {...a11yProps(6)} />
           <Tab label="팁" {...a11yProps(7)} />
+          <Tab label={spells} {...a11yProps(8)} />
         </Tabs>
     </Box>
+   
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
         <DenseTable Information={Information} spells = {spells}></DenseTable>
@@ -111,6 +113,12 @@ export default function BasicTabs({Information}, {spells}) {
       <TabPanel value={value} index={6}>
         <Box clone p ={5} mx={2} my={3}>
             <Typography>팁</Typography>
+            <DenseTable></DenseTable>
+        </Box>
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        <Box clone p ={5} mx={2} my={3}>
+            <Typography></Typography>
             <DenseTable></DenseTable>
         </Box>
       </TabPanel>

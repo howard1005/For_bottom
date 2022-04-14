@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {useState, useRef}from 'react'
 import {useEffect} from 'react';
+import axios from 'axios';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -17,7 +18,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
-function MatchCard(){
+function MatchCard(matchData){
 
   var message = "image skill status..."
 
@@ -46,10 +47,20 @@ function MatchCard(){
 function Summoner(){
 
   const [searchField, setSearchfield] = useState("");
+  const [matchDatas, setmatchDatas] = useState([]);
+
+  useEffect(()=>{
+    const apiCall = async () => {
+      await axios.get(`http://${global.serverAdress}/forbot/v1/match/{name}`)
+      .then(res => setmatchDatas(res))
+      .catch(error => console.log(error))
+    };
+    apiCall();
+  },[])
 
   const matchCards = () =>{
-    const result = [MatchCard(), MatchCard()];
-  
+    const result = matchDatas.map(matchData => MatchCard(matchData));
+
     /*
       result MatchCard set
     */

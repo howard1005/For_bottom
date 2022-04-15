@@ -51,7 +51,7 @@ function Summoner(){
 
   useEffect(()=>{
     const apiCall = async () => {
-      await axios.get(`http://${global.serverAdress}/forbot/v1/match/{name}`)
+      await axios.get(`http://${global.serverAdress}/forbot/v1/match/${searchField}`)
       .then(res => setmatchDatas(res))
       .catch(error => console.log(error))
     };

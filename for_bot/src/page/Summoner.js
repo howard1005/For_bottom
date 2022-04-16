@@ -55,11 +55,11 @@ function Summoner(){
       .then(res => setmatchDatas(res))
       .catch(error => console.log(error))
     };
-    apiCall();
+    searchField && apiCall();
   },[])
 
   const matchCards = () =>{
-    const result = matchDatas.map(matchData => MatchCard(matchData));
+    const result = matchDatas.length>0 ? matchDatas.map(matchData => MatchCard(matchData)) : matchDatas
 
     /*
       result MatchCard set

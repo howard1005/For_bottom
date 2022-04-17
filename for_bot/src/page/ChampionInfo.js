@@ -60,7 +60,7 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-        .then((json) => setSummonerSpellData(json.data.data))
+        .then((json) => setSummonerSpellData(json.data.data))//console.log ("dfdf");
         .catch(error => console.log(error))
       };
       apiCall();

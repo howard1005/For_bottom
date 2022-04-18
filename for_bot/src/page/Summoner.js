@@ -47,7 +47,7 @@ function MatchCard(matchData){
 function Summoner(){
 
   const [searchField, setSearchfield] = useState("");
-  const [matchDatas, setmatchDatas] = useState([]);
+  const [matchDatas, setmatchDatas] = useState([{id:1}, {id:2}]);
 
   useEffect(()=>{
     const apiCall = async () => {

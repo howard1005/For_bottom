@@ -18,6 +18,15 @@ import { blue } from "@mui/material/colors";
 import Typography from '@mui/material/Typography';
 import ReactHtmlParser from 'react-html-parser';
 
+import create from 'zustand'
+
+const useStore = create((set)=>({
+  abilityData : null,
+  setAbilitydata(){
+    set((state) => ({abilityData :state.abilityData}))
+  }
+}))
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -45,7 +54,8 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 function ChampionInfo (){
     const location = useLocation();
     const data = location.state.champInfo;
-    const [abilityData, setAbilitydata] = useState(null);
+    //const [abilityData, setAbilitydata] = useState(null);
+    const {abilityData, setAbilitydata} = useStore();
     const [summonerSpellData, setSummonerSpellData] = useState(null);
 
     useEffect(()=>{

@@ -56,7 +56,7 @@ function Summoner(){
       .catch(error => console.log(error))
     };
     searchField && apiCall();
-  },[])
+  },[searchField])
 
   const matchCards = () =>{
     const result = matchDatas.length>0 ? matchDatas.map(matchData => MatchCard(matchData)) : matchDatas

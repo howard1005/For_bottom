@@ -20,12 +20,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 import create from 'zustand'
 
-const useStore = create((set)=>({
-  abilityData : null,
-  setAbilitydata(){
-    set((state) => ({abilityData :state.abilityData}))
-  }
-}))
+
 
 
 
@@ -57,6 +52,15 @@ function ChampionInfo (){
     //const [abilityData, setAbilitydata] = useState(null);
     const {abilityData, setAbilitydata} = useStore();
     const [summonerSpellData, setSummonerSpellData] = useState(null);
+
+
+  const useStore = create((set) => ({
+    abilityData: {},
+    fetch: async (pond) => {
+      const response = await fetch(axios.get(`http://${global.serverAdress}/forbot/v1/champion/ability/${data.id}`))
+      set({ abilityData: await response.json() })
+    },
+  }))
 
     useEffect(()=>{
       const apiCall = async () => {

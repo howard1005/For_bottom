@@ -21,7 +21,9 @@ import ReactHtmlParser from 'react-html-parser';
 import create from 'zustand'
 
 
-
+const useStore = create(() => ({
+  abilityData: null,
+}));
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -54,18 +56,10 @@ function ChampionInfo (){
     const [summonerSpellData, setSummonerSpellData] = useState(null);
 
 
-  const useStore = create((set) => ({
-    abilityData: {},
-    fetch: async (pond) => {
-      const response = await fetch(axios.get(`http://${global.serverAdress}/forbot/v1/champion/ability/${data.id}`))
-      set({ abilityData: await response.json() })
-    },
-  }))
-
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/champion/ability/${data.id}`)
-        .then((json) => setAbilitydata(json.data.data))
+        .then((json) => useStore.setState({abilityData : json.data.data}))
         .catch(error => console.log(error))
       };
       apiCall();

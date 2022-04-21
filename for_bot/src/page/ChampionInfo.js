@@ -23,6 +23,7 @@ import create from 'zustand'
 
 const useStore = create(() => ({
   abilityData: null,
+  summonerSpellData: null,
 }));
 
 
@@ -52,9 +53,8 @@ function ChampionInfo (){
     const location = useLocation();
     const data = location.state.champInfo;
     //const [abilityData, setAbilitydata] = useState(null);
-    const {abilityData, setAbilitydata} = useStore();
-    const [summonerSpellData, setSummonerSpellData] = useState(null);
-
+    const {abilityData} = useStore();
+    const {summonerSpellData} = useStore();
 
     useEffect(()=>{
       const apiCall = async () => {
@@ -68,7 +68,7 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-        .then((json) => setSummonerSpellData(json.data.data))//console.log ("dfdf");
+        .then((json) => useStore.setState({summonerSpellData : json.data.data}))//console.log ("dfdf");
         .catch(error => console.log(error))
       };
       apiCall();
@@ -113,7 +113,7 @@ function ChampionInfo (){
                 
             </section>
             <section>
-            <BasicTabs Information = {data} spells = {summonerSpellData}></BasicTabs>
+            <BasicTabs Information = {data}></BasicTabs>
             </section>  
         </>
     );

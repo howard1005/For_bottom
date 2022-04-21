@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import { makeStyles } from "@material-ui/core/styles";
 import PinnedSubheaderList from './List.js'
 import DenseTable from './Table.js'
-
+import create from 'zustand'
 const useStyles = makeStyles({
     tabs:{
         width:1500,
@@ -50,9 +50,10 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs({Information}, {spells}) {
+export default function BasicTabs({Information}) {
   const [value, setValue] = React.useState(0);
   const tabClasses = useStyles();
+  //const {summonerSpellData} = useStore();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -69,15 +70,15 @@ export default function BasicTabs({Information}, {spells}) {
           <Tab label="스킬" {...a11yProps(5)} />
           <Tab label="트렌드 그래프" {...a11yProps(6)} />
           <Tab label="팁" {...a11yProps(7)} />
-          <Tab label={spells} {...a11yProps(8)} />
+          <Tab label="text" {...a11yProps(8)} />
         </Tabs>
     </Box>
    
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-        <DenseTable Information={Information} spells = {spells}></DenseTable>
+        <DenseTable Information={Information}></DenseTable>
         <br></br>
-        <DenseTable Information={Information} spells = {spells}></DenseTable>
+        <DenseTable Information={Information}></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

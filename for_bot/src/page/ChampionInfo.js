@@ -21,7 +21,7 @@ import ReactHtmlParser from 'react-html-parser';
 import create from 'zustand'
 
 
-const useStore = create(() => ({
+export const useStore = create(() => ({
   abilityData: null,
   summonerSpellData: null,
 }));

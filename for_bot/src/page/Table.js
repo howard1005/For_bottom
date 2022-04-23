@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import useStore from './ChampionInfo'
 
 function createData(champ, winrate, pickrate) {
   return { champ, winrate, pickrate};
@@ -14,9 +15,11 @@ function createData(champ, winrate, pickrate) {
 
 
 export default function DenseTable({Information}) {
+  const {summonerSpellData} = useStore();
   
+  console.log({summonerSpellData})
   const rows = [
-    createData('gg', '100%', '100%'),
+    createData('dfdf', '100%', '100%'),
   ];
   return (
     <TableContainer component={Paper}>

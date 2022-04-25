@@ -74,7 +74,7 @@ function Summoner(){
           textAlign='center'
 
         >
-          <TextField id="outlined-search" color = 'secondary' label="Search" type="search" onChange={(e) => setSearchfield(e.target.value)} />
+          <TextField id="outlined-search" color = 'secondary' label="Search Summoner Name" type="search" onChange={(e) => setSearchfield(e.target.value)} />
           <Button variant="contained" onClick={searchMatchDatas}>검색</Button>
         </Box>
 

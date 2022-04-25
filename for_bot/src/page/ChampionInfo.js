@@ -68,7 +68,7 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-        .then((json) => useStore.setState({summonerSpellData : json.data.data}))//console.log ("dfdf");
+        .then((json) => console.log (json.data))
         .catch(error => console.log(error))
       };
       apiCall();
@@ -114,7 +114,8 @@ function ChampionInfo (){
             </section>
             <section>
             <BasicTabs Information = {data}></BasicTabs>
-            </section>  
+            </section>
+            {summonerSpellData}
         </>
     );
 }

@@ -23,7 +23,7 @@ import create from 'zustand'
 
 export const useStore = create(() => ({
   abilityData: null,
-  summonerSpellData: null,
+  summonerSpellData: [],
 }));
 
 
@@ -68,9 +68,10 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-        .then((json) => console.log (json.data))
+        .then((json) => summonerSpellData.concat(json.data.data))
         .catch(error => console.log(error))
       };
+      
       apiCall();
     },[])
 

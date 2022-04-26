@@ -48,7 +48,7 @@ function MatchCard(matchData){
 function Summoner(){
 
   const [searchField, setSearchfield] = useState("");
-  const [matchDatas, setmatchDatas] = useState([{id:1}, {id:2}, {id:3}]);
+  const [matchDatas, setmatchDatas] = useState([{red:[1,2,3], blue:[4,5,6]}, {red:[1,2,3], blue:[4,5,6]}, {red:[1,2,3], blue:[4,5,6]}]);
 
   const searchMatchDatas = async () => {
     await axios.get(`http://${global.serverAdress}/forbot/v1/match/${searchField}`)

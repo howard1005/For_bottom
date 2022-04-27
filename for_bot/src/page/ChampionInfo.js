@@ -20,10 +20,9 @@ import ReactHtmlParser from 'react-html-parser';
 
 import create from 'zustand'
 
-
 export const useStore = create(() => ({
   abilityData: null,
-  summonerSpellData: [],
+  //summonerSpellData = splleData,
 }));
 
 
@@ -68,7 +67,7 @@ function ChampionInfo (){
     useEffect(()=>{
       const apiCall = async () => {
         await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-        .then((json) => summonerSpellData.concat(json.data.data))
+        .then((json) => console.log(1)) //useStore.setState({summonerSpellData = JSON.parse(JSON.stringify(json.data.data))}))
         .catch(error => console.log(error))
       };
       

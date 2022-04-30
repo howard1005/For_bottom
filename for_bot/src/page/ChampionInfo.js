@@ -20,9 +20,14 @@ import ReactHtmlParser from 'react-html-parser';
 
 import create from 'zustand'
 
-export const useStore = create(() => ({
+export const useStore = create((set) => ({
   abilityData: null,
-  //summonerSpellData = splleData,
+  summonerSpellData: {},
+  // fetch: async (pond) => {
+  //   const response = await axios.get(pond)
+  //     .then((response) => summonerSpellData : JSON.parse(JSON.stringify(json.data.data))) //useStore.setState({summonerSpellData = JSON.parse(JSON.stringify(json.data.data))}))
+  //     .catch(error => console.log(error))
+  // },
 }));
 
 
@@ -53,7 +58,8 @@ function ChampionInfo (){
     const data = location.state.champInfo;
     //const [abilityData, setAbilitydata] = useState(null);
     const {abilityData} = useStore();
-    const {summonerSpellData} = useStore();
+    const {summonerSpellData, fetch} = useStore();
+    
 
     useEffect(()=>{
       const apiCall = async () => {
@@ -64,15 +70,17 @@ function ChampionInfo (){
       apiCall();
     },[])
 
-    useEffect(()=>{
-      const apiCall = async () => {
-        await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-        .then((json) => console.log(1)) //useStore.setState({summonerSpellData = JSON.parse(JSON.stringify(json.data.data))}))
-        .catch(error => console.log(error))
-      };
+    fetch(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`);
+
+    // useEffect(()=>{
+    //   const apiCall = async () => {
+    //     await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
+    //     .then((json) => JSON.parse(JSON.stringify(json.data.data))))) //useStore.setState({summonerSpellData = JSON.parse(JSON.stringify(json.data.data))}))
+    //     .catch(error => console.log(error))
+    //   };
       
-      apiCall();
-    },[])
+    //   apiCall();
+    // },[])
 
     const skillImages = () =>{
       const result = [];

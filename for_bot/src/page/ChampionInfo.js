@@ -30,6 +30,20 @@ export const useStore = create((set) => ({
   // },
 }));
 
+// const planetNames = useStore((state) => state.planetNames);
+// const setPlanetNames = useStore((state) => state.setPlanetNames);
+
+// useEffect(() => {
+//     const populatePlanetsFromAPI = async () => {
+//         const planetsData = await (
+//             await fetch("https://swapi.dev/api/planets")
+//         ).json();
+//         setPlanetNames(planetsData.results.map((pd: any) => pd.name));
+//     };
+
+//     populatePlanetsFromAPI();
+// }, []);
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

@@ -137,7 +137,7 @@ function ChampionInfo (){
                 
             </section>
             <section>
-            {summonerSpellData}
+            {useStore(state=>state.getSummonerSpellData)}
             <BasicTabs Information = {data}></BasicTabs>
             </section>
             

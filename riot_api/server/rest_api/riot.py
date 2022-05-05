@@ -11,3 +11,7 @@ def index(request):
 def get_summoner(request, name):
     if 'name' is not None:
         return riotApi.get_summoner_by_summoner_name(name)
+
+def get_league_entries(request, name):
+    if 'name' is not None:
+        return riotApi.get_league_entries_by_summoner_name(name)

@@ -28,6 +28,7 @@ export const useStore = create((set) => ({
   getSummonerSpellData: async ()=> {
     const response = await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
     set({ summonerSpellData: response.data.data })
+    //어캐하는거야
   }
   
 }));

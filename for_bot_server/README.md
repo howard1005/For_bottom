@@ -14,6 +14,9 @@ or
 npm start
 ```
 
+## Swagger
+- http://211.218.213.188:8081/api-docs/
+
 ## Nodejs 기본소양
 - https://myeonguni.tistory.com/1582
 

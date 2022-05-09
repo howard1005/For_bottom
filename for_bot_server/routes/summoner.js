@@ -31,13 +31,7 @@ let getSummonerJson = function(cb){
     global.logger.info(`[${__filename}][/all-url] `, req.headers);
     (new Promise((resolve, reject) => {
         getSummonerJson((summonerJson) => {
-            var urlList = [];
-            for (var id in summonerJson.data) {
-                urlList.push({
-                    id : id, 
-                    data_api : `http://${global.serverAdress}/forbot/v1/summoner/${id}`});
-            }
-            resolve(urlList);
+            resolve(summonerJson.data);
         })
     })).then((urlList) => res.send({data : urlList}))
 });

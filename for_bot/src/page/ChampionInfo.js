@@ -11,7 +11,7 @@ import { styled } from '@mui/material/styles';
 
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ImageView from './ImageList.js'
 import Tooltip , {tooltipClasses}from '@mui/material/Tooltip';
 import { blue } from "@mui/material/colors";
@@ -24,13 +24,7 @@ import create from 'zustand'
 
 export const useStore = create((set) => ({
   abilityData: null,
-  summonerSpellData: [],
-  getSummonerSpellData: async ()=> {
-    const response = await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-    set({ summonerSpellData: response.data.data })
-    //어캐하는거야
-  }
-  
+  summonerSpellData: null,
 }));
 
 // const planetNames = useStore((state) => state.planetNames);
@@ -76,9 +70,9 @@ function ChampionInfo (){
     //const [abilityData, setAbilitydata] = useState(null);
     
     const {abilityData} = useStore();
+    const {summonerSpellData} = useStore();
     
     
-    const {summonerSpellData} = useStore(state => state.getSummonerSpellData)
 
     useEffect(()=>{
       const apiCall = async () => {
@@ -89,15 +83,15 @@ function ChampionInfo (){
       apiCall();
     },[])
 
-    // useEffect(()=>{
-    //   const apiCall = async () => {
-    //     await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
-    //     .then((json) => JSON.parse(JSON.stringify(json.data.data))))) //useStore.setState({summonerSpellData = JSON.parse(JSON.stringify(json.data.data))}))
-    //     .catch(error => console.log(error))
-    //   };
+    useEffect(()=>{
+      const apiCall = async () => {
+        await axios.get(`http://${global.serverAdress}/forbot/v1/summoner/all-url/`)
+        .then((json) => useStore.setState({summonerSpellData: json.data.data}))//useStore.setState({summonerSpellData = JSON.parse(JSON.stringify(json.data.data))}))
+        .catch(error => console.log(error))
+      };
       
-    //   apiCall();
-    // },[])
+      apiCall();
+    },[])
 
     const skillImages = () =>{
       const result = [];
@@ -138,8 +132,8 @@ function ChampionInfo (){
                 
             </section>
             <section>
-            {useStore(state=>state.getSummonerSpellData)}
-            <BasicTabs Information = {data}></BasicTabs>
+              {summonerSpellData && summonerSpellData.SummonerBarrier.id}
+              <BasicTabs Information = {data}></BasicTabs>
             </section>
             
         </>

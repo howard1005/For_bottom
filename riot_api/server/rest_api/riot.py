@@ -15,3 +15,10 @@ def get_summoner(request, name):
 def get_league_entries(request, name):
     if 'name' is not None:
         return riotApi.get_league_entries_by_summoner_name(name)
+
+def get_all_league_entries(request, tier, division):
+    return riotApi.get_all_league_entries(tier, division)
+
+
+def get_matchs(request, name):
+    return riotApi.get_matchs_by_summoner_name(name)

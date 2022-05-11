@@ -11,18 +11,6 @@ let getSummonerJson = function(cb){
     })
 }
 
-// getChampionJson(req.params.id, (data) => {
-//     var champInfo = data.data[`${req.params.id}`]
-//     champInfo.image.full = `http://${global.serverAdress}/dragontail/img/champion/` + champInfo.image.full
-//     var spells = champInfo.spells
-//     for (var i in spells){
-//         spells[i].image['full'] = `http://${global.serverAdress}/dragontail/img/spell/` + spells[i].image.full
-//     }
-//     var passive = champInfo.passive
-//     passive.image.full = `http://${global.serverAdress}/dragontail/img/passive/` +  passive.image.full
-//     resolve(champInfo)
-// })
-
  /**
   * @swagger
   * /forbot/v1/summoner/all-url:
@@ -45,7 +33,8 @@ let getSummonerJson = function(cb){
         getSummonerJson((summonerJson) => {
             for (var i in summonerJson.data){
                 summonerSpell = summonerJson.data[i]
-                summonerSpell.image.full = `http://${global.serverAdress}/dragontail/img/champion/` + summonerSpell.image.full
+                summonerSpell.image.full = `http://${global.serverAdress}/dragontail/img/spell/` + summonerSpell.image.full
+                summonerSpell.image.sprite = `http://${global.serverAdress}/dragontail/img/sprite/` + summonerSpell.image.sprite
             }
             resolve(summonerJson.data);
         })

@@ -132,7 +132,7 @@ function ChampionInfo (){
                 
             </section>
             <section>
-              {summonerSpellData && summonerSpellData.SummonerBarrier.image.full}
+              <img src ={summonerSpellData && summonerSpellData.SummonerBarrier.image.full}></img>
               <BasicTabs Information = {data}></BasicTabs>
             </section>
             

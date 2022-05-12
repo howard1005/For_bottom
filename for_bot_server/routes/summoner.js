@@ -31,6 +31,11 @@ let getSummonerJson = function(cb){
     global.logger.info(`[${__filename}][/all-url] `, req.headers);
     (new Promise((resolve, reject) => {
         getSummonerJson((summonerJson) => {
+            for (var i in summonerJson.data){
+                summonerSpell = summonerJson.data[i]
+                summonerSpell.image.full = `http://${global.serverAdress}/dragontail/img/spell/` + summonerSpell.image.full
+                summonerSpell.image.sprite = `http://${global.serverAdress}/dragontail/img/sprite/` + summonerSpell.image.sprite
+            }
             resolve(summonerJson.data);
         })
     })).then((urlList) => res.send({data : urlList}))

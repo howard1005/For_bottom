@@ -9,7 +9,6 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -48,13 +47,17 @@ function MatchCard(matchData){
 function Summoner(){
 
   const [searchField, setSearchfield] = useState("");
-  const [matchDatas, setmatchDatas] = useState([{red:[1,2,3,4,5], blue:[6,7,8,9,10]}, {red:[1,2,3,4,5], blue:[6,7,8,9,10]}]);
+  const [matchDatas, setmatchDatas] = useState([{id:1}, {id:2}, {id:3}]);
 
-  const searchMatchDatas = async () => {
-    await axios.get(`http://${global.serverAdress}/forbot/v1/match/${searchField}`)
-    .then(res => setmatchDatas(res))
-    .catch(error => console.log(error))
-  }
+  // 버튼 구현 필요
+  useEffect(()=>{
+    const apiCall = async () => {
+      await axios.get(`http://${global.serverAdress}/forbot/v1/match/${searchField}`)
+      .then(res => setmatchDatas(res))
+      .catch(error => console.log(error))
+    };
+    searchField && apiCall();
+  },[searchField])
 
   const matchCards = () =>{
     const result = matchDatas.length>0 ? matchDatas.map(matchData => MatchCard(matchData)) : matchDatas
@@ -74,8 +77,7 @@ function Summoner(){
           textAlign='center'
 
         >
-          <TextField id="outlined-search" color = 'secondary' label="Search Summoner Name" type="search" onChange={(e) => setSearchfield(e.target.value)} />
-          <Button variant="contained" onClick={searchMatchDatas}>검색</Button>
+          <TextField id="outlined-search" color = 'secondary' label="Search" type="search" onChange={(e) => setSearchfield(e.target.value)} />
         </Box>
 
         <Box sx={{ flexGrow: 1, overflow: 'hidden', px: 3 }}>

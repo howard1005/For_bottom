@@ -9,7 +9,7 @@ import LetterAvatars from './Avatar.js'
 function InGameInfo(){
 
   let [disadvantageRank, setDisadvantageRank] = useState('매우 불리');
-
+  
   return (
     <>
     <div className={styles.ingame_font}>

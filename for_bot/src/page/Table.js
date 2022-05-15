@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import useStore from './ChampionInfo'
+import {useStore} from './ChampionInfo'
 
 function createData(champ, winrate, pickrate) {
   return { champ, winrate, pickrate};
@@ -15,18 +15,21 @@ function createData(champ, winrate, pickrate) {
 
 
 export default function DenseTable({Information}) {
+
   const {summonerSpellData} = useStore();
+  const {information} = useStore();
   
-  console.log({summonerSpellData})
   const rows = [
-    createData('dfdf', '100%', '100%'),
+    createData(<img src = {summonerSpellData && summonerSpellData.SummonerBarrier.image.full}></img>
+      , '100%', '100%'),
   ];
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>{Information && Information.id} 탑 챔</TableCell>
+
+            <TableCell> {information && information.id} 챔</TableCell>
             <TableCell align="right">승률</TableCell>
             <TableCell align="right">픽률</TableCell>
           </TableRow>

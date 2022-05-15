@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 import ReactHtmlParser from 'react-html-parser';
 
 import create from 'zustand'
+import { ETIME } from "constants";
 
 
 
@@ -26,20 +27,6 @@ export const useStore = create((set) => ({
   abilityData: null,
   summonerSpellData: null,
 }));
-
-// const planetNames = useStore((state) => state.planetNames);
-// const setPlanetNames = useStore((state) => state.setPlanetNames);
-
-// useEffect(() => {
-//     const populatePlanetsFromAPI = async () => {
-//         const planetsData = await (
-//             await fetch("https://swapi.dev/api/planets")
-//         ).json();
-//         setPlanetNames(planetsData.results.map((pd: any) => pd.name));
-//     };
-
-//     populatePlanetsFromAPI();
-// }, []);
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -70,9 +57,10 @@ function ChampionInfo (){
     //const [abilityData, setAbilitydata] = useState(null);
     
     const {abilityData} = useStore();
+    const {information} = useStore();
     const {summonerSpellData} = useStore();
     
-    
+    // useStore.setState({information : data});
 
     useEffect(()=>{
       const apiCall = async () => {
@@ -132,10 +120,8 @@ function ChampionInfo (){
                 
             </section>
             <section>
-              <img src ={summonerSpellData && summonerSpellData.SummonerBarrier.image.full}></img>
               <BasicTabs Information = {data}></BasicTabs>
             </section>
-            
         </>
     );
 }

@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import { makeStyles } from "@material-ui/core/styles";
 import PinnedSubheaderList from './List.js'
 import DenseTable from './Table.js'
+import {useStore} from './ChampionInfo'
 
 
 const useStyles = makeStyles({
@@ -54,8 +55,8 @@ function a11yProps(index) {
 export default function BasicTabs({Information}) {
   const [value, setValue] = React.useState(0);
   const tabClasses = useStyles();
-  //const {summonerSpellData} = useStore();
-
+  const {summonerSpellData} = useStore();
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -77,9 +78,7 @@ export default function BasicTabs({Information}) {
    
       <TabPanel value={value} index={0}>
         <Box clone p ={5} mx={2} my={3}>
-        <DenseTable Information={Information}></DenseTable>
-        <br></br>
-        <DenseTable Information={Information}></DenseTable>
+        <DenseTable></DenseTable>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>

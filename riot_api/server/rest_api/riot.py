@@ -1,24 +1,29 @@
 from django.http import HttpResponse
 
-from workspace1.For_bottom.riot_api.riot_api import RiotApi
-
-riotApi = RiotApi()
-
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-def get_summoner(request, name):
-    if 'name' is not None:
-        return riotApi.get_summoner_by_summoner_name(name)
-
-def get_league_entries(request, name):
-    if 'name' is not None:
-        return riotApi.get_league_entries_by_summoner_name(name)
-
-def get_all_league_entries(request, tier, division):
-    return riotApi.get_all_league_entries(tier, division)
+import os, sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))))
+from riot_api import RiotApi
+from rest_framework.views import APIView 
 
 
-def get_matchs(request, name):
-    return riotApi.get_matchs_by_summoner_name(name)
+class RiotViewSet(APIView):
+    def __init__(self):
+        self.riotApi = RiotApi()
+
+
+    def index(self, request):
+        return HttpResponse("Hello, world. You're at the polls index.")
+
+    def get_summoner(self, request, name):
+        if 'name' is not None:
+            return self.riotApi.get_summoner_by_summoner_name(name)
+
+    def get_league_entries(self, request, name):
+        if 'name' is not None:
+            return self.riotApi.get_league_entries_by_summoner_name(name)
+
+    def get_all_league_entries(self, request, tier, division):
+        return self.riotApi.get_all_league_entries(tier, division)
+
+    def get_matchs(self, request, name):
+        return self.riotApi.get_matchs_by_summoner_name(name)

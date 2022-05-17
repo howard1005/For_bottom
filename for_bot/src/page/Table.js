@@ -8,8 +8,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {useStore} from './ChampionInfo'
 
-function createData(champ, winrate, pickrate) {
-  return { champ, winrate, pickrate};
+function createData(champ, image, winrate, pickrate) {
+  return { champ, image, winrate, pickrate};
 }
 
 
@@ -17,11 +17,9 @@ function createData(champ, winrate, pickrate) {
 export default function DenseTable({Information}) {
 
   const {summonerSpellData} = useStore();
-  const {information} = useStore();
   
   const rows = [
-    createData(<img src = {summonerSpellData && summonerSpellData.SummonerBarrier.image.full}></img>
-      , '100%', '100%'),
+    createData(<img src = {summonerSpellData && summonerSpellData.SummonerFlash.image.full}></img>,<img src = {summonerSpellData && summonerSpellData.SummonerExhaust.image.full}></img>, '100%', '100%'),
   ];
   return (
     <TableContainer component={Paper}>
@@ -29,7 +27,8 @@ export default function DenseTable({Information}) {
         <TableHead>
           <TableRow>
 
-            <TableCell> {information && information.id} 챔</TableCell>
+            <TableCell> {Information && Information.id} 챔</TableCell>
+            <TableCell></TableCell> 
             <TableCell align="right">승률</TableCell>
             <TableCell align="right">픽률</TableCell>
           </TableRow>
@@ -41,6 +40,7 @@ export default function DenseTable({Information}) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell align="left">{row.champ}</TableCell>
+              <TableCell align="left">{row.image}</TableCell>
               <TableCell align="right">{row.winrate}</TableCell>
               <TableCell align="right">{row.pickrate}</TableCell>
             </TableRow>

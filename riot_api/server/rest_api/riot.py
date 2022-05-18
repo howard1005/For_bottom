@@ -27,3 +27,6 @@ class RiotViewSet(APIView):
 
     def get_matchs(self, request, name):
         return self.riotApi.get_matchs_by_summoner_name(name)
+
+    def get_mget_match_timelinesatchs(self, request, name):
+        return self.riotApi.get_match_timelines_by_summoner_name(name)

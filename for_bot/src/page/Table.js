@@ -23,12 +23,12 @@ export default function DenseTable({Information}) {
   ];
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 150 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
 
-            <TableCell> {Information && Information.id} 챔</TableCell>
-            <TableCell></TableCell> 
+            <TableCell sx={{width:70}}> {Information && Information.id} 챔</TableCell>
+            <TableCell ></TableCell> 
             <TableCell align="right">승률</TableCell>
             <TableCell align="right">픽률</TableCell>
           </TableRow>
@@ -37,7 +37,7 @@ export default function DenseTable({Information}) {
           {rows.map((row) => (
             <TableRow
               key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ minWidth: 100,'&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell align="left">{row.champ}</TableCell>
               <TableCell align="left">{row.image}</TableCell>

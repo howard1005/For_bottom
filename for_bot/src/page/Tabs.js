@@ -62,7 +62,7 @@ export default function BasicTabs({Information}) {
   };
 
   return (
-    <Box sx={{height:1000, backgroundColor:'lightblue'}}>
+    <Box sx={{height:1000, padding:5,backgroundColor:'lightblue'}}>
       <Box lassName={tabClasses.tabs} sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="빌드" {...a11yProps(0)} />

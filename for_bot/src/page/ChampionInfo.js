@@ -119,7 +119,7 @@ function ChampionInfo (){
                 </Stack>
                 
             </section>
-            <section>
+            <section className={styles.info_tab}>
               <BasicTabs Information = {data}></BasicTabs>
             </section>
         </>

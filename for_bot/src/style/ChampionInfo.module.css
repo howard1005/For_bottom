@@ -8,10 +8,14 @@ section{
     background-color:#E4E9F7;
 }
 .info_section{
-    
+    padding:50px;
+    margin-left : 100px;
     background-color: rgb(41, 46, 56);
 }
 
+.info_tab{
+    margin-left : 200px;
+}
 .info_section .champion_img{
     border: 3px solid #A8E082;
     border-radius: 15px;

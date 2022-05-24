@@ -33,3 +33,6 @@ class RiotViewSet(APIView):
 
     def get_all_champion_mastery_entries(self, request, name):
         return self.riotApi.get_all_champion_mastery_entries_by_summoner_name(name)
+
+    def get_total_mastery_score(self, request, name):
+        return self.riotApi.get_total_mastery_score_by_summoner_name(name)

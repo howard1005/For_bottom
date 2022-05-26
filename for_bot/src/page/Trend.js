@@ -22,9 +22,10 @@ function Trend(){
   }
   
 function Championimages(props){
+  let champId = props.champ['id'];
     return(
       <>
-        <img className={styles.trend_img} alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick()}></img>
+        <img className={styles.trend_img} alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick(champId)}></img>
       </>
     );
   }
@@ -32,7 +33,7 @@ function Championimages(props){
   useEffect(()=>{
     const apiCall = async () => {
       await axios.get(`http://${global.serverAdress}/forbot/v1/champion/all-url`)
-      .then(res => change_champions(res.data.data))
+      .then(res => change_champions(res.data.champion_images))
       .catch(error => console.log(error))
     };
     apiCall();

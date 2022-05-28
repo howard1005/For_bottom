@@ -36,3 +36,6 @@ class RiotViewSet(APIView):
 
     def get_total_mastery_score(self, request, name):
         return self.riotApi.get_total_mastery_score_by_summoner_name(name)
+
+    def get_champion_rotations(self, request):
+        return self.riotApi.get_champion_rotations()

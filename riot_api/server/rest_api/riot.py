@@ -46,3 +46,7 @@ def get_total_mastery_score(request, name):
 @api_view(['GET'])
 def get_champion_rotations(request):
     return Response(riotApi.get_champion_rotations())
+
+@api_view(['GET'])
+def get_lol_status(request):
+    return Response(riotApi.get_lol_status())

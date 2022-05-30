@@ -11,5 +11,6 @@ urlpatterns = [
     path('forbot/v1/get_match_timelines/<str:name>', riot.get_match_timelines, name='get_match_timelines'),
     path('forbot/v1/get_all_champion_mastery_entries/<str:name>', riot.get_all_champion_mastery_entries, name='get_all_champion_mastery_entries'),
     path('forbot/v1/get_total_mastery_score/<str:name>', riot.get_total_mastery_score, name='get_total_mastery_score'),
+    path('forbot/v1/get_champion_rotations', riot.get_champion_rotations, name='get_champion_rotations'),
     
 ]

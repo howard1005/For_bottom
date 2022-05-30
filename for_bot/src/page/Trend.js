@@ -32,8 +32,8 @@ function Championimages(props){
 
   useEffect(()=>{
     const apiCall = async () => {
-      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/all-url`)
-      .then(res => change_champions(res.data.champion_images))
+      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
+      .then(res => console.log(res.data))//change_champions(res.data.champion_images))
       .catch(error => console.log(error))
     };
     apiCall();
@@ -62,7 +62,7 @@ function Championimages(props){
         <div className={styles.trend_subtitle}> AD </div>
           {
             
-            filterImages.map(function(n, i){
+            filterImages && filterImages.map(function(n, i){
               return(
                 <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
               )
@@ -75,7 +75,7 @@ function Championimages(props){
         <div className={styles.trend_subtitle}>Support</div>
           {
             
-            filterImages.map(function(n, i){
+            filterImages && filterImages.map(function(n, i){
               return(
                 <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
               )

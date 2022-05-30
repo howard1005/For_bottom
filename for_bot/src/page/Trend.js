@@ -41,7 +41,7 @@ function Championimages(props){
 
   useEffect(() => {
     setFilterimages(()=>
-      champions.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
+      champions && champions.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
     );
     
     

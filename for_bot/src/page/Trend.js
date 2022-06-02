@@ -33,7 +33,7 @@ function Championimages(props){
   useEffect(()=>{
     const apiCall = async () => {
       await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
-      .then(res => console.log(res.data))//change_champions(res.data.champion_images))
+      .then(res => console.log(res.data.champion_images))//change_champions(res.data.champion_images))
       .catch(error => console.log(error))
     };
     apiCall();

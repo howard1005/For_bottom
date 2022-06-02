@@ -5,10 +5,15 @@ import styles from '../style/Mate.module.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
 
+import create from 'zustand'
+
+export const champInfo = create((set) => ({
+  champions: null,
+}));
 
 function Mate (){
 
-  let [champions, change_champions] = useState([]);
+  const {champions} = champInfo();
   const [searchField, setSearchfield] = useState("");
   const [mateId, setMateid] = useState("");
   let [mateImages, setMateimages] = useState([]);
@@ -17,7 +22,7 @@ function Mate (){
   useEffect(()=>{
     const apiCall = async () => {
       await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
-      .then(res => change_champions(res.data.champion_images))
+      .then((json) => champInfo.setState({champions : json}))//change_champions(res.data.champion_images))
       .catch(error => console.log(error))
     };
     apiCall();

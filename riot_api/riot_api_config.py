@@ -2,7 +2,7 @@ import requests
 
 class RiotApiConfig:
     def __init__(self) -> None:
-        self.api_key = 'RGAPI-06d9a747-37e6-4a23-ae4a-43d28a4b66aa'
+        self.api_key = 'RGAPI-a569aa9d-a30e-4e94-88b3-3a1e1c3864d4'
 
     def get_api_key(self):
         return self.api_key

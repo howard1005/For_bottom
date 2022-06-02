@@ -50,3 +50,8 @@ def get_champion_rotations(request):
 @api_view(['GET'])
 def get_lol_status(request):
     return Response(riotApi.get_lol_status())
+
+@api_view(['GET'])
+def get_current_game_information(request, name):
+    return Response(riotApi.get_current_game_information(name))
+    

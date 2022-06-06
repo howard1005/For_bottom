@@ -9,7 +9,7 @@ from rest_framework.response import Response
 riotApi = RiotApi()
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("")
 
 @api_view(['GET'])
 def get_summoner(request, name):
@@ -53,5 +53,5 @@ def get_lol_status(request):
 
 @api_view(['GET'])
 def get_current_game_information(request, name):
-    return Response(riotApi.get_current_game_information(name))
+    return Response(riotApi.get_current_game_information_by_summoner_name(name))
     

@@ -5,6 +5,13 @@ const path = require('path');
 const db = require('../models/index');
 
 
+function get_matchs(name){
+    var url = global.riotApiAdress + `/forbot/v1/get_matchs/${name}`
+    fetch(url, options)
+    .then((response) => console.log("response:", response))
+    .catch((error) => console.log("error:", error));
+}
+
  /**
   * @swagger
   * /forbot/v1/match/all-url:

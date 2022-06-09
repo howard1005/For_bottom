@@ -5,13 +5,12 @@ import styles from '../style/Trend.module.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';  
-
-
+import {champInfo} from './Mate'
 
 function Trend(){
 
  
-  let [champions, change_champions] = useState([]);
+  const {champions} = champInfo();
   const [searchField, setSearchfield] = useState("");
   let [filterImages, setFilterimages] = useState([]);
   const navigate = useNavigate();
@@ -30,14 +29,14 @@ function Championimages(props){
     );
   }
 
-  useEffect(()=>{
-    const apiCall = async () => {
-      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
-      .then(res => console.log(res.data.champion_images))//change_champions(res.data.champion_images))
-      .catch(error => console.log(error))
-    };
-    apiCall();
-  },[])
+  // useEffect(()=>{
+  //   const apiCall = async () => {
+  //     await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
+  //     .then(res => console.log(res.data))//change_champions(res.data.champion_images))
+  //     .catch(error => console.log(error))
+  //   };
+  //   apiCall();
+  // },[])
 
   useEffect(() => {
     setFilterimages(()=>
@@ -56,8 +55,8 @@ function Championimages(props){
         <div className={styles.trend_title}>검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
-
         
+        {console.log("dfdffd"+champions)}
         <div className = {styles.trend_rows}>
         <div className={styles.trend_subtitle}> AD </div>
           {

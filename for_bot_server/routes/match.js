@@ -5,10 +5,10 @@ const path = require('path');
 const db = require('../models/index');
 
 
-function get_matchs(name){
+function get_matchs(name, cb){
     var url = global.riotApiAdress + `/forbot/v1/get_matchs/${name}`
     fetch(url, options)
-    .then((response) => console.log("response:", response))
+    .then(cb(response))
     .catch((error) => console.log("error:", error));
 }
 

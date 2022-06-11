@@ -65,7 +65,7 @@ function get_matchs(name, cb){
 router.get(`/:name`, function(req, res){
     global.logger.info(`[${__filename}][/${req.params.name}] `, req.headers);
     (new Promise((resolve, reject) => {
-        resolve("TODO")
+        get_matchs(params.name, (res) => resolve(res))
     })).then((data) => res.send(data))
 });
 

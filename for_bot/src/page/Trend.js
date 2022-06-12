@@ -10,41 +10,36 @@ import {champInfo} from './Mate'
 function Trend(){
 
  
-  const {champions} = champInfo();
+  const {fetchData} = champInfo();
   const [searchField, setSearchfield] = useState("");
   let [filterImages, setFilterimages] = useState([]);
   const navigate = useNavigate();
-
+  const [championImage, setImage] = useState([]);
   
   function imageClick(){
     navigate("/");
   }
+
+  (async () => {
+    setImage(await fetchData());
+  })();
   
-function Championimages(props){
+  function Championimages(props){
   let champId = props.champ['id'];
     return(
       <>
-        <img className={styles.trend_img} alt ={props.champ['id']} src = {props.champ['url']} height='50' width='50' onClick={()=>imageClick(champId)}></img>
+        <img className={styles.trend_img} alt ={props.champ['id']} src = {props.champ['img_href']} height='50' width='50' onClick={()=>imageClick(champId)}></img>
       </>
     );
   }
 
-  // useEffect(()=>{
-  //   const apiCall = async () => {
-  //     await axios.get(`http://${global.serverAdress}/forbot/v1/champion/img/all-url`)
-  //     .then(res => console.log(res.data))//change_champions(res.data.champion_images))
-  //     .catch(error => console.log(error))
-  //   };
-  //   apiCall();
-  // },[])
-
   useEffect(() => {
     setFilterimages(()=>
-      champions && champions.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
+     championImage && championImage.filter((c) => c.id.toLowerCase().includes(searchField.toLowerCase()))
     );
     
     
-  }, [searchField, champions]);
+  }, [searchField, championImage]);
 
 
   return (
@@ -56,7 +51,6 @@ function Championimages(props){
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
         
-        {console.log("dfdffd"+champions)}
         <div className = {styles.trend_rows}>
         <div className={styles.trend_subtitle}> AD </div>
           {

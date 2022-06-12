@@ -29,7 +29,7 @@ function App() {
           {/* <Sidebar></Sidebar> */}
           <AnimatePresence exitBeforeEnter>
             <Routes>
-              <Route path="/" element={<Home/>} />
+              <Route path="/" element={<Mate/>} />
               <Route path="/InGameInfo" element={<InGameInfo/>} />
               <Route path="/Summoner" element={<Summoner/>} />
               <Route path="/Trend" element={<Trend/>} />

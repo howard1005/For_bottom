@@ -17,7 +17,10 @@ const { swaggerUi, specs } = require('./swagger/swagger');
 const express = require("express");
 const app = express();
 
-sequelize.sync();
+sequelize
+    .sync()
+    .then(() => console.log('connected database'))
+    .catch(err => console.error('occurred error in database connecting', err))
 
 global.logger = require('./config/winston');
 global.serverAdress = "211.218.213.188:8081";

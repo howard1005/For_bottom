@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
       "info_dto",
       {
         gameCreation: { type: DataTypes.INTEGER, allowNull: false },
+        gameDuration: { type: DataTypes.INTEGER, allowNull: false },
+        gameEndTimestamp: { type: DataTypes.INTEGER, allowNull: false },
+        gameId: { type: DataTypes.INTEGER, allowNull: false },
        //TODO
       },
       { timestamps: false }

@@ -1,54 +1,86 @@
-import React, { Component } from "react";
+import * as React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
 import { motion } from "framer-motion";
 import styles from '../style/youtube.module.css';
 import YoutubeList from './YoutubeList.js'
 
-const channels = [
-  {
-    id:'1',
-    url: 'https://www.youtube.com/watch?v=gX0ddl-OGa4',
-    thumbnails:'https://img.youtube.com/vi/gX0ddl-OGa4/maxresdefault.jpg'
-  },
-  {
-    id: '2',
-    url: 'https://www.youtube.com/watch?v=IBK5-vECGHs',
-    thumbnails:'https://img.youtube.com/vi/IBK5-vECGHs/default.jpg'
-  },
-  {
-    id: '3',
-    url: 'https://www.youtube.com/watch?v=X-fi1ZbVyNs',
-    thumbnails:'https://img.youtube.com/vi/X-fi1ZbVyNs/maxresdefault.jpg'
-  },
-  {
-    id: '4',
-    url: 'https://www.youtube.com/watch?v=b9lhp0FUq5Q',
-    thumbnails:'https://img.youtube.com/vi/b9lhp0FUq5Q/maxresdefault.jpg'
-  }
-]
-function Youtube(){
-  return(
-    <>
-      <div className={styles.youtube_title}><h2 >Youtube</h2></div>
-        <div className = {styles.youtube_rows}>
-          {
-            <YoutubeList></YoutubeList>
-            // channels.map(function(n, i){
-            //   return(
-            //       <>
-                  
-            //       <div className={styles.youtube_container}>
-            //         <div className={styles.list_container}>
-            //           <div>{channels[i]['url']}</div>
-            //           <img className={styles.thumbnails} alt="thumbnails" key ={channels[i]['id']} src ={channels[i]['thumbnails']} height='100' width='200' ></img>
-            //         </div>
-            //       </div>
-            //       </>    
-            //   )
-            //})
+export default function AlignItemsList() {
+  return (
+    <List sx={{ marginLeft: 30, width: '100%', maxWidth: 800, bgcolor: 'background.paper' }}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="https://img.youtube.com/vi/gX0ddl-OGa4/maxresdefault.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="태군 형님"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                <a href="https://www.youtube.com/watch?v=gX0ddl-OGa4">태군 형님</a>
+              </Typography>
+              {" — I'll be in your neighborhood doing errands this…"}
+            </React.Fragment>
           }
-        </div>
-    </>
-  )
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Travis Howard" src="https://img.youtube.com/vi/IBK5-vECGHs/default.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="김지은 (하트)"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                <a href="https://www.youtube.com/watch?v=IBK5-vECGHs">김지은</a>
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="https://img.youtube.com/vi/X-fi1ZbVyNs/maxresdefault.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="마크툽"
+          secondary={
+            <React.Fragment>
+              <Typography
+                sx={{ display: 'inline' }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+              </Typography>
+              <a href="https://www.youtube.com/watch?v=X-fi1ZbVyNs">마크툽</a>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+    </List>
+  );
 }
-  
-  export default Youtube;
+
+
+
+
+

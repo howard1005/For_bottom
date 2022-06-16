@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
         gameMode: { type: DataTypes.STRING, allowNull: false },
         gameName: { type: DataTypes.INTEGER, allowNull: false },
         gameStartTimestamp: { type: DataTypes.INTEGER, allowNull: false },
+        gameType: { type: DataTypes.STRING, allowNull: false },
+        gameVersion: { type: DataTypes.STRING, allowNull: false },
        //TODO
       },
       { timestamps: false }

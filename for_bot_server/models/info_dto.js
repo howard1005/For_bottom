@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         gameStartTimestamp: { type: DataTypes.INTEGER, allowNull: false },
         gameType: { type: DataTypes.STRING, allowNull: false },
         gameVersion: { type: DataTypes.STRING, allowNull: false },
+        mapId: { type: DataTypes.INTEGER, allowNull: false },
+        //participants: { type: DataTypes.STRING, allowNull: false },
+        platformId: { type: DataTypes.STRING, allowNull: false },
+        queueId: { type: DataTypes.INTEGER, allowNull: false },
        //TODO
       },
       { timestamps: false }

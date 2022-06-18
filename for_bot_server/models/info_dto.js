@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
         //participants: { type: DataTypes.STRING, allowNull: false },
         platformId: { type: DataTypes.STRING, allowNull: false },
         queueId: { type: DataTypes.INTEGER, allowNull: false },
-       //TODO
+        //teams: { type: DataTypes.INTEGER, allowNull: false },
+        tournamentCode: { type: DataTypes.STRING, allowNull: false },
       },
       { timestamps: false }
     );

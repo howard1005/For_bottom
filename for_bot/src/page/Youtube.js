@@ -29,7 +29,6 @@ export default function AlignItemsList() {
               >
                 <a href="https://www.youtube.com/watch?v=gX0ddl-OGa4">태군 형님</a>
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
             </React.Fragment>
           }
         />

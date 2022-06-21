@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
         championId: { type: DataTypes.INTEGER, allowNull: false },
         championName: { type: DataTypes.STRING, allowNull: false },
         championTransform: { type: DataTypes.INTEGER, allowNull: false },
+        consumablesPurchased: { type: DataTypes.INTEGER, allowNull: false },
+        damageDealtToBuildings: { type: DataTypes.INTEGER, allowNull: false },
+        damageDealtToObjectives: { type: DataTypes.INTEGER, allowNull: false },
+        damageDealtToTurrets: { type: DataTypes.INTEGER, allowNull: false },
+        damageSelfMitigated: { type: DataTypes.INTEGER, allowNull: false },
+        deaths: { type: DataTypes.INTEGER, allowNull: false },
+
 
         
       },

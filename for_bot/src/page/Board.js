@@ -18,7 +18,7 @@ export default function AlignItemsList() {
           <Avatar alt="Remy Sharp" src="https://img.youtube.com/vi/gX0ddl-OGa4/maxresdefault.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="태군 형님"
+          primary="게시물1"
           secondary={
             <React.Fragment>
               <Typography
@@ -27,7 +27,7 @@ export default function AlignItemsList() {
                 variant="body2"
                 color="text.primary"
               >
-                <a href="https://www.youtube.com/watch?v=gX0ddl-OGa4">태군 형님</a>
+                <a href="https://www.youtube.com/watch?v=gX0ddl-OGa4">게시물1</a>
               </Typography>
             </React.Fragment>
           }
@@ -39,7 +39,7 @@ export default function AlignItemsList() {
           <Avatar alt="Travis Howard" src="https://img.youtube.com/vi/IBK5-vECGHs/default.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="김지은 (하트)"
+          primary="게시물2"
           secondary={
             <React.Fragment>
               <Typography
@@ -48,7 +48,7 @@ export default function AlignItemsList() {
                 variant="body2"
                 color="text.primary"
               >
-                <a href="https://www.youtube.com/watch?v=IBK5-vECGHs">김지은</a>
+                <a href="https://www.youtube.com/watch?v=IBK5-vECGHs">게시물2</a>
               </Typography>
             </React.Fragment>
           }
@@ -60,7 +60,7 @@ export default function AlignItemsList() {
           <Avatar alt="Cindy Baker" src="https://img.youtube.com/vi/X-fi1ZbVyNs/maxresdefault.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="마크툽"
+          primary="게시물3"
           secondary={
             <React.Fragment>
               <Typography
@@ -70,7 +70,7 @@ export default function AlignItemsList() {
                 color="text.primary"
               >
               </Typography>
-              <a href="https://www.youtube.com/watch?v=X-fi1ZbVyNs">마크툽</a>
+              <a href="https://www.youtube.com/watch?v=X-fi1ZbVyNs">게시물3</a>
             </React.Fragment>
           }
         />

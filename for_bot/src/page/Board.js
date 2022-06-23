@@ -15,7 +15,7 @@ export default function AlignItemsList() {
     <List sx={{ marginLeft: 30, width: '100%', maxWidth: 800, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="https://img.youtube.com/vi/gX0ddl-OGa4/maxresdefault.jpg" />
+          <Avatar alt="Remy Sharp" src="https://cdn-icons-png.flaticon.com/512/4812/4812731.png" />
         </ListItemAvatar>
         <ListItemText
           primary="게시물1"
@@ -36,7 +36,7 @@ export default function AlignItemsList() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Travis Howard" src="https://img.youtube.com/vi/IBK5-vECGHs/default.jpg" />
+          <Avatar alt="Travis Howard" src="https://cdn-icons-png.flaticon.com/512/4812/4812731.png" />
         </ListItemAvatar>
         <ListItemText
           primary="게시물2"
@@ -57,7 +57,7 @@ export default function AlignItemsList() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="https://img.youtube.com/vi/X-fi1ZbVyNs/maxresdefault.jpg" />
+          <Avatar alt="Cindy Baker" src="https://cdn-icons-png.flaticon.com/512/4812/4812731.png" />
         </ListItemAvatar>
         <ListItemText
           primary="게시물3"

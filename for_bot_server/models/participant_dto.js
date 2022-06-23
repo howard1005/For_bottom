@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
         damageDealtToTurrets: { type: DataTypes.INTEGER, allowNull: false },
         damageSelfMitigated: { type: DataTypes.INTEGER, allowNull: false },
         deaths: { type: DataTypes.INTEGER, allowNull: false },
+        detectorWardsPlaced: { type: DataTypes.INTEGER, allowNull: false },
+        doubleKills: { type: DataTypes.INTEGER, allowNull: false },
+        dragonKills: { type: DataTypes.INTEGER, allowNull: false },
 
 
         

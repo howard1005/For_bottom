@@ -20,6 +20,12 @@ module.exports = (sequelize, DataTypes) => {
         detectorWardsPlaced: { type: DataTypes.INTEGER, allowNull: false },
         doubleKills: { type: DataTypes.INTEGER, allowNull: false },
         dragonKills: { type: DataTypes.INTEGER, allowNull: false },
+        firstBloodAssist: { type: DataTypes.BOOLEAN, allowNull: false },
+        firstBloodKill: { type: DataTypes.BOOLEAN, allowNull: false },
+        firstTowerAssist: { type: DataTypes.BOOLEAN, allowNull: false },
+        firstTowerKill: { type: DataTypes.BOOLEAN, allowNull: false },
+        gameEndedInEarlySurrender: { type: DataTypes.BOOLEAN, allowNull: false },
+        gameEndedInSurrender: { type: DataTypes.BOOLEAN, allowNull: false },
 
 
         

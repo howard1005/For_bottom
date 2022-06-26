@@ -26,6 +26,12 @@ module.exports = (sequelize, DataTypes) => {
         firstTowerKill: { type: DataTypes.BOOLEAN, allowNull: false },
         gameEndedInEarlySurrender: { type: DataTypes.BOOLEAN, allowNull: false },
         gameEndedInSurrender: { type: DataTypes.BOOLEAN, allowNull: false },
+        goldEarned: { type: DataTypes.INTEGER, allowNull: false },
+        goldSpent: { type: DataTypes.INTEGER, allowNull: false },
+        individualPosition: { type: DataTypes.STRING, allowNull: false },
+        inhibitorKills: { type: DataTypes.INTEGER, allowNull: false },
+        inhibitorTakedowns: { type: DataTypes.INTEGER, allowNull: false },
+        inhibitorsLost: { type: DataTypes.INTEGER, allowNull: false },
 
 
         

@@ -5,6 +5,8 @@ import styles from '../style/Mate.module.css';
 import axios from 'axios';
 import { motion } from "framer-motion";
 import ImageView from './ImageList.js'
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 import create from 'zustand'
 
@@ -79,17 +81,28 @@ function Mate (){
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
 
-        <div className = {styles.mate_rows}>
-          {
 
-              <ImageView items ={filterImages}></ImageView>
-            // filterImages.map(function(n, i){
-            //   return(
-            //       <Championimages champ = {filterImages[i]} key={filterImages[i]['id']}/>
-            //   )
-            // })
-          }
-        </div>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            marginLeft: '400px',
+            '& > :not(style)': {
+              m: 1,
+              width: 900,
+              height: 1200,
+            },
+          }}
+        >
+         
+          <Paper elevation={3} >
+            <div className="mate_rows"styles ={{marginLeft:'20%'}}>
+              <ImageView items ={filterImages} sx={{marginLeft:'20%'}}></ImageView>
+            </div>
+          </Paper>
+
+        </Box>
+        
 
       </>
     )

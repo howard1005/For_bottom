@@ -39,8 +39,9 @@ module.exports = (sequelize, DataTypes) => {
         item4: { type: DataTypes.INTEGER, allowNull: false },
         item5: { type: DataTypes.INTEGER, allowNull: false },
         item6: { type: DataTypes.INTEGER, allowNull: false },
-        item7: { type: DataTypes.INTEGER, allowNull: false },
-
+        itemsPurchased: { type: DataTypes.INTEGER, allowNull: false },
+        killingSprees: { type: DataTypes.INTEGER, allowNull: false },
+        kills: { type: DataTypes.INTEGER, allowNull: false },
 
         
       },

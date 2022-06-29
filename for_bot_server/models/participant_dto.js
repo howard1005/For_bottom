@@ -42,6 +42,10 @@ module.exports = (sequelize, DataTypes) => {
         itemsPurchased: { type: DataTypes.INTEGER, allowNull: false },
         killingSprees: { type: DataTypes.INTEGER, allowNull: false },
         kills: { type: DataTypes.INTEGER, allowNull: false },
+        lane: { type: DataTypes.STRING, allowNull: false },
+        largestCriticalStrike: { type: DataTypes.INTEGER, allowNull: false },
+        largestKillingSpree: { type: DataTypes.INTEGER, allowNull: false },
+        largestMultiKill: { type: DataTypes.INTEGER, allowNull: false },
 
         
       },

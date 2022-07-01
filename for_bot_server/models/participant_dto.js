@@ -46,6 +46,11 @@ module.exports = (sequelize, DataTypes) => {
         largestCriticalStrike: { type: DataTypes.INTEGER, allowNull: false },
         largestKillingSpree: { type: DataTypes.INTEGER, allowNull: false },
         largestMultiKill: { type: DataTypes.INTEGER, allowNull: false },
+        longestTimeSpentLiving: { type: DataTypes.INTEGER, allowNull: false },
+        magicDamageDealt: { type: DataTypes.INTEGER, allowNull: false },
+        magicDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
+        magicDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
+
 
         
       },

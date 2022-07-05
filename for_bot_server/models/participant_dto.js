@@ -50,6 +50,20 @@ module.exports = (sequelize, DataTypes) => {
         magicDamageDealt: { type: DataTypes.INTEGER, allowNull: false },
         magicDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
         magicDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
+        neutralMinionsKilled: { type: DataTypes.INTEGER, allowNull: false },
+        nexusKills: { type: DataTypes.INTEGER, allowNull: false },
+        nexusTakedowns: { type: DataTypes.INTEGER, allowNull: false },
+        nexusLost: { type: DataTypes.INTEGER, allowNull: false },
+        objectivesStolen: { type: DataTypes.INTEGER, allowNull: false },
+        objectivesStolenAssists: { type: DataTypes.INTEGER, allowNull: false },
+        participantId: { type: DataTypes.INTEGER, allowNull: false },
+        pentaKills: { type: DataTypes.INTEGER, allowNull: false },
+        // perks: { type: DataTypes.INTEGER, allowNull: false },
+        physicalDamageDealt: { type: DataTypes.INTEGER, allowNull: false },
+        physicalDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
+        physicalDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
+        profileIcon: { type: DataTypes.INTEGER, allowNull: false },
+
 
 
         

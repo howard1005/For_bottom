@@ -63,6 +63,16 @@ module.exports = (sequelize, DataTypes) => {
         physicalDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
         physicalDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
         profileIcon: { type: DataTypes.INTEGER, allowNull: false },
+        puuid: { type: DataTypes.STRING, allowNull: false },
+        quadraKills: { type: DataTypes.INTEGER, allowNull: false },
+        riotIdName: { type: DataTypes.STRING, allowNull: false },
+        riotIdTagline: { type: DataTypes.STRING, allowNull: false },
+        role: { type: DataTypes.STRING, allowNull: false },
+        sightWardsBoughtInGame: { type: DataTypes.INTEGER, allowNull: false },
+        spell1Casts: { type: DataTypes.INTEGER, allowNull: false },
+        spell2Casts: { type: DataTypes.INTEGER, allowNull: false },
+        spell3Casts: { type: DataTypes.INTEGER, allowNull: false },
+        spell4Casts: { type: DataTypes.INTEGER, allowNull: false },
 
 
 

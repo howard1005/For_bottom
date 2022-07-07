@@ -73,6 +73,10 @@ module.exports = (sequelize, DataTypes) => {
         spell2Casts: { type: DataTypes.INTEGER, allowNull: false },
         spell3Casts: { type: DataTypes.INTEGER, allowNull: false },
         spell4Casts: { type: DataTypes.INTEGER, allowNull: false },
+        summoner1Casts: { type: DataTypes.INTEGER, allowNull: false },
+        summoner1Id: { type: DataTypes.INTEGER, allowNull: false },
+        summoner2Casts: { type: DataTypes.INTEGER, allowNull: false },
+        summoner2Id: { type: DataTypes.INTEGER, allowNull: false },
 
 
 

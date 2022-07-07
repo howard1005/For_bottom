@@ -89,14 +89,14 @@ function Mate (){
             marginLeft: '400px',
             '& > :not(style)': {
               m: 1,
-              width: 900,
+              width: 800,
               height: 1200,
             },
           }}
         >
          
           <Paper elevation={3} >
-            <div className="mate_rows"styles ={{marginLeft:'20%'}}>
+            <div className="mate_rows">
               <ImageView items ={filterImages} sx={{marginLeft:'20%'}}></ImageView>
             </div>
           </Paper>

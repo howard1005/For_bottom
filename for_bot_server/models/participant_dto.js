@@ -77,7 +77,10 @@ module.exports = (sequelize, DataTypes) => {
         summoner1Id: { type: DataTypes.INTEGER, allowNull: false },
         summoner2Casts: { type: DataTypes.INTEGER, allowNull: false },
         summoner2Id: { type: DataTypes.INTEGER, allowNull: false },
-
+        summonerId: { type: DataTypes.STRING, allowNull: false },
+        summonerLevel: { type: DataTypes.INTEGER, allowNull: false },
+        summonerName: { type: DataTypes.STRING, allowNull: false },
+        
 
 
         

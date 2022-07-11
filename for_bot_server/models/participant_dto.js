@@ -80,6 +80,9 @@ module.exports = (sequelize, DataTypes) => {
         summonerId: { type: DataTypes.STRING, allowNull: false },
         summonerLevel: { type: DataTypes.INTEGER, allowNull: false },
         summonerName: { type: DataTypes.STRING, allowNull: false },
+        teamEarlySurrendered: { type: DataTypes.BOOLEAN, allowNull: false },
+        teamId: { type: DataTypes.INTEGER, allowNull: false },
+        teamPosition: { type: DataTypes.STRING, allowNull: false },
         
 
 

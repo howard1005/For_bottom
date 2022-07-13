@@ -83,7 +83,13 @@ module.exports = (sequelize, DataTypes) => {
         teamEarlySurrendered: { type: DataTypes.BOOLEAN, allowNull: false },
         teamId: { type: DataTypes.INTEGER, allowNull: false },
         teamPosition: { type: DataTypes.STRING, allowNull: false },
-        
+        timeCCingOthers: { type: DataTypes.INTEGER, allowNull: false },
+        timePlayed: { type: DataTypes.INTEGER, allowNull: false },
+        totalDamageDealt: { type: DataTypes.INTEGER, allowNull: false },
+        totalDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
+        totalDamageShieldedOnTeammates: { type: DataTypes.INTEGER, allowNull: false },
+        totalDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
+
 
 
         

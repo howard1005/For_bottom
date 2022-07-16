@@ -96,6 +96,9 @@ module.exports = (sequelize, DataTypes) => {
         totalTimeSpentDead: { type: DataTypes.INTEGER, allowNull: false },
         totalUnitsHealed: { type: DataTypes.INTEGER, allowNull: false },
         tripleKills: { type: DataTypes.INTEGER, allowNull: false },
+        trueDamageDealt: { type: DataTypes.INTEGER, allowNull: false },
+        trueDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
+        trueDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
 
 
 

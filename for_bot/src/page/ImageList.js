@@ -13,16 +13,19 @@ function ImageView({items}){
         console.log(id);
     }
 
+    
+
 
     return (
-    <ImageList sx={{ width: 800,}} cols={12}  rowHeight={80}>
+    <ImageList sx={{ width: 300,}} cols={6}  rowHeight={50}>
                 {items.map((item) => (
                     
-                  <ImageListItem key={item.id}>
+                  <ImageListItem key={item.id} >
                     <Link to ='/championinfo' state={{champInfo : item}}>
                     <img
-                      src={`${item.img_href}?w=200&h=200&fit=crop&auto=format`}
-                      srcSet={`${item.img_href}?w=200&h=200&fit=crop&auto=format&dpr=2 2x`}
+                      width='46' height='46'
+                      src={`${item.img_href}?w=300&h=300&fit=crop&auto=format`}
+                      srcSet={`${item.img_href}?w=300&h=300&fit=crop&auto=format&dpr=2 2x`}
                       alt={item.id}
                       loading="lazy"
                     />

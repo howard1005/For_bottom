@@ -22,8 +22,8 @@ import {IoMdTrendingUp} from "react-icons/io"
 import {FaUserFriends} from "react-icons/fa"
 import {BsYoutube} from "react-icons/bs"
 import {IoMdClipboard} from "react-icons/io"
-import {BiBody, BiHomeAlt} from "react-icons/bi"
-
+import {ThemeProvider, createTheme } from "@material-ui/core/styles";
+import { ClassNames } from '@emotion/react';
 const menus = [
   { name: "Mate", path: "/", icons: <FaUserFriends></FaUserFriends>},
   { name: "인게임 정보", path: "/InGameInfo", icons: <HiInformationCircle></HiInformationCircle> },
@@ -43,22 +43,29 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const classes = ({
+    ListItemText:{
+      fontSize:'0.7em',//Insert your required size
+      fontFamily: ['"Public Sans"', 'sans-serif'].join(','),    }
+  });
+
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
-      <List>
-          {menus.map((text, index) => (
-            <ListItem button key={text.name}>
-              <ListItemIcon>
-                {text.icons}
-              </ListItemIcon>
-              <Link to={text.path}>
-              <ListItemText primary={text.name} />
-              </Link>
-            </ListItem>
-          ))}
-      </List>
+      
+        <List>
+            {menus.map((text) => (
+              <ListItem button key={text.name}>
+                <ListItemIcon>
+                  {text.icons}
+                </ListItemIcon>
+                <Link to={text.path}>
+                <ListItemText primary={<Typography variant="h8" style={{fontFamily: ['"Public Sans"', 'sans-serif'].join(',')}}>{text.name}</Typography>}/>
+                </Link>
+              </ListItem>
+            ))}
+        </List>
       <Divider />
       
     </div>

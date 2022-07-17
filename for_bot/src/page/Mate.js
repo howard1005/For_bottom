@@ -3,10 +3,13 @@ import {useState}from 'react'
 import {useEffect} from 'react';
 import styles from '../style/Mate.module.css';
 import axios from 'axios';
-import { motion } from "framer-motion";
 import ImageView from './ImageList.js'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 import create from 'zustand'
 
@@ -26,11 +29,21 @@ function Mate (){
   const [mateId, setMateid] = useState("");
   let [mateImages, setMateimages] = useState([]);
   let [filterImages, setFilterimages] = useState([]);
+
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   
-  
-  (async () => {
-    setImage(await fetchData());
-  })();
+  useEffect(()=>{
+    const apiCall = async () => {
+      await axios.get(`http://${global.serverAdress}/forbot/v1/champion/all-url`)
+      .then(res => setImage(res.data.data))
+      .catch(error => console.log(error))
+    };
+    apiCall();
+  },[])
 
   // useEffect(()=>{
   //   const apiCall = async () => {
@@ -81,28 +94,109 @@ function Mate (){
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
 
+        <Box sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            marginLeft: '250px',
+            backgroundColor: 'primary.black',
+            '& > :not(style)': {
+              m: 1,
+              minWidth: 120,
+              height: 70,
+            },
+          }}>
+          <FormControl >
+                  <InputLabel id="demo-simple-select-label">KR</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="server"
+                    label="server"
+                    autoWidth
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={1}>JP</MenuItem>
+                    <MenuItem value={2}>Global</MenuItem>
+                    <MenuItem value={3}>NA</MenuItem>
+                  </Select>
+            </FormControl>
+            <FormControl >
+                  <InputLabel id="demo-simple-select-label">Platinum</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="tier"
+                    label="tier"
+                    autoWidth
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={4}>Iron</MenuItem>
+                    <MenuItem value={5}>Bronze</MenuItem>
+                    <MenuItem value={6}>Silver</MenuItem>
+                    <MenuItem value={7}>Gold</MenuItem>
+                    <MenuItem value={8}>Platinum</MenuItem>
+                    <MenuItem value={9}>Diamond</MenuItem>
+                    <MenuItem value={10}>Master</MenuItem>
+                    <MenuItem value={11}>GrandMaster</MenuItem>
+                    <MenuItem value={12}>Challenger</MenuItem>
 
+
+                  </Select>
+            </FormControl> 
+            <FormControl sx={{ m:4, minWidth: 2000 }}>
+                  <InputLabel id="demo-simple-select-label">Version 12.13</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="version"
+                    label="version"
+                    autoWidth
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={13}>Version 12.12</MenuItem>
+                    <MenuItem value={14}>Version 12.11</MenuItem>
+                  </Select>
+            </FormControl> 
+      </Box>
+
+       <Box sx={{display: 'flex'}}> 
         <Box
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
-            marginLeft: '400px',
+            marginLeft: '250px',
             '& > :not(style)': {
               m: 1,
-              width: 800,
-              height: 1200,
+              width: 300,
+              height: 2000,
             },
           }}
         >
          
-          <Paper elevation={3} >
+          <Paper elevation={3} sx={{width: 400, height: 500}} >
             <div className="mate_rows">
               <ImageView items ={filterImages} sx={{marginLeft:'20%'}}></ImageView>
             </div>
           </Paper>
 
         </Box>
-        
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            marginLeft: '10px',
+            '& > :not(style)': {
+              m: 1,
+              width: 900,
+              height: 2000,
+            },
+          }}
+        >
+         
+          <Paper elevation={3} sx={{width: 400, height: 500}} >
+            <div className="">
+            </div>
+          </Paper>
+
+        </Box>
+        </Box>
 
       </>
     )

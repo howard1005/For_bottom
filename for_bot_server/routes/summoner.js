@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const api = require('../util/api');
 const fs = require('fs');
 const path = require('path');
 const db = require('../models/index');
@@ -43,7 +44,7 @@ let getSummonerJson = function(cb){
 
  /**
   * @swagger
-  * /forbot/v1/summoner/{id}:
+  * /forbot/v1/summoner/spell/{id}:
   *   get:
   *     summary: summoner(소환사 주문) 데이터 가져오기
   *     tags: [Summoner]
@@ -64,11 +65,46 @@ let getSummonerJson = function(cb){
   *       500:
   *         description: InternalError
   */
-router.get(`/:id`, function(req, res){
+router.get(`/spell/:id`, function(req, res){
     global.logger.info(`[${__filename}][/${req.params.id}] `, req.headers);
     (new Promise((resolve, reject) => {
         getSummonerJson((summonerJson) => {
             resolve(summonerJson.data[`${req.params.id}`]);
+        })
+    })).then((data) => res.send(data))
+});
+
+ /**
+  * @swagger
+  * /forbot/v1/summoner/info/{name}:
+  *   get:
+  *     summary: 소환사 닉네임 기반으로 summoner 정보 가져오기
+  *     tags: [Summoner]
+  *     parameters:
+  *       - in: path
+  *         name: name
+  *         required: true
+  *         schema:
+  *           type: string
+  *           description: summoner name
+  *     responses:
+  *       200:
+  *         description: 성공
+  *       403:
+  *         description: BadRequest
+  *       404:
+  *         description: NotFound
+  *       500:
+  *         description: InternalError
+  */
+  router.get(`/info/:name`, function(req, res){
+    global.logger.info(`[${__filename}][/${req.params.name}]`, req.headers);
+    (new Promise((resolve, reject) => {
+        api.get(`http://${global.riotApiAdress}/forbot/v1/summoner/${req.params.name}`)
+        .then(data => resolve(data))
+        .catch(e => {
+            global.logger.error(e)
+            reject(e)
         })
     })).then((data) => res.send(data))
 });

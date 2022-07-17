@@ -99,6 +99,15 @@ module.exports = (sequelize, DataTypes) => {
         trueDamageDealt: { type: DataTypes.INTEGER, allowNull: false },
         trueDamageDealtToChampions: { type: DataTypes.INTEGER, allowNull: false },
         trueDamageTaken: { type: DataTypes.INTEGER, allowNull: false },
+        turretKills: { type: DataTypes.INTEGER, allowNull: false },
+        turretTakedowns: { type: DataTypes.INTEGER, allowNull: false },
+        turretsLost: { type: DataTypes.INTEGER, allowNull: false },
+        unrealKills: { type: DataTypes.INTEGER, allowNull: false },
+        visionScore: { type: DataTypes.INTEGER, allowNull: false },
+        visionWardsBoughtInGame: { type: DataTypes.INTEGER, allowNull: false },
+        wardsKilled: { type: DataTypes.INTEGER, allowNull: false },
+        wardsPlaced: { type: DataTypes.INTEGER, allowNull: false },
+        win: { type: DataTypes.BOOLEAN, allowNull: false },
 
 
 

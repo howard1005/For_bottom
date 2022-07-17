@@ -28,7 +28,9 @@ let getChampionJson = function(championName, cb){
   *         description: InternalError
   */
   router.get(`/all-url`, function(req, res){
-    global.logger.info(`[${__filename}][/img/all-url] `, req.headers);
+    const ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
+    global.logger.info(`[${__filename}][/img/all-url] ip : ${ip}`, req.headers);
+    // global.logger.info(`${req.headers}`)
     (new Promise((resolve, reject) => {
         imgs_path = path.join(global.dragontail_path, `/img/champion`)
         fs.readdir(imgs_path, function(error, filelist){

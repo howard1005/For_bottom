@@ -12,5 +12,6 @@ db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, Sequelize);
 db.Champion = require('./champion')(sequelize, Sequelize);
+// db.Summoner = require('./summoner')(sequelize, Sequelize);
 
 module.exports = db;

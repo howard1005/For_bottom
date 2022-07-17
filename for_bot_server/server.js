@@ -24,7 +24,7 @@ sequelize
 
 global.logger = require('./config/winston');
 global.serverAdress = "211.218.213.188:8081";
-global.riotApiAdress = "211.218.213.188:8000";
+global.riotApiAdress = "211.218.213.188:8001";
 global.port = 8080;
 global.resource_path = path.join(__dirname, "../for_bot/build")
 global.dragontail_path = path.join(__dirname, "./dragontail-12.3.1/12.3.1")

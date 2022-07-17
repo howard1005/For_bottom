@@ -1,15 +1,40 @@
+const request = require('request')
 
 let get = function(url){
-    return request({url: url, method: "GET"})
+    const options = {
+        url: url, 
+        method: 'GET'
+    }
+    return new Promise((resolve, reject) => {
+        request(options, function(error, response, body){
+            if(error){
+                global.logger.error(error)
+                reject(error)
+            }
+            global.logger.info(`get response : ${response}`)
+            var obj = JSON.parse(body)
+            resolve(obj)
+        })
+    })
 }
 
-let post = function(url, body, cb){ // cb(err,httpResponse,body)
+let post = function(url, body){
     const options = {
         uri:url, 
         method: 'POST',
-        body: body
+        body: body,
     }
-    request.post(options, cb)
+    return new Promise((resolve, reject) => {
+        request(options, function(error, response, body){
+            if(error){
+                global.logger.error(error)
+                reject(error)
+            }
+            global.logger.info(`get response : ${response}`)
+            var obj = JSON.parse(body)
+            resolve(obj)
+        })
+    })
 }
 
 module.exports = { 

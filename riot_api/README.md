@@ -16,8 +16,11 @@ https://docs.google.com/spreadsheets/d/1ud1CjRezWv2N13RCcIIF3utwKzC4JEF1cA16CM1c
 
 # django server 실행
 ``` bash
-python manage.py runserver
+python manage.py runserver 10.0.2.15:8000
 ```
+
+# swagger
+http://211.218.213.188:8000/swagger/
 
 # TODO
 -[ ] API 설명 정리

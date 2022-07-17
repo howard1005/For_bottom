@@ -106,7 +106,7 @@ router.get(`/spell/:id`, function(req, res){
             global.logger.error(e)
             reject(e)
         })
-    })).then((data) => res.send(data))
+    })).then((data) => res.send(data)) // data를 entity에 매칭해야함
 });
 
 module.exports = router;

@@ -10,6 +10,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 import create from 'zustand'
 
@@ -31,9 +33,13 @@ function Mate (){
   let [filterImages, setFilterimages] = useState([]);
 
   const [age, setAge] = React.useState('');
+  const [alignment, setAlignment] = React.useState('web');
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+  const handleLines = (event, newAlignment) => {
+    setAlignment(newAlignment);
   };
   
   useEffect(()=>{
@@ -99,12 +105,14 @@ function Mate (){
             flexWrap: 'wrap',
             marginLeft: '250px',
             backgroundColor: 'primary.black',
+            float: 'left',
             '& > :not(style)': {
               m: 1,
               minWidth: 120,
               height: 70,
             },
           }}>
+          
           <FormControl >
                   <InputLabel id="demo-simple-select-label">KR</InputLabel>
                   <Select
@@ -154,14 +162,40 @@ function Mate (){
                     <MenuItem value={14}>Version 12.11</MenuItem>
                   </Select>
             </FormControl> 
-      </Box>
 
+       </Box>
+
+      <Box sx={{display: 'flex',
+            marginLeft: '1000px',
+            backgroundColor: 'primary.black',
+            
+            '& > :not(style)': {
+              m: 1,
+              width: 300,
+              height: 50,
+            },}}>
+      <ToggleButtonGroup
+              color="primary"
+              value={alignment}
+              exclusive
+              onChange={handleLines}
+              size='large'
+            
+            >
+              <ToggleButton value="Top">탑</ToggleButton>
+              <ToggleButton value="Jungle">정글</ToggleButton>
+              <ToggleButton value="Mid">미드</ToggleButton>
+              <ToggleButton value="Bottom">바텀</ToggleButton>
+              <ToggleButton value="Support">서포터</ToggleButton>
+            </ToggleButtonGroup>
+      </Box>
        <Box sx={{display: 'flex'}}> 
         <Box
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
-            marginLeft: '250px',
+            marginLeft: '0px',
+            textAligh: 'left',
             '& > :not(style)': {
               m: 1,
               width: 300,

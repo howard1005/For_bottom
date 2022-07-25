@@ -99,7 +99,7 @@ function Mate (){
         <div className={styles.mate_title}>검색
           <input type ="search" placeholder="searchField" onChange={(e) => setSearchfield(e.target.value)}></input>
         </div>
-
+      <div>
         <Box sx={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -164,7 +164,8 @@ function Mate (){
             </FormControl> 
 
        </Box>
-
+       
+       
       <Box sx={{display: 'flex',
             marginLeft: '1000px',
             backgroundColor: 'primary.black',
@@ -177,7 +178,7 @@ function Mate (){
       <ToggleButtonGroup
               color="primary"
               value={alignment}
-              exclusive
+              
               onChange={handleLines}
               size='large'
             
@@ -189,13 +190,13 @@ function Mate (){
               <ToggleButton value="Support">서포터</ToggleButton>
             </ToggleButtonGroup>
       </Box>
-       <Box sx={{display: 'flex'}}> 
+      </div>
+       <Box sx={{display: 'flex', float: 'left', marginLeft: '250px'}}> 
         <Box
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
             marginLeft: '0px',
-            textAligh: 'left',
             '& > :not(style)': {
               m: 1,
               width: 300,
@@ -206,7 +207,7 @@ function Mate (){
          
           <Paper elevation={3} sx={{width: 400, height: 500}} >
             <div className="mate_rows">
-              <ImageView items ={filterImages} sx={{marginLeft:'20%'}}></ImageView>
+              <ImageView items ={filterImages} sx={{marginLeft:'10%'}}></ImageView>
             </div>
           </Paper>
 

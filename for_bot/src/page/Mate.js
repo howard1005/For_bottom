@@ -55,11 +55,11 @@ function Mate (){
   }
   
   const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData('챔피언1', 159, 6.0, 24, 4.0),
+    createData('챔피언2', 237, 9.0, 37, 4.3),
+    createData('챔피언3', 262, 16.0, 24, 6.0),
+    createData('챔피언4', 305, 3.7, 67, 4.3),
+    createData('챔피언5', 356, 16.0, 49, 3.9),
   ];
   
   useEffect(()=>{
@@ -134,7 +134,7 @@ function Mate (){
           }}>
           
           <FormControl >
-                  <InputLabel id="demo-simple-select-label">KR</InputLabel>
+                  <InputLabel id="demo-simple-select-label">서버</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="server"
@@ -142,13 +142,14 @@ function Mate (){
                     autoWidth
                     onChange={handleChange}
                   >
-                    <MenuItem value={1}>JP</MenuItem>
-                    <MenuItem value={2}>Global</MenuItem>
-                    <MenuItem value={3}>NA</MenuItem>
+                    <MenuItem value={1}>KR</MenuItem>
+                    <MenuItem value={2}>JP</MenuItem>
+                    <MenuItem value={3}>Global</MenuItem>
+                    <MenuItem value={4}>NA</MenuItem>
                   </Select>
             </FormControl>
             <FormControl >
-                  <InputLabel id="demo-simple-select-label">Platinum</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Tier</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="tier"
@@ -170,7 +171,7 @@ function Mate (){
                   </Select>
             </FormControl> 
             <FormControl sx={{ m:4, minWidth: 2000 }}>
-                  <InputLabel id="demo-simple-select-label">Version 12.13</InputLabel>
+                  <InputLabel id="demo-simple-select-label">Version</InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="version"
@@ -195,7 +196,7 @@ function Mate (){
               width: 300,
               height: 50,
             },}}>
-      <ToggleButtonGroup
+            <ToggleButtonGroup
               color="primary"
               value={alignment}
               

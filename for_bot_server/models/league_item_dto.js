@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
         freshBlood: { type: DataTypes.BOOLEAN, allowNull: false },
         wins: { type: DataTypes.INTEGER, allowNull: false },
         summonerName: { type: DataTypes.STRING, allowNull: false },
+        // miniSeries: { type: DataTypes.MiniSeriesDTO, allowNull: false },
+        inactive: { type: DataTypes.BOOLEAN, allowNull: false },
+        veteran: { type: DataTypes.BOOLEAN, allowNull: false },
       },
       { timestamps: false }
     );

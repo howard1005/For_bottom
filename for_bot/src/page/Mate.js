@@ -261,19 +261,16 @@ function Mate (){
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {rows.map((row) => (
+                    {championImage.map((champ) => (
                       <TableRow
-                        key={row.name}
+                        key={champ.id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       >
                         <TableCell component="th" scope="row">
-                          {row.name}
+                          {champ.id}
                         </TableCell>
-                        <TableCell align="">{row.calories}</TableCell>
-                        <TableCell align="">{row.fat}</TableCell>
-                        <TableCell align="">{row.carbs}</TableCell>
-                        <TableCell align="">{row.protein}</TableCell>
-                        <TableCell align="">{row.protein}</TableCell>
+                        <TableCell align="">{champ.id}</TableCell>
+                        
                       </TableRow>
                     ))}
                   </TableBody>

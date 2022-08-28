@@ -2,7 +2,7 @@ const request = require('request')
 
 let get = function(url){
     const options = {
-        url: url, 
+        url: encodeURI(url), 
         method: 'GET'
     }
     return new Promise((resolve, reject) => {
@@ -10,6 +10,7 @@ let get = function(url){
             if(error){
                 global.logger.error(error)
                 reject(error)
+                return
             }
             global.logger.info(`get response : ${response}`)
             var obj = JSON.parse(body)

@@ -12,6 +12,8 @@ db.Sequelize = Sequelize;
 
 db.User = require('./user')(sequelize, Sequelize);
 db.Champion = require('./champion')(sequelize, Sequelize);
-// db.Summoner = require('./summoner')(sequelize, Sequelize);
+db.SummonerDto = require('./summoner_dto')(sequelize, Sequelize);
+db.PerkStyleDto = require('./perk_style_dto')(sequelize, Sequelize);
+db.PerkStyleSelectionDto = require('./perk_style_selection_dto')(sequelize, Sequelize);
 
 module.exports = db;

@@ -106,7 +106,22 @@ router.get(`/spell/:id`, function(req, res){
             global.logger.error(e)
             reject(e)
         })
-    })).then((data) => res.send(data)) // data를 entity에 매칭해야함
+    }))
+    .then((data) => {
+        db.SummonerDto.create(data)
+        .then((result) => {
+            console.log("저장 성공: ", result);
+        })
+        .catch((err) => {
+            console.log("저장 Error: ", err);
+        })
+    
+        res.send(data)
+    }) // data를 entity에 매칭해야함
+    .catch(e => {
+        global.logger.error(e)
+        res.send(e)
+    })
 });
 
 module.exports = router;

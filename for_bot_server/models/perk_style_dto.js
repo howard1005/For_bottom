@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
       { timestamps: false }
     );
 
+    perk_style_dto.associate = models => {
+      perk_style_dto.belongsToMany(models.perk_style_selection_dto, {through: "selections"})
+    };
+
 
 
     return perk_style_dto

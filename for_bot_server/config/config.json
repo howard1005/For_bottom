@@ -3,9 +3,10 @@
         "username": "guest",
         "password": "1234",
         "database": "forbot",
-        "host": "211.218.215.226",
-        "port": "3307",
+        "host": "localhost",
+        "port": "3306",
         "dialect": "mysql",
-        "operatorAliases": false
+        "operatorAliases": false,
+        "force": true
     }
 }
